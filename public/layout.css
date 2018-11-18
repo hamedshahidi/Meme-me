@@ -1,0 +1,28 @@
+body {
+    background-color: black
+}
+
+#meme {
+    width: 500px;
+    margin: auto;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#backward{float: left;}
+#forward{float: right;}
+#like{float: left;}
+#dislike{float: right;}
+img{
+    width: 500px ;
+}
+
+.block{
+    display: block;
+    width: 100%;
+    clear: both;
+}

@@ -2,7 +2,7 @@ body {
     background-color: black
 }
 
-#meme {
+#main {
     width: 500px;
     margin: auto;
 }
@@ -25,4 +25,11 @@ img{
     display: block;
     width: 100%;
     clear: both;
+}
+#preImage{
+    height: 100px;
+    width: 100px;
+}
+#previewImage{
+    width: 100px;
 }

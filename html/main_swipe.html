@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main_page.css">
+    <title>Title</title>
+</head>
+<body>
+<div id="main_page">
+    <div class="header_and_tabs">
+        <div class="header">
+            <div class="left">
+                <nav role="navigation">
+                    <div id="menuToggle">
+                        <input type="checkbox"/>
+                        <!-- span makes the 3 hamburger icons -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <ul id="menu">
+                            <a href="#">
+                                <li>Home</li>
+                            </a>
+                            <a href="#">
+                                <li>About</li>
+                            </a>
+                            <a href="#">
+                                <li>My Uploads</li>
+                            </a>
+                            <a href="#">
+                                <li>Contact</li>
+                            </a>
+                            <a href="https://9gag.com" target="_blank">
+                                <li>Show me more</li>
+                            </a>
+                        </ul>
+                    </div>
+                </nav>
+
+                <h1>Meme Me</h1>
+            </div>
+            <div class="right">
+                <button id="login_button" type="button">Login/SignUp</button>
+                <button id="upload_button" type="button">Upload</button>
+                <button id="search_button_container" type="submit"><img src="../res/search_icon.png" width="60px"
+                                                                        height="60px">
+                </button>
+
+
+            </div>
+        </div>
+        <div class="navigation_bar">
+            <nav class="tab_bar">
+                <a class>Swipe</a>
+                <a class>Top 100</a>
+                <a class>Worst 100</a>
+            </nav>
+        </div>
+    </div>
+    <div class="meme_container">
+        <div class="meme_title">
+            <h3>This is the meme title</h3>
+        </div>
+        <div class="meme">
+            <img src="../res/maxresdefault.jpg">
+        </div>
+        <div class="like_dislike_buttons">
+            <button id="like" type="button">Like</button>
+            <button id="dislike" type="button">Dislike</button>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

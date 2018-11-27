@@ -6,24 +6,37 @@ const connect = () => {
     return mysql.createConnection({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
-        database: process.env.DB_DATABASE
+        database: process.env.DB_DATABASE,
     });
 };
 
-const select = (res, connection, callback) => {
+const selectMeme = (res, connection) => {
     connection.query(
         'SELECT * FROM meme',
         (err, results, fields) => {
-            if(err) console.log(err);
-            console.log(results);
-            callback();
+            if (err) console.log(err);
+            console.log('All memes selected');
+            res.json(results);
         },
     );
 };
 
+const selectUser = (profile, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `SELECT * FROM user WHERE ${profile.id} = user.id_google`,
+            (err, results, fields) => {
+                if (err) console.log(err);
+                resolve(results);
+            },
+        );
+    });
+
+};
+
 const insertMeme = (data, connection, callback) => {
     connection.execute(
-        'INSERT INTO meme (name, tag) VALUE (?, ?);',
+        'INSERT INTO meme (meme_name, meme_medium, tag) VALUES (?, ?, ?);',
         data,
         (err, results, fields) => {
             callback();
@@ -31,9 +44,21 @@ const insertMeme = (data, connection, callback) => {
     );
 };
 
-const insertUser = (data, connection, callback) => {
+const insertVoted = (data, connection, callback) => {
     connection.execute(
-        'INSERT INTO user (last_name, first_name, email, username, password) VALUE (?, ?, ?, ?, ?);',
+        `INSERT INTO voted_for (id_user, id_meme, vote) SELECT ${data[0]},id_meme,${data[1]} FROM meme WHERE meme.meme_medium = \'${data[2]}\';`,
+        data,
+        (err, results, fields) => {
+            if (err) console.log(err);
+            console.log(fields);
+            callback();
+        },
+    );
+};
+
+const insertGoogleUser = (data, connection, callback) => {
+    connection.execute(
+        'INSERT INTO user (id_google, last_name, first_name, username) VALUE (?, ?, ?, ?);',
         data,
         (err, results, fields) => {
             callback();
@@ -42,7 +67,9 @@ const insertUser = (data, connection, callback) => {
 };
 module.exports = {
     connect: connect,
-    select: select,
+    selectMeme: selectMeme,
+    selectUser: selectUser,
     insertMeme: insertMeme,
-    insertUser: insertUser
+    insertVoted: insertVoted,
+    insertGoogleUser: insertGoogleUser,
 };

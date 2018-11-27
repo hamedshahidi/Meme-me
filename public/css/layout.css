@@ -13,23 +13,42 @@ a {
     padding: 10px;
 }
 
-#backward{float: left;}
-#forward{float: right;}
-#like{float: left;}
-#dislike{float: right;}
-img{
-    width: 500px ;
+#backward {
+    float: left;
 }
 
-.block{
+#forward {
+    float: right;
+}
+
+#like {
+    float: left;
+}
+
+#dislike {
+    float: right;
+}
+
+img {
+    width: 500px;
+}
+
+.block {
     display: block;
     width: 100%;
     clear: both;
 }
-#preImage{
+
+#preImage {
     height: 100px;
     width: 100px;
 }
-#previewImage{
+
+#previewImage {
     width: 100px;
 }
+
+p{
+    color: white;
+}
+

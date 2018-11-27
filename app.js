@@ -5,13 +5,16 @@ const multer        = require('multer');
 const db            = require('./modules/database');
 const rs            = require('./modules/resize');
 const authRoutes    = require('./modules/auth-routes');
-const bodyParser    = require('body-parser');
 const passportSetup = require('./config/passport-setup');
+const bodyParser    = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport      = require('passport');
 const keys          = require('./config/keys');
 
 const app = express();
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('public'));
@@ -23,9 +26,7 @@ app.use(cookieSession({
     maxAge: 24*3600*1000,
     keys: [keys.session.cookieKey]
 }));
-// initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 app.listen(3000);
 
@@ -68,7 +69,7 @@ app.use('/listMeme', (req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('main_page');
+    res.render('login');
 });
 
 

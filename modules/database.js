@@ -26,12 +26,29 @@ const selectUser = (profile, connection) => {
         connection.query(
             `SELECT * FROM user WHERE ${profile.id} = user.id_google`,
             (err, results, fields) => {
-                if (err) console.log(err);
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
                 resolve(results);
             },
         );
     });
+};
 
+const selectGoogleUser = (profile, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `SELECT * FROM user WHERE ${profile.id} = user.id_google`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
 };
 
 const insertMeme = (data, connection, callback) => {
@@ -58,7 +75,7 @@ const insertVoted = (data, connection, callback) => {
 
 const insertGoogleUser = (data, connection, callback) => {
     connection.execute(
-        'INSERT INTO user (id_google, last_name, first_name, username) VALUE (?, ?, ?, ?);',
+        'INSERT INTO user (id_google, last_name, first_name) VALUE (?, ?, ?);',
         data,
         (err, results, fields) => {
             callback();
@@ -68,6 +85,7 @@ const insertGoogleUser = (data, connection, callback) => {
 module.exports = {
     connect: connect,
     selectMeme: selectMeme,
+    selectGoogleUser: selectGoogleUser,
     selectUser: selectUser,
     insertMeme: insertMeme,
     insertVoted: insertVoted,

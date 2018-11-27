@@ -68,7 +68,7 @@ app.use('/listMeme', (req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('main_page');
+    res.render('login');
 });
 
 

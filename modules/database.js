@@ -41,6 +41,7 @@ const selectGoogleUser = (profile, connection) => {
         connection.query(
             `SELECT * FROM user WHERE ${profile.id} = user.id_google`,
             (err, results, fields) => {
+                //console.log(results);
                 if (err) {
                     console.log(err);
                     reject(err);
@@ -73,13 +74,13 @@ const insertVoted = (data, connection, callback) => {
     );
 };
 
-const insertGoogleUser = (data, connection, callback) => {
+const insertGoogleUser = (data, connection) => {
     connection.execute(
-        'INSERT INTO user (id_google, last_name, first_name) VALUE (?, ?, ?);',
+        'INSERT INTO user (id_google, last_name, first_name, email) VALUE (?, ?, ?, ?);',
         data,
         (err, results, fields) => {
-            callback();
-        },
+            if(err) console.log(err);
+        }
     );
 };
 module.exports = {

@@ -26,18 +26,22 @@ passport.use(new GoogleStrategy({
     //passport callback function
     (accessToken, refreshToken, profile, done) => {
         // check if the user already exists
+        console.log(profile);
         db.selectGoogleUser(profile, connection).then((currentUser) => {
-            if (currentUser) {
-                // already have this user
+            // already have this user
+            if (currentUser.length !== 0) {
                 console.log('user is: ', currentUser);
                 done(null, currentUser);
             } else {
                 const data = [
                     profile.id,
-                    profile.user.familyName,
-                    profile.user.givenName,
+                    profile.name.familyName,
+                    profile.name.givenName,
+                    profile.emails[0].value,
                 ];
-                db.insertGoogleUser(data, connection).then((newUser) => {
+                console.log('My data is ' + data);
+                db.insertGoogleUser(data, connection);
+                db.selectGoogleUser(profile, connection).then((newUser) => {
                     console.log(newUser);
                     done(null, newUser);
                 });

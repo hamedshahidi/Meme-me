@@ -5,59 +5,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+          content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
     <title>Login</title>
 </head>
 
 <body>
 
-<h2 style="text-align:center">Welcome to Meme me </h2>
 
-<div class="container">
-    <form action="/action_page.php">
-        <div class="row">
-            <h3 style="text-align:center">Please sign in...</h3>
-            <div class="vl">
-                <span class="vl-innertext">or</span>
-            </div>
+<main>
+    <h2 id="title_login">Welcome to Meme-me </h2>
+    <section id="login_container">
+        <div class="container">
+            <form action="/action_page.php">
+                <div class="row">
+                    <h3 style="text-align:center">Please sign in...</h3>
+                    <div class="vl">
+                        <span class="vl-innertext">or</span>
+                    </div>
 
-            <div class="col">
-                <a href="#" class="fb btn">
-                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-                </a>
-                <a href="#" class="twitter btn">
-                    <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                </a>
-                <a href="/auth/google" class="google btn"><i class="fa fa-google fa-fw">
-                    </i> Login with Google+
-                </a>
-            </div>
+                    <div class="col">
+                        <a href="#" class="fb btn">
+                            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                        </a>
+                        <a href="#" class="twitter btn">
+                            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                        </a>
+                        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                            </i> Login with Google+
+                        </a>
+                    </div>
 
-            <div class="col">
-                <div class="hide-md-lg">
-                    <p>Or sign in manually:</p>
+                    <div class="col">
+                        <div class="hide-md-lg">
+                            <p>Or sign in manually:</p>
+                        </div>
+
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="submit" value="Login">
+                    </div>
+
                 </div>
+            </form>
+        </div>
 
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="submit" value="Login">
+        <div class="bottom-container">
+            <div class="row">
+                <div class="col">
+                    <a href="#" style="color:white" class="btn">Sign up</a>
+                </div>
+                <div class="col">
+                    <a href="#" style="color:white" class="btn">Forgot password?</a>
+                </div>
             </div>
-
         </div>
-    </form>
-</div>
-
-<div class="bottom-container">
-    <div class="row">
-        <div class="col">
-            <a href="#" style="color:white" class="btn">Sign up</a>
-        </div>
-        <div class="col">
-            <a href="#" style="color:white" class="btn">Forgot password?</a>
-        </div>
-    </div>
-</div>
+    </section>
+</main>
 
 </body>
 </html>

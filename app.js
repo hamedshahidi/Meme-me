@@ -72,6 +72,10 @@ app.get('/', (req, res) => {
     res.render('login');
 });
 
+app.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
 
 
 

@@ -6,11 +6,13 @@
     <title>Title</title>
 </head>
 <body>
-<div id="main_page">
-    <div class="header_and_tabs">
-        <div class="header">
+<div class="wrapper">
+
+
+    <header id="header">
+        <div class="header_main">
             <div class="left">
-                <nav role="navigation">
+                <nav class="navigation" role="navigation">
                     <div id="menuToggle">
                         <input type="checkbox"/>
                         <!-- span makes the 3 hamburger icons -->
@@ -19,62 +21,91 @@
                         <span></span>
 
                         <ul id="menu">
-                            <a href="#">
+                            <a href="main_swipe_html.html">
                                 <li>Home</li>
                             </a>
-                            <a href="#">
-                                <li>About</li>
+                            <a href="main_swipe_html.html">
+                                <li>Register/Login</li>
                             </a>
-                            <a href="#">
+                            <a href="main_swipe_html.html">
+                                <li>Upload</li>
+                            </a>
+                            <a href="main_swipe_html.html">
                                 <li>My Uploads</li>
                             </a>
-                            <a href="#">
-                                <li>Contact</li>
-                            </a>
-                            <a href="https://9gag.com" target="_blank">
-                                <li>Show me more</li>
+                            <a href="main_swipe_html.html">
+                                <li>About Us</li>
                             </a>
                         </ul>
                     </div>
                 </nav>
-
-                <h1>Meme Me</h1>
             </div>
             <div class="right">
-                <button id="login_button" type="button">Login/SignUp</button>
-                <button id="upload_button" type="button">Upload</button>
-                <button id="search_button_container" type="submit"><img src="../res/search_icon.png" width="60px"
-                                                                        height="60px">
-                </button>
 
-
+                <!--<button id="login_button" type="button">Login/SignUp</button>
+                <button id="upload_button" type="button">Upload</button>-->
+                <div class="search_div">
+                    <button id="search_button" type="submit">
+                        <img src="../res/search_icon.png"
+                             width="128"
+                             height="128">
+                    </button>
+                </div>
+            </div>
+            <div class="logo">
+                <h1>Meme Me</h1>
             </div>
         </div>
-        <div class="navigation_bar">
-            <nav class="tab_bar">
-                <a class>Swipe</a>
-                <a class>Top 100</a>
-                <a class>Worst 100</a>
-            </nav>
+
+    </header>
+</div>
+<div class="button_bar">
+    <nav class="tab_bar">
+        <div class="btn">
+            <div class="button3">Swipe</div>
         </div>
-    </div>
-    <div class="meme_container">
-        <div class="meme_title">
-            <h3>This is the meme title</h3>
+        <div class="btn">
+            <div class="button3">Top 100</div>
         </div>
-        <div class="meme">
-            <img src="../res/maxresdefault.jpg">
-        </div>
-        <div class="like_dislike_buttons">
-            <button id="like" type="button">Like</button>
-            <button id="dislike" type="button">Dislike</button>
+        <div class="btn">
+            <div class="button3">Worst 100</div>
         </div>
 
-    </div>
+    </nav>
+</div>
 
+<div class="meme_container">
+    <div class="meme_title">
+        <h3>When you see how much stuff you have to do</h3>
+    </div>
+    <div class="meme">
+        <img src="../res/maxresdefault.jpg">
+    </div>
+    <div class="like_dislike_buttons">
+        <button class="dislike" type="button">
+            <i class="fa fa-thumbs-up"></i>
+            Dislike
+            <span>0</span>
+        </button>
+        <button id="like">
+            <i class="fa fa-thumbs-up"></i>
+            Like
+            <span id="likeSpan">0</span>
+        </button>
+    </div>
 
 </div>
 
+<script>
 
+    let button = document.getElementById("like"),
+        count = 0;
+    button.onclick = function () {
+        count += 1;
+        button.innerHTML = "Likes :" + count;
+
+    };
+
+</script>
 </body>
 </html>

@@ -10,28 +10,35 @@ const bodyParser    = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport      = require('passport');
 const keys          = require('./config/keys');
+const session       = require('express-session');
 
 const app = express();
-// initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
 app.set('view engine', 'ejs');
 app.set('views', './views');
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static('public'));
 app.use(bodyParser.json());
-// set up auth-route
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/auth', authRoutes);
-// set up cookie
 app.use(cookieSession({
     maxAge: 24*3600*1000,
     keys: [keys.session.cookieKey]
 }));
-
+app.use(session({
+    secret:'keyboard LOL cat',
+    resave:false,
+    saveUninitialized:false,
+    cookie: {secure:true}
+}));
 
 app.listen(3000);
 
 const connection = db.connect();
 const upload = multer({dest: 'public/memes/'});
+
+
+
 
 //upload the meme
 app.post('/upload', upload.single('mediafile'), (req, res, next) => {
@@ -66,6 +73,10 @@ app.post('/voted', (req, res, next) => {
 //query all memes from database
 app.use('/listMeme', (req, res, next) => {
     db.selectMeme(res, connection, next);
+});
+
+app.get('/profile', (req, res) => {
+    res.render('profile');
 });
 
 app.get('/', (req, res) => {

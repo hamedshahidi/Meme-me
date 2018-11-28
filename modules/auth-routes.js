@@ -3,9 +3,10 @@ const passport          = require('passport');
 const router            = require('express').Router();
 
 //auth login
-router.get('/login', (req, res) => {
-   res.render('login');
-});
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/profile',
+    failureRedirect: '/'
+}));
 
 //auth logout
 router.get('/logout', (req, res) => {

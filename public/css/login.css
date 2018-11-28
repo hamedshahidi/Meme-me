@@ -68,9 +68,8 @@ input[type=submit]:hover {
     float: left;
     /*width: 50%;*/
     width: 100%;
-    margin: auto;
     padding: 0 50px;
-    margin-top: 6px;
+    margin: 6px auto auto;
 }
 
 /* Clear floats after the columns */
@@ -113,7 +112,7 @@ input[type=submit]:hover {
 .bottom-container {
     text-align: center;
     background-color: #666;
-    border-radius: 0px 0px 4px 4px;
+    border-radius: 0 0 4px 4px;
 }
 
 #title_login {

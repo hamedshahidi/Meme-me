@@ -21,16 +21,14 @@ const selectMeme = (res, connection) => {
     );
 };
 
-const selectUser = (profile, connection) => {
+const selectUser = (data, connection, callback) => {
     return new Promise((resolve, reject) => {
         connection.query(
-            `SELECT * FROM user WHERE ${profile.id} = user.id_google`,
+            'SELECT * FROM user WHERE user.username = ? AND user.password = ?',
+            data,
             (err, results, fields) => {
-                if (err) {
-                    console.log(err);
-                    reject(err);
-                }
-                resolve(results);
+                if (err) callback(err);
+                else resolve(results);
             },
         );
     });
@@ -86,8 +84,8 @@ const insertGoogleUser = (data, connection) => {
 module.exports = {
     connect: connect,
     selectMeme: selectMeme,
-    selectGoogleUser: selectGoogleUser,
     selectUser: selectUser,
+    selectGoogleUser: selectGoogleUser,
     insertMeme: insertMeme,
     insertVoted: insertVoted,
     insertGoogleUser: insertGoogleUser,

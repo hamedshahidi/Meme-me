@@ -54,54 +54,100 @@ table {
 ==================
 */
 body {
-    background-color: #ffffff;
+    background-color: #f4f7f6;
 }
 
-#main_page {
-    display: flex;
-    flex-direction: column;
-}
-
-.header_and_tabs {
-    background-color: #ffee00;
+.wrapper {
+    position: relative;
+    display: block;
+    background-color: #f4f7f6;
 }
 
 h1 {
     font-size: 3em;
-    padding: 0 10px;
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 2.5em;
+    font-weight: bold;
 }
 
 h4 {
     font-size: 1.5em;
 }
 
-.header {
-    height: fit-content;
-    background-color: red;
+#header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 73px;
+    font-size: 13px;
+    font-weight: 400;
+    z-index: 302;
+    display: block;
+    clear: both;
+}
+
+.header_main {
+    position: relative;
     display: flex;
+    height: 100px;
+    border-bottom: 2px solid #E6EAEA;
+    margin: 0;
+    padding: 0;
 }
 
 .left {
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    width: 100px;
+    background-color: #4d4d4d;
+
+}
+
+.navigation {
+    padding: 0 23px;
+    width: 100px;
+    min-width: inherit;
+    height: 100px;
+    border-right: 2px solid #E6EAEA;
+    color: #202121;
+    cursor: pointer;
+    float: left;
+
     display: flex;
-    justify-content: flex-start;
-    width: 50%;
+    justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .right {
     display: flex;
     justify-content: flex-end;
-    width: 50%;
     align-items: center;
+    flex: 1;
+}
+
+.logo {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 40%;
+    width: auto;
+    height: 23px;
+    line-height: normal;
+    box-sizing: inherit;
+    z-index: -1;
+
 }
 
 #login_button, #upload_button {
     display: inline-block;
-    background-color: #4CAF50; /* Green */
+    background-color: #6ed3cf; /* Green */
     border: none;
     color: white;
     text-align: center;
@@ -111,44 +157,67 @@ h4 {
 
 }
 
-#search_button_container {
-    float: right;
+.search_div {
+    display: flex;
+    height: 100px;
+    padding: 0 23px;
+}
+
+#search_button {
     background-color: transparent;
     padding: 0;
     border: 0;
-    display: inline;
-
 }
 
-.navigation_bar {
-    height: 48px;
-    background-color: #0077ff;
+#search_button > img {
+    width: 50px;
+    height: 50px;
 }
 
-.tab_bar {
+.button_bar {
+    height: 70px;
+    display: block;
+}
+.tab_bar{
+    height: inherit;
     display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    text-align: center;
+
+}
+.btn {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 33.333%;
+    background-color: #f4f7f6;
+    border-bottom: 2px solid #E6EAEA;
+    box-sizing: border-box;
+
 }
 
-.tab_bar > a {
-    color: #5d5599;
+.button3 {
+    color: #000000;
     text-decoration: none;
     line-height: 24px;
-    padding: 12px;
-    width: 33.3333%;
     font-size: 2em;
-    background-color: #4CAF50;
+    text-align: center;
+
+}
+
+
+.btn:nth-child(1), .btn:nth-child(2) {
+    border-right: 2px solid #E6EAEA;
 }
 
 .meme_container {
-    margin: 50px;
+
     display: flex;
     flex-direction: column;
-    background-color: #909090;
     justify-content: center;
     align-items: center;
+    border: 2px solid #E6EAEA;
+    border-top: 0;
+    padding-top: 50px;
 
 }
 
@@ -167,33 +236,34 @@ h4 {
 
 }
 
-.like_dislike_buttons{
+.like_dislike_buttons {
     display: flex;
     flex-direction: row;
 }
-#like, #dislike{
+
+#like, #dislike {
     font-size: 2em;
     margin: 30px;
 }
 
-a {
+.button3 {
     text-decoration: none;
     color: #232323;
-
     transition: color 0.3s ease;
 }
 
-a:hover {
+.button3:hover {
     color: tomato;
 }
 
 #menuToggle {
-    display: block;
     position: relative;
-    padding: 0 20px;
-
+    display: inline-block;
+    width: 30px;
+    height: 13px;
+    justify-content: center;
     z-index: 1;
-
+    padding-bottom: 10px;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -296,13 +366,118 @@ a:hover {
     font-size: 22px;
 }
 
-
 /*
  * And let's slide it in from the left
  */
 #menuToggle input:checked ~ ul {
     transform: none;
 }
+
+/*
+Like button
+*/
+
+
+#like, .dislike {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 250px;
+    height: 100px;
+    background: #FFFFFF;
+    border: 0;
+    font-size: 0.9rem;
+    font-family: Futura, sans-serif;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+    margin-top: 100px;
+}
+.dislike{
+    background-color: rgba(255, 0, 19, 0.19);
+    margin-right: 30px;
+}
+#like{
+    margin-left: 30px;
+    background-color: rgba(116, 143, 255, 0.19);
+}
+#like:hover, .dislike:hover {
+    color: #748fff;
+    transform: scale(1.2);
+}
+.dislike:hover {
+    color: #ff3f3c;
+    transform: scale(1.2);
+}
+#like:hover span, .dislike:hover span {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+#like:active, .dislike:active {
+    transform: scale(1.4);
+}
+#like span, .dislike span {
+    position: absolute;
+    top: -55px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #84d9ff;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    border-radius: 100px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.dislike span {
+    position: absolute;
+    top: -55px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #ff0013;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    border-radius: 100px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+#like span:hover, .dislike span:hover {
+    opacity: 1;
+}
+#like span:after, .dislike span:after {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #84d9ff;
+}
+.dislike span:after {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #ff0013;
+}
+
+
 
 /* ==========================================================================
    Media Queries

@@ -13,14 +13,28 @@
 
 <body>
 <main>
-    <h2 id="title_login">Welcome to Meme-me </h2>
+    <header>
+        <span id="title_login">Welcome to Meme-me </span>
+    </header>
+
     <section id="login_container">
         <div class="container">
             <form action="/auth/login" method="POST" >
                 <div class="row">
-                    <h3 style="text-align:center">Please sign in...</h3>
+                    <h4 style="text-align:center">Please sign in...</h4>
                     <div class="vl">
                         <span class="vl-innertext">or</span>
+                    </div>
+
+                    <div class="col">
+
+                        <input type="text" name="username" placeholder="Username" required="">
+                        <input type="password" name="password" placeholder="Password" required="">
+                        <input type="submit" value="Login">
+
+                        <div class="hide-md-lg">
+                            <p>Or...</p>
+                        </div>
                     </div>
 
                     <div class="col">
@@ -33,16 +47,6 @@
                         <a href="/auth/google" class="google btn"><i class="fa fa-google fa-fw">
                             </i> Login with Google+
                         </a>
-                    </div>
-
-                    <div class="col">
-                        <div class="hide-md-lg">
-                            <p>Or sign in manually:</p>
-                        </div>
-
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <input type="submit" value="Login">
                     </div>
 
                 </div>
@@ -60,6 +64,61 @@
             </div>
         </div>
     </section>
+
+    <div id="signup-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <section id="signup_container">
+                <div class="container">
+                    <form action="/action_page.php">
+                        <div class="row">
+                            <h4 style="text-align:center">Create your personal account...</h4>
+                            <div class="vl">
+                                <span class="vl-innertext">or</span>
+                            </div>
+
+                            <div class="col">
+                                <input type="text" name="username" placeholder="Username" required>
+                                <input type="text" name="firstname" placeholder="First name" required>
+                                <input type="text" name="lastname" placeholder="Last name" required>
+                                <input type="email" name="email" placeholder="jim.carrey@liarliar.com" required>
+                                <input type="password" name="password" placeholder="Password" required>
+                                <input type="submit" value="Sign up">
+
+                                <div class="hide-md-lg">
+                                    <p>Or...</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <a href="#" class="fb btn">
+                                    <i class="fa fa-facebook fa-fw"></i> Sign up with Facebook
+                                </a>
+                                <a href="#" class="twitter btn">
+                                    <i class="fa fa-twitter fa-fw"></i> Sign up with Twitter
+                                </a>
+                                <a href="/auth/google" class="google btn"><i class="fa fa-google fa-fw">
+                                    </i> Sigh up with Google+
+                                </a>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bottom-container">
+                    <div class="row">
+                        <div class="col">
+                            <a href="#" style="color:white" class="btn">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
 </main>
 </body>
 </html>

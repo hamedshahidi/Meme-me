@@ -1,44 +1,50 @@
 'use strict';
 require('dotenv').config();
-const express       = require('express');
-const multer        = require('multer');
-const db            = require('./modules/database');
-const rs            = require('./modules/resize');
-const authRoutes    = require('./modules/auth-routes');
+const express = require('express');
+const multer = require('multer');
+const db = require('./modules/database');
+const rs = require('./modules/resize');
+const authRoutes = require('./modules/auth-routes');
 const passportSetup = require('./config/passport-setup');
-const bodyParser    = require('body-parser');
-const cookieSession = require('cookie-session');
-const passport      = require('passport');
-const keys          = require('./config/keys');
-const session       = require('express-session');
+const bodyParser = require('body-parser');
+//const cookieSession = require('cookie-session');
+const passport = require('passport');
+//const keys = require('./config/keys');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+const options = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    database: process.env.DB_DATABASE,
+};
+const sessionStore = new MySQLStore(options);
 
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
+app.use(session({
+    secret: 'keyboard LOL cat',
+    resave: true,
+    store: sessionStore,
+    saveUninitialized: true,
+    // cookie: {secure: true},
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use('/auth', authRoutes);
-app.use(cookieSession({
-    maxAge: 24*3600*1000,
-    keys: [keys.session.cookieKey]
-}));
-app.use(session({
-    secret:'keyboard LOL cat',
-    resave:false,
-    saveUninitialized:false,
-    cookie: {secure:true}
-}));
+
+// app.use(cookieSession({
+//     maxAge: 24*3600*1000,
+//     keys: [keys.session.cookieKey]
+// }));
 
 app.listen(3000);
 
 const connection = db.connect();
 const upload = multer({dest: 'public/memes/'});
-
-
-
 
 //upload the meme
 app.post('/upload', upload.single('mediafile'), (req, res, next) => {
@@ -75,7 +81,9 @@ app.use('/listMeme', (req, res, next) => {
     db.selectMeme(res, connection, next);
 });
 
-app.get('/profile', (req, res) => {
+app.get('/profile',authenticationMiddleware(), (req, res) => {
+    console.log(req.user);
+    console.log(req.isAuthenticated());
     res.render('profile');
 });
 
@@ -83,10 +91,14 @@ app.get('/', (req, res) => {
     res.render('login');
 });
 
-app.get('/profile', (req, res) => {
-  res.render('profile');
-});
+function authenticationMiddleware () {
+    return (req, res, next) => {
+        console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
 
+        if (req.isAuthenticated()) return next();
+        res.redirect('/')
+    }
+}
 
 
 

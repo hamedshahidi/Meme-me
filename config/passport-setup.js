@@ -1,34 +1,32 @@
 'use strict';
-const passport          = require('passport');
-const keys              = require('./keys');
-const db                = require('../modules/database');
-const LocalStrategy     = require('passport-local').Strategy;
-const GoogleStrategy    = require('passport-google-oauth20').Strategy;
+const passport = require('passport');
+const keys = require('./keys');
+const db = require('../modules/database');
+const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const connection = db.connect();
 
 passport.serializeUser((user, done) => {
-    console.log(user);
-    done(null, user[0].id_user);
+    done(null, user.id_user);
 });
 
-passport.deserializeUser(function(id, done) {
-    connection.query('select * from users where id = ' + id,
-        function(err, rows) {
-            done(err, rows[0]);
-        });
+passport.deserializeUser((id_user, done) => {
+    done(null, id_user);
 });
 
 passport.use(new LocalStrategy(
     (username, password, done) => {
         const data = [username, password];
-        db.selectUser(data, connection, done).then((user) => {
-            if(user.length === 0){
+        db.selectUser(data, connection).then((user) => {
+            if (user.length === 0) {
                 done(null, false);
             }
-            return done(null, user);
+            else done(null, user[0]);
+        }).catch((err) => {
+            console.log(err);
         });
-    }
+    },
 ));
 
 passport.use(new GoogleStrategy({
@@ -42,8 +40,9 @@ passport.use(new GoogleStrategy({
         // check if the user already exists
         db.selectGoogleUser(profile, connection).then((currentUser) => {
             // already have this user
+            console.log(currentUser);
             if (currentUser.length !== 0) {
-                done(null, currentUser);
+                done(null, currentUser[0]);
             } else {
                 const data = [
                     profile.id,
@@ -54,7 +53,7 @@ passport.use(new GoogleStrategy({
                 console.log('My data is ' + data);
                 db.insertGoogleUser(data, connection);
                 db.selectGoogleUser(profile, connection).then((newUser) => {
-                    done(null, newUser);
+                    done(null, newUser[0]);
                 });
             }
         }).catch((err) => {

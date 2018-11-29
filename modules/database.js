@@ -21,14 +21,17 @@ const selectMeme = (res, connection) => {
     );
 };
 
-const selectUser = (data, connection, callback) => {
+const selectUser = (data, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
             'SELECT * FROM user WHERE user.username = ? AND user.password = ?',
             data,
             (err, results, fields) => {
-                if (err) callback(err);
-                else resolve(results);
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
             },
         );
     });
@@ -39,7 +42,6 @@ const selectGoogleUser = (profile, connection) => {
         connection.query(
             `SELECT * FROM user WHERE ${profile.id} = user.id_google`,
             (err, results, fields) => {
-                //console.log(results);
                 if (err) {
                     console.log(err);
                     reject(err);
@@ -77,9 +79,31 @@ const insertGoogleUser = (data, connection) => {
         'INSERT INTO user (id_google, last_name, first_name, email) VALUE (?, ?, ?, ?);',
         data,
         (err, results, fields) => {
-            if(err) console.log(err);
+            if(err) console.log('My fking error'+err);
         }
     );
+};
+
+const insertUser = (req, res, data, connection) => {
+    connection.execute(
+        'INSERT INTO user (last_name, first_name, email, username, password) VALUES (?, ?, ?, ?, ?);',
+        data,
+        (err, results, fields) => {
+            console.log('Insert user is called');
+            if(err) console.log(err);
+            connection.query(
+                `SELECT * FROM user WHERE username = '${data[3]}'`,
+                (err, results, fields) => {
+                    if(err) console.log(err);
+                    console.log(results[0]);
+                    req.login(results[0], function(err) {
+                        if (err) { console.log(err) }
+                        res.redirect('/profile');
+                    });
+                }
+            );
+        }
+    )
 };
 module.exports = {
     connect: connect,
@@ -89,4 +113,5 @@ module.exports = {
     insertMeme: insertMeme,
     insertVoted: insertVoted,
     insertGoogleUser: insertGoogleUser,
+    insertUser: insertUser
 };

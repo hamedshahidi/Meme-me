@@ -71,7 +71,7 @@
         <div class="modal-content">
             <section id="signup_container">
                 <div class="container">
-                    <form action="/action_page.php">
+                    <form action="/auth/register" method="post">
                         <div class="row">
                             <h4 style="text-align:center">Create your personal account...</h4>
                             <div class="vl">
@@ -84,6 +84,7 @@
                                 <input type="text" name="lastname" placeholder="Last name" required>
                                 <input type="email" name="email" placeholder="jim.carrey@liarliar.com" required>
                                 <input type="password" name="password" placeholder="Password" required>
+                                <input type="password" name="re_enter_password" placeholder="Re enter password" required>
                                 <input type="submit" value="Sign up">
 
                                 <div class="hide-md-lg">

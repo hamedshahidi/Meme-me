@@ -49,6 +49,7 @@ passport.use(new GoogleStrategy({
                     profile.name.familyName,
                     profile.name.givenName,
                     profile.emails[0].value,
+                    profile.emails[0].value
                 ];
                 console.log('My data is ' + data);
                 db.insertGoogleUser(data, connection);

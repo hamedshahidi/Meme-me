@@ -12,6 +12,8 @@ const passport = require('passport');
 //const keys = require('./config/keys');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+
+
 const options = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -94,7 +96,6 @@ app.get('/', (req, res) => {
 function authenticationMiddleware () {
     return (req, res, next) => {
         console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
-
         if (req.isAuthenticated()) return next();
         res.redirect('/')
     }

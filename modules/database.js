@@ -37,6 +37,38 @@ const selectUser = (data, connection) => {
     });
 };
 
+const selectUsername = (data, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            'SELECT * FROM user WHERE username = ?',
+            data,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
+const selectEmail = (data, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            'SELECT * FROM user WHERE user.email = ?',
+            data,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
 const selectGoogleUser = (profile, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -76,42 +108,36 @@ const insertVoted = (data, connection, callback) => {
 
 const insertGoogleUser = (data, connection) => {
     connection.execute(
-        'INSERT INTO user (id_google, last_name, first_name, email) VALUE (?, ?, ?, ?);',
+        'INSERT INTO user (id_google, last_name, first_name, email, username) VALUE (?, ?, ?, ?, ?);',
         data,
         (err, results, fields) => {
-            if(err) console.log('My fking error'+err);
-        }
+            if (err) console.log('My google error' + err);
+        },
     );
 };
 
-const insertUser = (req, res, data, connection) => {
-    connection.execute(
-        'INSERT INTO user (last_name, first_name, email, username, password) VALUES (?, ?, ?, ?, ?);',
-        data,
-        (err, results, fields) => {
-            console.log('Insert user is called');
-            if(err) console.log(err);
-            connection.query(
-                `SELECT * FROM user WHERE username = '${data[3]}'`,
-                (err, results, fields) => {
-                    if(err) console.log(err);
-                    console.log(results[0]);
-                    req.login(results[0], function(err) {
-                        if (err) { console.log(err) }
-                        res.redirect('/profile');
-                    });
-                }
-            );
-        }
-    )
+const insertUser = (data, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.execute(
+            'INSERT INTO user (last_name, first_name, email, username, password) VALUES (?, ?, ?, ?, ?);',
+            data,
+            (err, results, fields) => {
+                if (err) reject(err);
+                resolve('Insert user is done');
+            },
+        );
+    });
+
 };
 module.exports = {
     connect: connect,
     selectMeme: selectMeme,
     selectUser: selectUser,
+    selectUsername: selectUsername,
+    selectEmail: selectEmail,
     selectGoogleUser: selectGoogleUser,
     insertMeme: insertMeme,
     insertVoted: insertVoted,
     insertGoogleUser: insertGoogleUser,
-    insertUser: insertUser
+    insertUser: insertUser,
 };

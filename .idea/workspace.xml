@@ -4,9 +4,20 @@
     <list default="true" id="107c2712-f303-416b-8a0f-05b434294852" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/passport-setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport-setup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main_swipe_css.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_swipe_html.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/auth-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth-routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/medium/a12d4a0c79caa18900ecb234467417c3_medium" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/medium/fdd6284b1f922f2ce9087604d998f72e_medium" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/memes/a12d4a0c79caa18900ecb234467417c3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/memes/fdd6284b1f922f2ce9087604d998f72e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/maxresdefault.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/maxresdefault.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/search_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/search_icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main_page.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/main_page.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/upload_page.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/upload_page.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -108,10 +119,11 @@
     <session id="-1547434474">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.110" value="1" />
+          <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.35" value="1" />
@@ -124,48 +136,49 @@
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.77" value="2" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.open.time.82" value="1" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="107" />
-          <entry key="ejs" value="750" />
+          <entry key="css" value="175" />
+          <entry key="ejs" value="940" />
           <entry key="html" value="122" />
-          <entry key="js" value="9619" />
-          <entry key="txt" value="165" />
+          <entry key="js" value="13047" />
+          <entry key="txt" value="272" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="107" />
-          <entry key="EJS" value="750" />
+          <entry key="CSS" value="175" />
+          <entry key="EJS" value="940" />
           <entry key="HTML" value="122" />
-          <entry key="JavaScript" value="9619" />
-          <entry key="PLAIN_TEXT" value="165" />
+          <entry key="JavaScript" value="13047" />
+          <entry key="PLAIN_TEXT" value="272" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="7" />
-          <entry key="ejs" value="33" />
+          <entry key="css" value="17" />
+          <entry key="ejs" value="47" />
           <entry key="env" value="10" />
-          <entry key="html" value="5" />
+          <entry key="html" value="9" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="51" />
+          <entry key="js" value="69" />
           <entry key="json" value="3" />
-          <entry key="png" value="1" />
+          <entry key="png" value="4" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="7" />
-          <entry key="EJS" value="33" />
-          <entry key="HTML" value="5" />
-          <entry key="Image" value="3" />
+          <entry key="CSS" value="17" />
+          <entry key="EJS" value="47" />
+          <entry key="HTML" value="9" />
+          <entry key="Image" value="6" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="51" />
+          <entry key="JavaScript" value="69" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="TypeScript" value="1" />
         </counts>
@@ -219,47 +232,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="97" column="90" selection-start-line="97" selection-start-column="90" selection-end-line="97" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/auth-routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1050">
-              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/database.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="125" column="47" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+            <state relative-caret-position="338">
+              <caret line="105" column="7" lean-forward="true" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -270,17 +247,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>body</find>
       <find>mydat</find>
       <find>profile</find>
+      <find>My da</find>
+      <find>My</find>
+      <find>menu</find>
+      <find>button_</find>
+      <find>/main</find>
+      <find>previewIma</find>
+      <find>voted</find>
+      <find>vote</find>
+      <find>body</find>
+      <find>titl</find>
+      <find>left-ac</find>
+      <find>var</find>
+      <find>stackedcards-container</find>
+      <find>src</find>
+      <find>init</find>
+      <find>currentE</find>
+      <find>popular-destinations-images</find>
+      <find>popular-destinations-text</find>
+      <find>p</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>const</replace>
+      <replace>let</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public\js</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -289,7 +292,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Views/Main page.html" />
-        <option value="$PROJECT_DIR$/views/profile.ejs" />
         <option value="$PROJECT_DIR$/views/layout.css" />
         <option value="$PROJECT_DIR$/public/layout.css" />
         <option value="$PROJECT_DIR$/index.js" />
@@ -301,13 +303,10 @@
         <option value="$PROJECT_DIR$/modules/resize.js" />
         <option value="$PROJECT_DIR$/views/test.html" />
         <option value="$PROJECT_DIR$/public/css/layout.css" />
-        <option value="$PROJECT_DIR$/views/upload_page.ejs" />
-        <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/routes/auth-routes.js" />
         <option value="$PROJECT_DIR$/public/css/login.css" />
         <option value="$PROJECT_DIR$/public/css/home.css" />
         <option value="$PROJECT_DIR$/config/keys.js" />
-        <option value="$PROJECT_DIR$/views/main_page.ejs" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/js/button.css" />
         <option value="$PROJECT_DIR$/js/button.js" />
@@ -315,8 +314,20 @@
         <option value="$PROJECT_DIR$/html/main_swipe_html.html" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/config/passport-setup.js" />
-        <option value="$PROJECT_DIR$/modules/database.js" />
+        <option value="$PROJECT_DIR$/public/js/profile.js" />
+        <option value="$PROJECT_DIR$/views/profile.ejs" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
+        <option value="$PROJECT_DIR$/views/upload_page.ejs" />
+        <option value="$PROJECT_DIR$/views/main_page.ejs" />
+        <option value="$PROJECT_DIR$/public/js/swipe.js" />
+        <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/modules/database.js" />
+        <option value="$PROJECT_DIR$/views/swipe.ejs" />
+        <option value="$PROJECT_DIR$/public/css/swipe.css" />
+        <option value="$PROJECT_DIR$/public/js/test.js" />
+        <option value="$PROJECT_DIR$/public/css/test.css" />
+        <option value="$PROJECT_DIR$/views/test.ejs" />
         <option value="$PROJECT_DIR$/modules/auth-routes.js" />
       </list>
     </option>
@@ -363,18 +374,7 @@
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
               <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
@@ -391,7 +391,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -400,9 +400,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public" />
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\res" />
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public\css" />
       <recent name="C:\Users\Kristofer\Desktop\The missing semicolon\REPO\Meme-me" />
       <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\modules" />
-      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public" />
@@ -460,7 +462,10 @@
       <workItem from="1543474295382" duration="19403000" />
       <workItem from="1543575076277" duration="1277000" />
       <workItem from="1543576643222" duration="3350000" />
-      <workItem from="1543649180935" duration="6808000" />
+      <workItem from="1543649180935" duration="18041000" />
+      <workItem from="1543737736279" duration="8112000" />
+      <workItem from="1543821619851" duration="17824000" />
+      <workItem from="1543849967431" duration="20952000" />
     </task>
     <task id="LOCAL-00001" summary="commit -m&quot;Adding like, dislike function, login page&quot;">
       <created>1543323916517</created>
@@ -483,17 +488,45 @@
       <option name="project" value="LOCAL" />
       <updated>1543525666693</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;Sign up finished, checking duplicate username and email done&quot;">
+      <created>1543656134542</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543656134542</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214076000" />
+    <option name="totallyTimeSpent" value="272197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16414523" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14977308" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.18852459" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.55573773" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.08852459" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.66721314" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.102118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -506,28 +539,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.18852459" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.55573773" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.352459" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.66721314" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19515885" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3288364" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.0" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.30491802" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.352459" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.08852459" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.66721314" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -545,7 +557,8 @@
     <MESSAGE value="commit -m&quot;Adding like, dislike function, login page&quot;" />
     <MESSAGE value="&quot;Adding public files&quot;" />
     <MESSAGE value="&quot;Express-validator, Express-session added. Fixing login and sign up system&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Express-validator, Express-session added. Fixing login and sign up system&quot;" />
+    <MESSAGE value="&quot;Sign up finished, checking duplicate username and email done&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Sign up finished, checking duplicate username and email done&quot;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Uploads/1.jpg" />
@@ -591,20 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/upload_page.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -613,28 +612,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/route.js" />
-    <entry file="file://$PROJECT_DIR$/views/main_page.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/button.css" />
-    <entry file="file://$PROJECT_DIR$/css/main_swipe_css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="452" selection-start-line="452" selection-end-line="452" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/profile.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -642,22 +620,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/main_swipe_html.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/keys.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -673,38 +637,132 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1029">
+          <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/profile.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/main_swipe_html.html" />
+    <entry file="file://$PROJECT_DIR$/public/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
+        <state relative-caret-position="147">
           <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/database.js">
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="125" column="47" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+        <state relative-caret-position="208">
+          <caret line="497" column="11" selection-start-line="497" selection-start-column="11" selection-end-line="497" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
+    <entry file="file://$PROJECT_DIR$/views/profile.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="359">
+          <caret line="287" column="24" selection-start-line="287" selection-end-line="288" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/main_page.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1030">
+          <caret line="138" selection-start-line="138" selection-end-line="139" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/upload_page.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/swipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="257" column="13" lean-forward="true" selection-start-line="257" selection-start-column="13" selection-end-line="257" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="97" column="90" selection-start-line="97" selection-start-column="90" selection-end-line="97" selection-end-column="90" />
+        <state relative-caret-position="2179">
+          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="72" column="56" lean-forward="true" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/swipe.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="127" column="26" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/heart.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/broken_heart.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="93" column="59" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/swipe.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/test.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="27" column="66" lean-forward="true" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/auth-routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+        <state relative-caret-position="338">
+          <caret line="105" column="7" lean-forward="true" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
         </state>
       </provider>
     </entry>

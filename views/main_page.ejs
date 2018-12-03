@@ -1,27 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="http://localhost:3000/"/>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta id="viewport" name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
-    <title>Meme me</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Title</title>
 </head>
 
-<body>
-<nav>
-    <ul>
-        <li><a href="/auth/login">Log in</a></li>
-        <!--<li><a href="/auth/logout">Log out</a></li>-->
-        <li><a href="/auth/">Sign up</a></li>
-        <!--<li><a href="/">Home Page</a></li>-->
-    </ul>
-</nav>
-<header>
-    <h1> Welcome to the main page of project</h1>
-</header>
 
+<body>
+<div class="wrapper">
+    <header id="header">
+        <div class="header_main">
+            <div class="left">
+                <nav class="navigation" role="navigation">
+                    <div id="menuToggle">
+                        <input type="checkbox"/>
+                        <!-- span makes the 3 hamburger icons -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <ul id="menu">
+                            <a href="#">
+                                <li>Home</li>
+                            </a>
+                            <a href="#">
+                                <li>Register/Login</li>
+                            </a>
+                            <a href="#">
+                                <li>Upload</li>
+                            </a>
+                            <a href="#">
+                                <li>My Uploads</li>
+                            </a>
+                            <a href="#">
+                                <li>About Us</li>
+                            </a>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="right">
+
+                <!--<button id="login_button" type="button">Login/SignUp</button>
+                <button id="upload_button" type="button">Upload</button>-->
+                <div class="search_div">
+                    <button id="search_button" type="submit">
+                        <img src="../public/res/search_icon.png"
+                             width="128"
+                             height="128">
+                    </button>
+                </div>
+            </div>
+            <div class="logo">
+                <h1>Meme Me</h1>
+            </div>
+        </div>
+
+    </header>
+</div>
+<div class="button_bar">
+    <nav class="tab_bar">
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+
+        <div class="form-popup" id="myForm">
+            <form method="post" enctype="multipart/form-data" id="mediaform">
+                <input type="text" name="Caption" placeholder="Caption">
+                <br>
+                <input type="text" name="tag" placeholder="tag">
+                <br>
+                <input type="file" name="mediafile" accept="audio/*,video/*,image/*">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <br>
+            <div id="preImage">
+                <img id="previewImage">
+            </div>
+            <div id=test>
+                <img src="medium/a12d4a0c79caa18900ecb234467417c3_medium">
+                <p>Number of likes</p>
+                <button>Like</button>
+                <p>Number of dislikes</p>
+                <button>Dislike</button>
+            </div>
+            <div id="meme">
+
+            </div>
+        </div>
+
+        <div class="btn">
+            <div class="button3">Swipe</div>
+        </div>
+        <div class="btn">
+            <div class="button3">Top 100</div>
+        </div>
+        <div class="btn">
+            <div class="button3">Worst 100</div>
+        </div>
+
+    </nav>
+</div>
+
+<div class="meme_container">
+    <div class="meme_title">
+        <h3>When you see how much stuff you have to do</h3>
+    </div>
+    <div class="meme">
+        <img src="../public/res/maxresdefault.jpg">
+    </div>
+    <div class="like_dislike_buttons">
+        <button class="dislike" type="button">
+            <i class="fa fa-thumbs-up"></i>
+            Dislike
+            <span>0</span>
+        </button>
+        <button id="like">
+            <i class="fa fa-thumbs-up"></i>
+            Like
+            <span id="likeSpan">0</span>
+        </button>
+    </div>
+
+</div>
+
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+</script>
 </body>
 </html>

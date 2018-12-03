@@ -72,9 +72,18 @@ app.use('/upload', (req, res, next) => {
 //insert to voted_for table
 app.post('/voted', (req, res, next) => {
     console.log('voted route is called');
-    const data = [req.body.user, req.body.vote, req.body.meme_medium];
+    const data = [req.user, req.body.like, req.body.dislike, req.body.meme_medium];
     console.log(data);
-    db.insertVoted(data, connection, next);
+    db.checkVoted(data, connection).then((result) => {
+        if (result[0]) {
+            db.updateVoted(data, connection, next);
+            console.log('There is already');
+        }
+        else {
+            db.insertVoted(data, connection, next);
+            console.log('There is nothing');
+        }
+    });
     res.send('hahaha');
 });
 
@@ -87,6 +96,18 @@ app.get('/profile',authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
     res.render('profile');
+});
+
+app.get('/main',authenticationMiddleware(), (req, res) => {
+    console.log(req.user);
+    console.log(req.isAuthenticated());
+    res.render('upload_page');
+});
+
+app.get('/test',authenticationMiddleware(), (req, res) => {
+    console.log(req.user);
+    console.log(req.isAuthenticated());
+    res.render('test');
 });
 
 app.get('/', (req, res) => {

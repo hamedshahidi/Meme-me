@@ -64,12 +64,13 @@ router.post('/register', [
         db.insertUser(data, connection).then((info) => {
             console.log(info);
             return db.selectUsername(data[3], connection);
-        }).then((user) => {
+        })
+        .then((user) => {
                 req.login(user[0], function(err) {
                     if (err) {
                         console.log(err);
                     }
-                    res.redirect(`/profile`);
+                    res.redirect(`/test`);
                 });
             },
         );
@@ -78,7 +79,7 @@ router.post('/register', [
 
 //auth login
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/profile',
+    successRedirect: '/test',
     failureRedirect: '/',
 }));
 
@@ -97,7 +98,12 @@ router.get('/google', passport.authenticate('google', {
 
 //callback route for google redirect
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    res.send(req.user);
+    req.login(req.user, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect(`/test`);
+    });
 });
 
 module.exports = router;

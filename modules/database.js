@@ -12,7 +12,11 @@ const connect = () => {
 
 const selectMeme = (res, connection) => {
     connection.query(
-        'SELECT * FROM meme',
+        'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, SUM(voted_for.liked) as NumLikes, SUM(voted_for.disliked) as NumDislikes\n' +
+        'FROM meme, voted_for\n' +
+        'WHERE meme.id_meme = voted_for.id_meme\n' +
+        'GROUP BY voted_for.id_meme;',
+        // 'SELECT * FROM meme',
         (err, results, fields) => {
             if (err) console.log(err);
             console.log('All memes selected');
@@ -94,14 +98,60 @@ const insertMeme = (data, connection, callback) => {
     );
 };
 
+const checkVoted = (data, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `SELECT * FROM voted_for WHERE id_user = ${data[0]} AND id_meme = (SELECT id_meme FROM meme WHERE meme.meme_medium = \'${data[3]}\');`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
 const insertVoted = (data, connection, callback) => {
     connection.execute(
-        `INSERT INTO voted_for (id_user, id_meme, vote) SELECT ${data[0]},id_meme,${data[1]} FROM meme WHERE meme.meme_medium = \'${data[2]}\';`,
+        `INSERT INTO voted_for (id_user, id_meme, liked, disliked) 
+        SELECT ${data[0]},id_meme,${data[1]},${data[2]}
+        FROM meme 
+        WHERE meme.meme_medium = \'${data[3]}\';`,
         data,
         (err, results, fields) => {
             if (err) console.log(err);
-            console.log(fields);
             callback();
+        },
+    );
+};
+
+const updateVoted = (data, connection, callback) => {
+    connection.execute(
+        `UPDATE voted_for 
+        SET 
+            liked = ${data[1]},
+            disliked = ${data[2]}
+        WHERE
+            id_user = ${data[0]} AND id_meme = (SELECT id_meme FROM meme WHERE meme.meme_medium = \'${data[3]}\') ;`,
+        data,
+        (err, results, fields) => {
+            if (err) console.log(err);
+            callback();
+        },
+    );
+};
+
+const showNumLikes = (res, data, connection) => {
+    connection.query(
+        'SELECT id_meme, SUM(liked) as NumLikes, SUM(disliked) as NumDislikes\n' +
+        'FROM voted_for\n' +
+        'GROUP BY id_meme;',
+        (err, results, fields) => {
+            if (err) console.log(err);
+            console.log('All memes selected');
+            res.json(results);
         },
     );
 };
@@ -138,6 +188,9 @@ module.exports = {
     selectGoogleUser: selectGoogleUser,
     insertMeme: insertMeme,
     insertVoted: insertVoted,
+    checkVoted: checkVoted,
+    updateVoted: updateVoted,
+    showNumLikes: showNumLikes,
     insertGoogleUser: insertGoogleUser,
     insertUser: insertUser,
 };

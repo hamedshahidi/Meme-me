@@ -1,0 +1,129 @@
+.btn--launch-modal, .btn {
+    padding: 1.5rem 2.5rem;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #185077;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn--launch-modal {
+    margin-bottom: 2rem;
+    margin-top: 2px;
+    width: inherit;
+}
+
+.modal {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    max-width: 50rem;
+    padding: 2.5rem;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-200%);
+    transition: all 1s cubic-bezier(0.15, 0.59, 0.46, 1.07);
+}
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-50%);
+}
+.modal__header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+}
+
+.modal__header .modal__dismiss .modal__submit{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.modal__header>p{
+    margin: auto;
+}
+#x_button{
+    font-size: 2rem;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal__footer {
+    margin-top: 4rem;
+    display: flex;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+.popup_header_text{
+    font-size: 2rem;
+}
+.meme_caption{
+    font-size: 1.5rem;
+}
+.caption_div{
+    padding-bottom: 2rem;
+}
+.caption_div>div{
+    font-size: 1.5rem;
+}
+/*
+html {
+    min-height: 100%;
+    height: 100%;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+html body {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.8rem;
+    background-image: linear-gradient(135deg, #65fdf0 10%, #1d6fa3 100%);
+}
+*/
+html body p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}

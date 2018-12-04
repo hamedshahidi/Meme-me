@@ -65,18 +65,24 @@ app.use('/upload', (req, res, next) => {
         req.file.filename + '_medium',
         req.body.tag.toString()];
     db.insertMeme(data, connection, next);
-    const votedData = [
-        req.user,
-        0,
-        0,
-        req.file.filename + '_medium',
-    ];
-    //console.log(votedData);
-    db.insertVoted(votedData, connection, next);
-    res.send('Insert meme successful, upload finished here ');
+});
+
+//insert to uploaded table
+app.use('/upload', (req, res, next) => {
+    const data = [req.file.filename + '_medium', req.user];
+    //console.log(data);
+    db.insertUploaded(data, connection, next);
 });
 
 //insert to voted_for table
+app.use('/upload', (req, res, next) => {
+    const data = [req.user, 0, 0, req.file.filename + '_medium'];
+    //console.log(data);
+    db.insertVoted(data, connection, next);
+    res.send('Insert meme successful, upload finished here ');
+});
+
+//update voted_for table when there is interaction from user
 app.post('/voted', (req, res, next) => {
     console.log('voted route is called');
     const data = [
@@ -97,7 +103,16 @@ app.use('/listMeme', (req, res, next) => {
 app.get('/profile', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
-    res.render('profile');
+    db.selectProfile(req.user, connection).then((profile) => {
+        return profile[0]
+    }).then((userProfile) => {
+        db.countUploads(req.user, connection).then((count) => {
+            if(count.length === 0 )  userProfile.num = 0;
+            else userProfile.num = count[0].NumOfMemes;
+            console.log(userProfile);
+            res.render('profile' , {profile: userProfile});
+        });
+    });
 });
 
 app.get('/main', authenticationMiddleware(), (req, res) => {

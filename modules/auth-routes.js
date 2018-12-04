@@ -85,10 +85,10 @@ router.post('/login', passport.authenticate('local', {
 
 //auth logout
 router.get('/logout', (req, res) => {
+    console.log('User id: '+req.user +' logout');
     req.logout();
     req.session.destroy();
     res.redirect('/');
-    //res.send('Logging out');
 });
 
 //auth with google

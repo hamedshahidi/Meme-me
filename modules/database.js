@@ -25,6 +25,38 @@ const selectMeme = (res, connection) => {
     );
 };
 
+const countUploads = (user_id, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `SELECT COUNT(id_meme) as NumOfMemes FROM uploaded WHERE uploaded.id_user = ${user_id} GROUP BY id_user;`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
+const selectProfile = (user_id, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            'SELECT user.last_name, user.first_name, user.username\n' +
+            'FROM user\n' +
+            `WHERE user.id_user = ${user_id}\n`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
 const selectUser = (data, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -98,20 +130,21 @@ const insertMeme = (data, connection, callback) => {
     );
 };
 
-// const checkVoted = (data, connection) => {
-//     return new Promise((resolve, reject) => {
-//         connection.query(
-//             `SELECT * FROM voted_for WHERE id_user = ${data[0]} AND id_meme = (SELECT id_meme FROM meme WHERE meme.meme_medium = \'${data[3]}\');`,
-//             (err, results, fields) => {
-//                 if (err) {
-//                     console.log(err);
-//                     reject(err);
-//                 }
-//                 resolve(results);
-//             },
-//         );
-//     });
-// };
+const insertUploaded = (data, connection, callback) => {
+    connection.execute(
+        `INSERT INTO uploaded
+        VALUES (
+        (SELECT meme.id_meme
+        FROM meme
+        WHERE meme.meme_medium = '${data[0]}' ),
+        ${data[1]}
+        );`,
+        (err, results, fields) => {
+            if (err) console.log(err);
+            callback();
+        },
+    );
+};
 
 const insertVoted = (data, connection, callback) => {
     connection.execute(
@@ -143,19 +176,6 @@ const updateVoted = (data, connection, callback) => {
     );
 };
 
-// const showNumLikes = (res, data, connection) => {
-//     connection.query(
-//         'SELECT id_meme, SUM(liked) as NumLikes, SUM(disliked) as NumDislikes\n' +
-//         'FROM voted_for\n' +
-//         'GROUP BY id_meme;',
-//         (err, results, fields) => {
-//             if (err) console.log(err);
-//             console.log('All memes selected');
-//             res.json(results);
-//         },
-//     );
-// };
-
 const insertGoogleUser = (data, connection) => {
     connection.execute(
         'INSERT INTO user (id_google, last_name, first_name, email, username) VALUE (?, ?, ?, ?, ?);',
@@ -181,16 +201,17 @@ const insertUser = (data, connection) => {
 };
 module.exports = {
     connect: connect,
+    countUploads: countUploads,
     selectMeme: selectMeme,
+    selectProfile: selectProfile,
     selectUser: selectUser,
     selectUsername: selectUsername,
     selectEmail: selectEmail,
     selectGoogleUser: selectGoogleUser,
     insertMeme: insertMeme,
     insertVoted: insertVoted,
-    // checkVoted: checkVoted,
+    insertUploaded: insertUploaded,
     updateVoted: updateVoted,
-    // showNumLikes: showNumLikes,
     insertGoogleUser: insertGoogleUser,
     insertUser: insertUser,
 };

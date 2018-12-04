@@ -23,7 +23,9 @@ const likeMeme = (id_meme) => {
         body: JSON.stringify(data),
         headers: {'Content-Type': 'application/json'},
     }).then((response) => {
-        console.log(response.toString());
+        return response.text();
+    }).then((text) => {
+        console.log(text);
     });
 };
 
@@ -48,6 +50,7 @@ const dislikeMeme = (id_meme) => {
 
 //Function for listing all memes
 const listAllMemes = () => {
+
     fetch('/listMeme').then((response) => {
         return response.json();
     }).then((json) => {

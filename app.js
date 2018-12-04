@@ -13,7 +13,6 @@ const passport = require('passport');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 
-
 const options = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -66,25 +65,28 @@ app.use('/upload', (req, res, next) => {
         req.file.filename + '_medium',
         req.body.tag.toString()];
     db.insertMeme(data, connection, next);
+    const votedData = [
+        req.user,
+        0,
+        0,
+        req.file.filename + '_medium',
+    ];
+    //console.log(votedData);
+    db.insertVoted(votedData, connection, next);
     res.send('Insert meme successful, upload finished here ');
 });
 
 //insert to voted_for table
 app.post('/voted', (req, res, next) => {
     console.log('voted route is called');
-    const data = [req.user, req.body.like, req.body.dislike, req.body.meme_medium];
+    const data = [
+        req.user,
+        req.body.like,
+        req.body.dislike,
+        req.body.meme_medium];
     console.log(data);
-    db.checkVoted(data, connection).then((result) => {
-        if (result[0]) {
-            db.updateVoted(data, connection, next);
-            console.log('There is already');
-        }
-        else {
-            db.insertVoted(data, connection, next);
-            console.log('There is nothing');
-        }
-    });
-    res.send('hahaha');
+    db.updateVoted(data, connection, next);
+    res.send('Update voted is done');
 });
 
 //query all memes from database
@@ -92,19 +94,19 @@ app.use('/listMeme', (req, res, next) => {
     db.selectMeme(res, connection, next);
 });
 
-app.get('/profile',authenticationMiddleware(), (req, res) => {
+app.get('/profile', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
     res.render('profile');
 });
 
-app.get('/main',authenticationMiddleware(), (req, res) => {
+app.get('/main', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
     res.render('upload_page');
 });
 
-app.get('/test',authenticationMiddleware(), (req, res) => {
+app.get('/test', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
     res.render('test');
@@ -114,12 +116,13 @@ app.get('/', (req, res) => {
     res.render('login');
 });
 
-function authenticationMiddleware () {
+function authenticationMiddleware() {
     return (req, res, next) => {
-        console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
+        console.log(`req.session.passport.user: ${JSON.stringify(
+            req.session.passport)}`);
         if (req.isAuthenticated()) return next();
-        res.redirect('/')
-    }
+        res.redirect('/');
+    };
 }
 
 

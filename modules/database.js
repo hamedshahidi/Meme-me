@@ -98,20 +98,20 @@ const insertMeme = (data, connection, callback) => {
     );
 };
 
-const checkVoted = (data, connection) => {
-    return new Promise((resolve, reject) => {
-        connection.query(
-            `SELECT * FROM voted_for WHERE id_user = ${data[0]} AND id_meme = (SELECT id_meme FROM meme WHERE meme.meme_medium = \'${data[3]}\');`,
-            (err, results, fields) => {
-                if (err) {
-                    console.log(err);
-                    reject(err);
-                }
-                resolve(results);
-            },
-        );
-    });
-};
+// const checkVoted = (data, connection) => {
+//     return new Promise((resolve, reject) => {
+//         connection.query(
+//             `SELECT * FROM voted_for WHERE id_user = ${data[0]} AND id_meme = (SELECT id_meme FROM meme WHERE meme.meme_medium = \'${data[3]}\');`,
+//             (err, results, fields) => {
+//                 if (err) {
+//                     console.log(err);
+//                     reject(err);
+//                 }
+//                 resolve(results);
+//             },
+//         );
+//     });
+// };
 
 const insertVoted = (data, connection, callback) => {
     connection.execute(
@@ -143,18 +143,18 @@ const updateVoted = (data, connection, callback) => {
     );
 };
 
-const showNumLikes = (res, data, connection) => {
-    connection.query(
-        'SELECT id_meme, SUM(liked) as NumLikes, SUM(disliked) as NumDislikes\n' +
-        'FROM voted_for\n' +
-        'GROUP BY id_meme;',
-        (err, results, fields) => {
-            if (err) console.log(err);
-            console.log('All memes selected');
-            res.json(results);
-        },
-    );
-};
+// const showNumLikes = (res, data, connection) => {
+//     connection.query(
+//         'SELECT id_meme, SUM(liked) as NumLikes, SUM(disliked) as NumDislikes\n' +
+//         'FROM voted_for\n' +
+//         'GROUP BY id_meme;',
+//         (err, results, fields) => {
+//             if (err) console.log(err);
+//             console.log('All memes selected');
+//             res.json(results);
+//         },
+//     );
+// };
 
 const insertGoogleUser = (data, connection) => {
     connection.execute(
@@ -188,9 +188,9 @@ module.exports = {
     selectGoogleUser: selectGoogleUser,
     insertMeme: insertMeme,
     insertVoted: insertVoted,
-    checkVoted: checkVoted,
+    // checkVoted: checkVoted,
     updateVoted: updateVoted,
-    showNumLikes: showNumLikes,
+    // showNumLikes: showNumLikes,
     insertGoogleUser: insertGoogleUser,
     insertUser: insertUser,
 };

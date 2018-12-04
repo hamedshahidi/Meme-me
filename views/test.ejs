@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="/css/test.css">
     <title>Main page</title>
 </head>
+<% include partials/nav.ejs %>
 <body>
-<form method="post" enctype="multipart/form-data" id="mediaform">
+<form hidden method="post" enctype="multipart/form-data" id="mediaform">
     <input type="text" name="Caption" placeholder="Caption">
     <br>
     <input type="text" name="tag" placeholder="tag">
@@ -15,8 +16,7 @@
     <br>
     <button type="submit">Submit</button>
 </form>
-<br>
-<div id="preImage">
+<div hidden id="preImage">
     <img id="previewImage">
 </div>
 <div class="stage">

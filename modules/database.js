@@ -12,10 +12,11 @@ const connect = () => {
 
 const selectMeme = (res, connection) => {
     connection.query(
-        'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, SUM(voted_for.liked) as NumLikes, SUM(voted_for.disliked) as NumDislikes\n' +
-        'FROM meme, voted_for\n' +
-        'WHERE meme.id_meme = voted_for.id_meme\n' +
-        'GROUP BY voted_for.id_meme;',
+        'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, SUM(IFNULL(voted_for.liked, 0)) as NumLikes, SUM(IFNULL(voted_for.disliked, 0)) as NumDislikes\n' +
+        'FROM meme LEFT JOIN voted_for \n' +
+        'ON meme.id_meme = voted_for.id_meme\n' +
+        'GROUP BY meme.id_meme\n' +
+        'ORDER BY meme.id_meme;',
         // 'SELECT * FROM meme',
         (err, results, fields) => {
             if (err) console.log(err);
@@ -29,6 +30,26 @@ const countUploads = (user_id, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
             `SELECT COUNT(id_meme) as NumOfMemes FROM uploaded WHERE uploaded.id_user = ${user_id} GROUP BY id_user;`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
+const selectMemeProfile = (user_id, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `SELECT IFNULL(new.id_user, ${user_id}) , new.id_meme, new.meme_medium, SUM(IFNULL(new.liked, 0)) as NumLikes, SUM(IFNULL(new.disliked, 0)) as NumDislikes\n` +
+            'FROM (SELECT meme.id_meme, meme.meme_medium, meme.tag, voted_for.id_user, voted_for.liked, voted_for.disliked\n' +
+            '      FROM meme LEFT JOIN voted_for \n' +
+            '      ON meme.id_meme = voted_for.id_meme) as new, uploaded\n' +
+            `WHERE uploaded.id_user = ${user_id} AND new.id_meme = uploaded.id_meme AND  uploaded.id_meme = new.id_meme\n` +
+            'GROUP BY new.id_meme;',
             (err, results, fields) => {
                 if (err) {
                     console.log(err);
@@ -146,6 +167,21 @@ const insertUploaded = (data, connection, callback) => {
     );
 };
 
+const checkVoted = (data, connection) => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `SELECT * FROM voted_for WHERE id_user = ${data[0]} AND id_meme = (SELECT id_meme FROM meme WHERE meme.meme_medium = \'${data[3]}\');`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
 const insertVoted = (data, connection, callback) => {
     connection.execute(
         `INSERT INTO voted_for (id_user, id_meme, liked, disliked) 
@@ -203,12 +239,14 @@ module.exports = {
     connect: connect,
     countUploads: countUploads,
     selectMeme: selectMeme,
+    selectMemeProfile: selectMemeProfile,
     selectProfile: selectProfile,
     selectUser: selectUser,
     selectUsername: selectUsername,
     selectEmail: selectEmail,
     selectGoogleUser: selectGoogleUser,
     insertMeme: insertMeme,
+    checkVoted: checkVoted,
     insertVoted: insertVoted,
     insertUploaded: insertUploaded,
     updateVoted: updateVoted,

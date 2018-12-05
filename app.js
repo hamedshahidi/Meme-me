@@ -7,9 +7,7 @@ const rs = require('./modules/resize');
 const authRoutes = require('./modules/auth-routes');
 const passportSetup = require('./config/passport-setup');
 const bodyParser = require('body-parser');
-//const cookieSession = require('cookie-session');
 const passport = require('passport');
-//const keys = require('./config/keys');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 
@@ -36,11 +34,6 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/auth', authRoutes);
-
-// app.use(cookieSession({
-//     maxAge: 24*3600*1000,
-//     keys: [keys.session.cookieKey]
-// }));
 
 app.listen(3000);
 
@@ -72,13 +65,6 @@ app.use('/upload', (req, res, next) => {
     const data = [req.file.filename + '_medium', req.user];
     //console.log(data);
     db.insertUploaded(data, connection, next);
-});
-
-//insert to voted_for table
-app.use('/upload', (req, res, next) => {
-    const data = [req.user, 0, 0, req.file.filename + '_medium'];
-    //console.log(data);
-    db.insertVoted(data, connection, next);
     res.send('Insert meme successful, upload finished here ');
 });
 
@@ -91,8 +77,15 @@ app.post('/voted', (req, res, next) => {
         req.body.dislike,
         req.body.meme_medium];
     console.log(data);
-    db.updateVoted(data, connection, next);
-    res.send('Update voted is done');
+    db.checkVoted(data, connection).then((result) => {
+        if (result.length === 0) {
+            db.insertVoted(data, connection, next);
+            res.send('Vote is inserted');
+        } else {
+            db.updateVoted(data, connection, next);
+            res.send('Vote is updated');
+        }
+    });
 });
 
 //query all memes from database
@@ -100,17 +93,28 @@ app.use('/listMeme', (req, res, next) => {
     db.selectMeme(res, connection, next);
 });
 
+//query profile user
 app.get('/profile', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
     db.selectProfile(req.user, connection).then((profile) => {
-        return profile[0]
+        return profile[0];
     }).then((userProfile) => {
         db.countUploads(req.user, connection).then((count) => {
-            if(count.length === 0 )  userProfile.num = 0;
+            if (count.length === 0) userProfile.num = 0;
             else userProfile.num = count[0].NumOfMemes;
-            console.log(userProfile);
-            res.render('profile' , {profile: userProfile});
+            db.selectMemeProfile(req.user, connection).then((memes) => {
+                    console.log('The result is');
+                    console.log(memes);
+                    if (memes.length === 0) {
+                        userProfile.memes = 0;
+                    } else {
+                        userProfile.memes = memes.reverse();
+                    }
+                    //console.log(userProfile.memes[0].meme_medium);
+                    res.render('profile', {profile: userProfile});
+                },
+            );
         });
     });
 });

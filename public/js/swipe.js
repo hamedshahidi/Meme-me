@@ -1,7 +1,7 @@
 // JavaScript Document
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", const() {
 
-    function stackedCards () {
+    const stackedCards () {
 
         const stackedOptions = 'Top'; //Change stacked cards view from 'Bottom', 'Top' or 'None'.
         const rotate = true; //Activate the elements' rotation for each move on stacked cards.
@@ -95,12 +95,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Remove class init
-        setTimeout(function() {
+        setTimeout(const() {
             obj.classList.remove('init');
         },150);
 
 
-        function backToMiddle() {
+        const backToMiddle() {
 
             removeNoTransition();
             transformUi(0, 0, 1, currentElementObj);
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Usable functions
-        function countElements() {
+        const countElements() {
             maxElements = listElNodesObj.length;
             if(items > maxElements){
                 items = maxElements;
@@ -130,20 +130,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Keep the active card.
-        function currentElement() {
+        const currentElement() {
             currentElementObj = listElNodesObj[currentPosition];
         }
 
         //Change background for each swipe.
-        function changeBackground() {
+        const changeBackground() {
             document.body.classList.add("background-" + currentPosition + "");
         }
 
         //Change states
-        function changeStages() {
+        const changeStages() {
             if(currentPosition === maxElements){
                 //Event listener created to know when transition ends and changes states
-                listElNodesObj[maxElements - 1].addEventListener('transitionend', function(){
+                listElNodesObj[maxElements - 1].addEventListener('transitionend', const(){
                     document.body.classList.add("background-7");
                     document.querySelector('.stage').classList.add('hidden');
                     document.querySelector('.final-state').classList.remove('hidden');
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Functions to swipe left elements on logic external action.
-        function onActionLeft() {
+        const onActionLeft() {
             if(!(currentPosition >= maxElements)){
                 if(useOverlays) {
                     leftObj.classList.remove('no-transition');
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 }
 
-                setTimeout(function() {
+                setTimeout(const() {
                     onSwipeLeft();
                     resetOverlayLeft();
                 },300);
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Functions to swipe right elements on logic external action.
-        function onActionRight() {
+        const onActionRight() {
             if(!(currentPosition >= maxElements)){
                 if(useOverlays) {
                     rightObj.classList.remove('no-transition');
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     transformUi(0, 0, 1, rightObj);
                 }
 
-                setTimeout(function(){
+                setTimeout(const(){
                     onSwipeRight();
                     resetOverlayRight();
                 },300);
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Functions to swipe top elements on logic external action.
-        function onActionTop() {
+        const onActionTop() {
             if(!(currentPosition >= maxElements)){
                 if(useOverlays) {
                     leftObj.classList.remove('no-transition');
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     transformUi(0, 0, 1, topObj);
                 }
 
-                setTimeout(function(){
+                setTimeout(const(){
                     onSwipeTop();
                     resetOverlays();
                 },300); //wait animations end
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Swipe active card to left.
-        function onSwipeLeft() {
+        const onSwipeLeft() {
             removeNoTransition();
             transformUi(-1000, 0, 0, currentElementObj);
             if(useOverlays){
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Swipe active card to right.
-        function onSwipeRight() {
+        const onSwipeRight() {
             removeNoTransition();
             transformUi(1000, 0, 0, currentElementObj);
             if(useOverlays){
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Swipe active card to top.
-        function onSwipeTop() {
+        const onSwipeTop() {
             removeNoTransition();
             transformUi(0, -1000, 0, currentElementObj);
             if(useOverlays){
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Remove transitions from all elements to be moved in each swipe movement to improve perfomance of stacked cards.
-        function removeNoTransition() {
+        const removeNoTransition() {
             if(listElNodesObj[currentPosition]){
 
                 if(useOverlays) {
@@ -276,10 +276,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Move the overlay left to initial position.
-        function resetOverlayLeft() {
+        const resetOverlayLeft() {
             if(!(currentPosition >= maxElements)){
                 if(useOverlays){
-                    setTimeout(function(){
+                    setTimeout(const(){
 
                         if(stackedOptions === "Top"){
 
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                         }
 
-                        requestAnimationFrame(function(){
+                        requestAnimationFrame(const(){
 
                             leftObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
                             leftObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
@@ -318,10 +318,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Move the overlay right to initial position.
-        function resetOverlayRight() {
+        const resetOverlayRight() {
             if(!(currentPosition >= maxElements)){
                 if(useOverlays){
-                    setTimeout(function(){
+                    setTimeout(const(){
 
                         if(stackedOptions === "Top"){
 
@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                         }
 
-                        requestAnimationFrame(function(){
+                        requestAnimationFrame(const(){
 
                             rightObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
                             rightObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
@@ -360,11 +360,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Move the overlays to initial position.
-        function resetOverlays() {
+        const resetOverlays() {
             if(!(currentPosition >= maxElements)){
                 if(useOverlays){
 
-                    setTimeout(function(){
+                    setTimeout(const(){
                         if(stackedOptions === "Top"){
 
                             elTrans = elementsMargin * (items - 1);
@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                         }
 
-                        requestAnimationFrame(function(){
+                        requestAnimationFrame(const(){
 
                             leftObj.style.transform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
                             leftObj.style.webkitTransform = "translateX(0) translateY(" + elTrans + "px) translateZ(0)";
@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        function setActiveHidden() {
+        const setActiveHidden() {
             if(!(currentPosition >= maxElements)){
                 listElNodesObj[currentPosition - 1].classList.remove('stackedcards-active');
                 listElNodesObj[currentPosition - 1].classList.add('stackedcards-hidden');
@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Set the new z-index for specific card.
-        function setZindex(zIndex) {
+        const setZindex(zIndex) {
             if(listElNodesObj[currentPosition]){
                 listElNodesObj[currentPosition].style.zIndex = zIndex;
             }
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Remove element from the DOM after swipe. To use this method you need to call this function in onSwipeLeft, onSwipeRight and onSwipeTop and put the method just above the variable 'currentPosition = currentPosition + 1'.
         //On the actions onSwipeLeft, onSwipeRight and onSwipeTop you need to remove the currentPosition variable (currentPosition = currentPosition + 1) and the function setActiveHidden
 
-        function removeElement() {
+        const removeElement() {
             currentElementObj.remove();
             if(!(currentPosition >= maxElements)){
                 listElNodesObj[currentPosition].classList.add('stackedcards-active');
@@ -432,15 +432,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Add translate X and Y to active card for each frame.
-        function transformUi(moveX,moveY,opacity,elementObj) {
-            requestAnimationFrame(function(){
+        const transformUi(moveX,moveY,opacity,elementObj) {
+            requestAnimationFrame(const(){
                 const element = elementObj;
 
                 // Function to generate rotate value
                 /**
                  * @return {number}
                  */
-                function RotateRegulator(value) {
+                const RotateRegulator(value) {
                     if(value/10 > 15) {
                         return 15;
                     }
@@ -476,8 +476,8 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         //Action to update all elements on the DOM for each stacked card.
-        function updateUi() {
-            requestAnimationFrame(function(){
+        const updateUi() {
+            requestAnimationFrame(const(){
                 elTrans = 0;
                 let elZindex = 5;
                 let elScale = 1;
@@ -548,7 +548,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let rightOpacity;
         let leftOpacity;
 
-        function setOverlayOpacity() {
+        const setOverlayOpacity() {
 
             topOpacity = (((translateY + (elementHeight) / 2) / 100) * -1);
             rightOpacity = translateX / 100;
@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        function gestureStart(evt) {
+        const gestureStart(evt) {
             startTime = new Date().getTime();
 
             startX = evt.changedTouches[0].clientX;

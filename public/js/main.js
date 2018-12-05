@@ -99,7 +99,7 @@ const listAllMemes = () => {
 const previewFile = () => {
     const preview = document.querySelector('#previewImage');
     const reader = new FileReader();
-    reader.addEventListener('load', function() {
+    reader.addEventListener('load', const() {
         preview.src = reader.result;
     }, false);
     if (inputFile.files[0]) {

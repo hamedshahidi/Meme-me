@@ -1,0 +1,59 @@
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+    /*background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);*/
+    background-color: #5f6982;
+    color: white;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+input[type="radio"] + label span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -2px 10px 0 0;
+    vertical-align: middle;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -38px top no-repeat;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -57px top no-repeat;
+}
+
+.uploader div{
+    margin: auto;
+}
+.radio_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.radio_container > p {
+    flex-basis: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.radio_container > label {
+    width: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin: 3px;
+}

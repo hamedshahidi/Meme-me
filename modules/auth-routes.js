@@ -70,7 +70,7 @@ router.post('/register', [
                     if (err) {
                         console.log(err);
                     }
-                    res.redirect(`/test`);
+                    res.redirect(`/main`);
                 });
             },
         );
@@ -79,7 +79,7 @@ router.post('/register', [
 
 //auth login
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/test',
+    successRedirect: '/main',
     failureRedirect: '/',
 }));
 
@@ -104,7 +104,7 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
         if (err) {
             console.log(err);
         }
-        res.redirect(`/test`);
+        res.redirect(`/main`);
     });
 });
 

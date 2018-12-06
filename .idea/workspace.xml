@@ -4,97 +4,28 @@
     <list default="true" id="107c2712-f303-416b-8a0f-05b434294852" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/css_reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/upload_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main_swipe_html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/upload_function.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/upload_popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/auth-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth-routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resize.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/resize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/swipe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/test.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/swipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/swipe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/0169da658e32031c39d3fcdfb025dae9_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/01e391d01a904bb9d6ed8af8befc2e45_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/05ce8688942f8e6208701110e7f3cbf4_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/1d20612a54ffd284262eacc250af8ba3_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/28d838d9a1d09bcfc3fd343e8d40cb48_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/2fd50a8fdbfe593baeeb20a9f3b9459a_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/3116fb11c0e155cf3c27cb534d74f1b3_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/34cb7cfda8e583c0437899572ffa9404_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/443e727b295c53294ab2d42d58609565_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/4977b2a64f820aa76361a1bf4a6641b7_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/5e8c35287f9592c1c8ed3cc6b9064c60_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/630fcf77d46af73ba3c85b57bc8a5275_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/6a38caf0225528fa409711bd77b34d83_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/6a99c80be6ade42edad2423dd84c4a44_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/732f070c7548bebdaf791da47b79fa7a_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/7a4d31784e741e825787dbfde292f299_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/8a962a9b33ad07967cd275837b2d478e_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/90ef5c9707779e08a3cad7286b6b3566_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/9152ef30aa8e43f192d1f0635ef1b1dd_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/97580162a99274432b99915fccbaa08c_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/9fa81a424affc5624f1ea1cba000b8e3_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/a65aeea4177c0cb777425dea92b202ff_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/ad01665ceafb4c79a73915f91d2f8a18_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/b180eab0d33c503d0b44e658ca8f6192_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/b4616090ea9252998d90b167b1e4f71c_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/b8c324dd68a474c64728678d4940a273_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/c084fa0c8bdd9907872fc31d1e560d51_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/c96d619d5dec9c872141c11a4b0e1f5d_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/cda4665bc3b3aab6ff0699f7033095ba_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/ce9c4cbe91159a10e723496104bacf1d_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/ceff0a7293030c621b81772483459917_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/d06aa4bc32b96d0461c596aa7a4eed90_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/d33046beef79f2f749e210c7320aff19_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/d64b47a798fa054d2a27ef2e83bc695f_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/de81127d67336ad9b3af8c98226c3596_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/e4026f2337262a1dc391110a904a7c02_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/eb136eaae9e224609391cbe575c44ec9_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/f19b0a212ca51b652705703a0330518a_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/f21080bf2451953dff5c23a6bee080ab_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/f50b281c14ff9fe25ce1a75b36164294_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/f75805b76432050c76738d3578ebb3f8_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/medium/fa689f7cc3017171541a47e3c152bc57_medium" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/0169da658e32031c39d3fcdfb025dae9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/01e391d01a904bb9d6ed8af8befc2e45" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/05ce8688942f8e6208701110e7f3cbf4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/1d20612a54ffd284262eacc250af8ba3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/28d838d9a1d09bcfc3fd343e8d40cb48" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/2fd50a8fdbfe593baeeb20a9f3b9459a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/3116fb11c0e155cf3c27cb534d74f1b3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/34cb7cfda8e583c0437899572ffa9404" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/443e727b295c53294ab2d42d58609565" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/4977b2a64f820aa76361a1bf4a6641b7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/5e8c35287f9592c1c8ed3cc6b9064c60" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/630fcf77d46af73ba3c85b57bc8a5275" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/6a38caf0225528fa409711bd77b34d83" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/6a99c80be6ade42edad2423dd84c4a44" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/732f070c7548bebdaf791da47b79fa7a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/7a4d31784e741e825787dbfde292f299" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/8a962a9b33ad07967cd275837b2d478e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/90ef5c9707779e08a3cad7286b6b3566" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/9152ef30aa8e43f192d1f0635ef1b1dd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/97580162a99274432b99915fccbaa08c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/9fa81a424affc5624f1ea1cba000b8e3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/a65aeea4177c0cb777425dea92b202ff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/ad01665ceafb4c79a73915f91d2f8a18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/b180eab0d33c503d0b44e658ca8f6192" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/b4616090ea9252998d90b167b1e4f71c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/b8c324dd68a474c64728678d4940a273" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/c084fa0c8bdd9907872fc31d1e560d51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/c96d619d5dec9c872141c11a4b0e1f5d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/cda4665bc3b3aab6ff0699f7033095ba" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/ce9c4cbe91159a10e723496104bacf1d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/ceff0a7293030c621b81772483459917" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/d06aa4bc32b96d0461c596aa7a4eed90" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/d33046beef79f2f749e210c7320aff19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/d64b47a798fa054d2a27ef2e83bc695f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/de81127d67336ad9b3af8c98226c3596" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/e4026f2337262a1dc391110a904a7c02" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/eb136eaae9e224609391cbe575c44ec9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/f19b0a212ca51b652705703a0330518a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/f21080bf2451953dff5c23a6bee080ab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/f50b281c14ff9fe25ce1a75b36164294" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/f75805b76432050c76738d3578ebb3f8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/memes/fa689f7cc3017171541a47e3c152bc57" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/navigation.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/swipe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/res/broken_heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/res/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main_page.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/nav.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/nav.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/swipe.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/test.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/upload_page.ejs" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -196,7 +127,7 @@
     <session id="-1547434474">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.110" value="1" />
@@ -211,56 +142,57 @@
           <entry key="project.open.time.41" value="2" />
           <entry key="project.open.time.43" value="2" />
           <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.55" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.77" value="2" />
           <entry key="project.open.time.82" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="669" />
-          <entry key="ejs" value="1350" />
+          <entry key="css" value="670" />
+          <entry key="ejs" value="1493" />
           <entry key="html" value="122" />
-          <entry key="js" value="15444" />
-          <entry key="txt" value="477" />
+          <entry key="js" value="16062" />
+          <entry key="txt" value="552" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="669" />
-          <entry key="EJS" value="1350" />
+          <entry key="CSS" value="670" />
+          <entry key="EJS" value="1493" />
           <entry key="HTML" value="122" />
-          <entry key="JavaScript" value="15444" />
-          <entry key="PLAIN_TEXT" value="477" />
+          <entry key="JavaScript" value="16062" />
+          <entry key="PLAIN_TEXT" value="552" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="27" />
-          <entry key="ejs" value="68" />
-          <entry key="env" value="10" />
-          <entry key="html" value="10" />
+          <entry key="css" value="45" />
+          <entry key="ejs" value="81" />
+          <entry key="env" value="12" />
+          <entry key="html" value="14" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="95" />
+          <entry key="js" value="129" />
           <entry key="json" value="3" />
-          <entry key="png" value="4" />
-          <entry key="ts" value="2" />
+          <entry key="png" value="6" />
+          <entry key="ts" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="27" />
-          <entry key="EJS" value="68" />
-          <entry key="HTML" value="10" />
-          <entry key="Image" value="6" />
+          <entry key="CSS" value="45" />
+          <entry key="EJS" value="81" />
+          <entry key="HTML" value="14" />
+          <entry key="Image" value="8" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="95" />
-          <entry key="PLAIN_TEXT" value="10" />
-          <entry key="TypeScript" value="2" />
+          <entry key="JavaScript" value="129" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="TypeScript" value="4" />
         </counts>
       </usages-collector>
     </session>
@@ -313,70 +245,32 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+        <entry file="file://$PROJECT_DIR$/html/upload_button.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1869">
-              <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+            <state relative-caret-position="168">
+              <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/keys.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/public/res/heart.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-488">
-              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/auth-routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1384">
-              <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/test.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-334">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/public/res/x.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/test.js">
+        <entry file="file://$PROJECT_DIR$/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
+            <state relative-caret-position="290">
+              <caret line="99" column="72" selection-start-line="99" selection-start-column="72" selection-end-line="99" selection-end-column="72" />
               <folding>
-                <element signature="e#631#1015#0" />
-                <element signature="e#1076#1463#0" />
-                <element signature="e#4980#5283#0" />
-                <element signature="e#6342#6876#0" />
-                <element signature="e#10557#11018#0" />
-                <element signature="e#11082#11544#0" />
-                <element signature="e#11604#12131#0" />
-                <element signature="e#17886#18260#0" />
-                <element signature="e#18910#19111#0" />
-                <element signature="e#9176#9221#0" />
-                <element signature="e#27462#27845#0" />
-                <element signature="e#27900#28913#0" />
-                <element signature="e#28923#30030#0" />
-                <element signature="e#30061#31534#0" />
+                <element signature="e#575#959#0" />
+                <element signature="e#1020#1407#0" />
               </folding>
             </state>
           </provider>
@@ -388,26 +282,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>My</find>
-      <find>menu</find>
-      <find>button_</find>
-      <find>/main</find>
-      <find>previewIma</find>
-      <find>vote</find>
-      <find>titl</find>
-      <find>left-ac</find>
-      <find>var</find>
-      <find>src</find>
-      <find>init</find>
-      <find>currentE</find>
-      <find>popular-destinations-images</find>
       <find>popular-destinations-text</find>
       <find>p</find>
       <find>voted_for</find>
@@ -425,6 +306,19 @@
       <find>listA</find>
       <find>swipe</find>
       <find>function</find>
+      <find>right</find>
+      <find>file-drag</find>
+      <find>file-upload</find>
+      <find>file-image</find>
+      <find>got</find>
+      <find>sub</find>
+      <find>reset</find>
+      <find>notimage</find>
+      <find>submit_button</find>
+      <find>file-upload-form</find>
+      <find>test</find>
+      <find>mediafile</find>
+      <find>type=&quot;file&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -450,7 +344,6 @@
         <option value="$PROJECT_DIR$/controllers/memes_controller.js" />
         <option value="$PROJECT_DIR$/views/upload.ejs" />
         <option value="$PROJECT_DIR$/views/upload_page.html" />
-        <option value="$PROJECT_DIR$/modules/resize.js" />
         <option value="$PROJECT_DIR$/views/test.html" />
         <option value="$PROJECT_DIR$/public/css/layout.css" />
         <option value="$PROJECT_DIR$/routes/auth-routes.js" />
@@ -467,22 +360,31 @@
         <option value="$PROJECT_DIR$/views/upload_page.ejs" />
         <option value="$PROJECT_DIR$/views/main_page.ejs" />
         <option value="$PROJECT_DIR$/public/js/swipe.js" />
-        <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/views/swipe.ejs" />
         <option value="$PROJECT_DIR$/public/css/swipe.css" />
         <option value="$PROJECT_DIR$/views/navigation.ejs" />
         <option value="$PROJECT_DIR$/config/passport-setup.js" />
-        <option value="$PROJECT_DIR$/views/partials/nav.ejs" />
         <option value="$PROJECT_DIR$/public/css/styles.css" />
         <option value="$PROJECT_DIR$/public/css/test.css" />
-        <option value="$PROJECT_DIR$/views/test.ejs" />
         <option value="$PROJECT_DIR$/public/css/profile.css" />
         <option value="$PROJECT_DIR$/views/profile.ejs" />
         <option value="$PROJECT_DIR$/modules/database.js" />
-        <option value="$PROJECT_DIR$/modules/auth-routes.js" />
         <option value="$PROJECT_DIR$/config/keys.js" />
-        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/js/upload_function.js" />
+        <option value="$PROJECT_DIR$/views/partials/modal.ejs" />
+        <option value="$PROJECT_DIR$/public/js/upload_popup.js" />
+        <option value="$PROJECT_DIR$/modules/resize.js" />
+        <option value="$PROJECT_DIR$/public/js/upload_function.js" />
+        <option value="$PROJECT_DIR$/public/js/nav.js" />
+        <option value="$PROJECT_DIR$/views/partials/nav.ejs" />
         <option value="$PROJECT_DIR$/public/js/test.js" />
+        <option value="$PROJECT_DIR$/views/test.ejs" />
+        <option value="$PROJECT_DIR$/modules/auth-routes.js" />
+        <option value="$PROJECT_DIR$/views/main.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/css/main_swipe_css.css" />
+        <option value="$PROJECT_DIR$/html/upload_button.html" />
+        <option value="$PROJECT_DIR$/public/js/main.js" />
       </list>
     </option>
   </component>
@@ -530,7 +432,7 @@
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
               <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
@@ -546,18 +448,18 @@
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
               <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
               <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -578,16 +480,17 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public" />
-      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\views" />
-      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public\js" />
       <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public\css" />
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public\js" />
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\js" />
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\html" />
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public\res" />
       <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\public" />
-      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\res" />
+      <recent name="D:\Metropolia UAS\Second year\Basic Concepts of Web Technology\Meme_me\Meme-me\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -648,7 +551,8 @@
       <workItem from="1543873561363" duration="532000" />
       <workItem from="1543909384983" duration="19081000" />
       <workItem from="1543942376476" duration="13143000" />
-      <workItem from="1543989649313" duration="20806000" />
+      <workItem from="1543989649313" duration="21179000" />
+      <workItem from="1544080883289" duration="24205000" />
     </task>
     <task id="LOCAL-00001" summary="commit -m&quot;Adding like, dislike function, login page&quot;">
       <created>1543323916517</created>
@@ -706,21 +610,27 @@
       <option name="project" value="LOCAL" />
       <updated>1543961316195</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="&quot;Voting fixed, profile page done. New bug: responsive design&quot;">
+      <created>1544047955468</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1544047955469</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325987000" />
+    <option name="totallyTimeSpent" value="350565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.123298034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18910742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.42295083" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -737,11 +647,11 @@
       <window_info anchor="right" id="Remote Host" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.102118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18910742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3288364" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.42295083" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -773,42 +683,10 @@
     <MESSAGE value="&quot;Again: Swiping system, like and dislike button is done. Hurraaaayyyyyy&quot;" />
     <MESSAGE value="&quot;Fixing main page, adding nav bar, logout button&quot;" />
     <MESSAGE value="&quot;Creating dynamic profile page (cont)&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Creating dynamic profile page (cont)&quot;" />
+    <MESSAGE value="&quot;Voting fixed, profile page done. New bug: responsive design&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Voting fixed, profile page done. New bug: responsive design&quot;" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Uploads/5.jpg" />
-    <entry file="file://$PROJECT_DIR$/views/Main page.html" />
-    <entry file="file://$PROJECT_DIR$/views/layout.css" />
-    <entry file="file://$PROJECT_DIR$/.env.txt" />
-    <entry file="file://$PROJECT_DIR$/modules/exif.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/html.html" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/memes_controller.js" />
-    <entry file="file://$PROJECT_DIR$/views/upload_page.html" />
-    <entry file="file://$PROJECT_DIR$/views/test.html" />
-    <entry file="file://$PROJECT_DIR$/views/upload.ejs" />
-    <entry file="file://$PROJECT_DIR$/public/memes/3848765-wallpaper-images-download.jpg-1542919391789.jpg" />
-    <entry file="file://$PROJECT_DIR$/public/memes/mediafile-1542913405196.png" />
-    <entry file="file://$PROJECT_DIR$/public/memes/mediafile-1542913541936.jpg" />
-    <entry file="file://$PROJECT_DIR$/public/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/route.js" />
     <entry file="file://$PROJECT_DIR$/js/button.css" />
     <entry file="file://$PROJECT_DIR$/js/button.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -824,21 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/main_swipe_html.html" />
-    <entry file="file://$PROJECT_DIR$/public/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -846,24 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/upload_page.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/swipe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="257" column="13" lean-forward="true" selection-start-line="257" selection-start-column="13" selection-end-line="257" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/swipe.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="127" column="26" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -880,36 +729,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="72" column="56" lean-forward="true" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/main_page.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2898">
-          <caret line="138" selection-start-line="138" selection-end-line="139" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html" />
-    <entry file="file://$PROJECT_DIR$/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/script.js" />
-    <entry file="file://$PROJECT_DIR$/public/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/test.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -917,29 +738,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/resize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/nav.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/profile.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/profile.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -948,24 +748,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/profile.ejs">
+    <entry file="file://$PROJECT_DIR$/views/navigation.ejs" />
+    <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/navigation.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1869">
-          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="21">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -976,53 +763,234 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
+    <entry file="file://$PROJECT_DIR$/public/css/radio_buttons.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-488">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        <state relative-caret-position="168">
+          <caret line="8" column="42" selection-start-line="8" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/auth-routes.js">
+    <entry file="file://$PROJECT_DIR$/views/profile.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1384">
-          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/test.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="-313">
+          <caret line="350" column="47" lean-forward="true" selection-start-line="350" selection-start-column="47" selection-end-line="350" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
-          <caret line="17109" column="17" selection-start-line="17109" selection-start-column="17" selection-end-line="17109" selection-end-column="17" />
+          <caret line="5115" column="4" selection-start-line="5115" selection-start-column="4" selection-end-line="5115" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="859" column="4" selection-start-line="859" selection-start-column="4" selection-end-line="859" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql2/lib/packets/packet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="57" column="2" selection-start-line="57" selection-start-column="2" selection-end-line="57" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="240" column="13" selection-start-line="240" selection-start-column="13" selection-end-line="240" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/upload_function.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/upload_popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/test.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/main_page.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
+        <state relative-caret-position="-2168">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/main_swipe_html.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3063">
+          <caret line="151" lean-forward="true" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/test.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/upload_page.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/nav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
           <folding>
-            <element signature="e#631#1015#0" />
-            <element signature="e#1076#1463#0" />
-            <element signature="e#4980#5283#0" />
-            <element signature="e#6342#6876#0" />
-            <element signature="e#10557#11018#0" />
-            <element signature="e#11082#11544#0" />
-            <element signature="e#11604#12131#0" />
-            <element signature="e#17886#18260#0" />
-            <element signature="e#18910#19111#0" />
-            <element signature="e#9176#9221#0" />
-            <element signature="e#27462#27845#0" />
-            <element signature="e#27900#28913#0" />
-            <element signature="e#28923#30030#0" />
-            <element signature="e#30061#31534#0" />
+            <element signature="e#347#349#0" />
+            <element signature="e#390#3057#0" />
+            <element signature="e#266#297#0" />
+            <element signature="e#347#883#0" />
+            <element signature="e#1066#1524#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/modal.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-614">
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/resize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/css_reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/nav.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-687">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/auth-routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/main.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1113">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/swipe.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="127" column="26" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/upload_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="134" column="2" selection-start-line="134" selection-start-column="2" selection-end-line="134" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/modal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="128" column="14" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main_swipe_css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/upload_button.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/heart.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="99" column="72" selection-start-line="99" selection-start-column="72" selection-end-line="99" selection-end-column="72" />
+          <folding>
+            <element signature="e#575#959#0" />
+            <element signature="e#1020#1407#0" />
           </folding>
         </state>
       </provider>

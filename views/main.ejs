@@ -7,18 +7,6 @@
 </head>
 <body>
 <% include partials/nav.ejs %>
-<form  method="post" enctype="multipart/form-data" id="mediaform">
-    <input type="text" name="Caption" placeholder="Caption">
-    <br>
-    <input type="text" name="tag" placeholder="tag">
-    <br>
-    <input type="file" name="mediafile" accept="audio/*,video/*,image/*">
-    <br>
-    <button type="submit">Submit</button>
-</form>
-<div hidden id="preImage">
-    <img id="previewImage">
-</div>
 <div class="stage">
     <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
         <div class="stackedcards-container">
@@ -41,6 +29,6 @@
 
 <div class="final-state hidden"><h2>Got it! We received your preferences! <br/> To submit again, press F5.</h2></div>
 
-<script src="js/test.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

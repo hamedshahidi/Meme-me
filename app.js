@@ -63,7 +63,6 @@ app.use('/upload', (req, res, next) => {
 //insert to uploaded table
 app.use('/upload', (req, res, next) => {
     const data = [req.file.filename + '_medium', req.user];
-    //console.log(data);
     db.insertUploaded(data, connection, next);
     res.send('Insert meme successful, upload finished here ');
 });
@@ -122,13 +121,8 @@ app.get('/profile', authenticationMiddleware(), (req, res) => {
 app.get('/main', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
-    res.render('upload_page');
-});
-
-app.get('/test', authenticationMiddleware(), (req, res) => {
-    console.log(req.user);
-    console.log(req.isAuthenticated());
-    res.render('test');
+    console.log('main route');
+    res.render('main');
 });
 
 app.get('/', (req, res) => {

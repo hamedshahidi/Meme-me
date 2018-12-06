@@ -1,10 +1,62 @@
-<nav>
-    <ul class="menu">
-        <li><a href="/test">Home</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/" id="upload">Upload</a></li>
-        <li><a href="/auth/logout">Logout</a></li>
-    </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/css_reset.css">
+    <link rel="stylesheet" href="../public/css/main_swipe_css.css">
+    <link rel="stylesheet" href="../public/css/modal.css">
+    <link rel="stylesheet" href="../public/css/upload_style.css">
+    <link rel="stylesheet" href="../public/css/radio_buttons.css">
+    <title>Meme Me</title>
+</head>
+<body>
+<div class="wrapper">
+
+
+    <header id="header">
+        <div class="left">
+            <nav class="navigation" role="navigation">
+                <div id="menuToggle">
+                    <input type="checkbox"/>
+                    <!-- span makes the 3 hamburger icons -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menu">
+                        <a href="main_swipe_html.html">
+                            <li>Home</li>
+                        </a>
+                        <a href="main_swipe_html.html">
+                            <li>Register/Login</li>
+                        </a>
+                        <a href="main_swipe_html.html">
+                            <li>Upload</li>
+                        </a>
+                        <a href="main_swipe_html.html">
+                            <li>My Uploads</li>
+                        </a>
+                        <a href="main_swipe_html.html">
+                            <li>About Us</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="right">
+
+            <!-- Modal Button -->
+            <button class="btn--launch-modal">
+                Upload Meme's
+            </button>
+
+        </div>
+
+    </header>
+
+    <!---->
+    <!-- Modal -->
+    <!---->
     <div class="modal" id="modal">
         <div class="modal__header">
             <button class="modal__dismiss" id="x_button">X</button>
@@ -16,8 +68,8 @@
 
         <div class="modal__footer">
             <!-- Upload  -->
-            <form id="file-upload-form" class="uploader" method="post" enctype="multipart/form-data">
-                <input id="file-upload" type="file" name="mediafile" accept="image/*"/>
+            <form id="file-upload-form" class="uploader">
+                <input id="file-upload" type="file" name="fileUpload" accept="image/*"/>
 
                 <label for="file-upload" id="file-drag">
 
@@ -36,7 +88,7 @@
 
                         <div class="radio_container">
                             <div class="caption_div">
-                                <input class="meme_caption" type="text" name="tag" maxlength="40"
+                                <input class="meme_caption" type="text" name="caption" maxlength="40"
                                        placeholder="Enter a caption">
                             </div>
 
@@ -57,7 +109,7 @@
                             <label for="c7"><span></span>Tech</label>
                             <input type="checkbox" id="c8" name="cc"/>
                             <label for="c8"><span></span>Music</label>
-                            <input id="submit-button" class="submit_button" type="submit" title="Upload Meme!">
+                            <input class="submit_button" type="submit" title="Upload Meme!">
                         </div>
                     </div>
                 </label>
@@ -65,11 +117,17 @@
             <!--<button class="btn modal__dismiss">Close</button>-->
         </div>
     </div>
-</nav>
-<link rel="stylesheet" href="css/styles.css">
-<script type="text/javascript" src="../js/nav.js"></script>
 
-<!--<link rel="stylesheet" href="../css/css_reset.css">-->
-<link rel="stylesheet" href="../css/modal.css">
-<link rel="stylesheet" href="../css/upload_style.css">
-<link rel="stylesheet" href="../css/radio_buttons.css">
+
+    <!---->
+    <!--The meme container-->
+    <!---->
+
+</div>
+
+<script type="text/javascript" src="../public/js/upload_popup.js"></script>
+<script type="text/javascript" src="../public/js/upload_function.js"></script>
+
+
+</body>
+</html>

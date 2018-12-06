@@ -34,10 +34,10 @@ p {
     user-select: none;
 }
 .uploader label:hover {
-    border-color: #454cad;
+    border-color: #656569;
 }
 .uploader label.hover {
-    border: 3px solid #454cad;
+    border: 3px solid #656569;
     box-shadow: inset 0 0 0 6px #eee;
 }
 .uploader label.hover #start i.fa {
@@ -100,18 +100,7 @@ p {
     background-color: #eee;
     overflow: hidden;
 }
-.uploader .progress[value]::-webkit-progress-bar {
-    border-radius: 4px;
-    background-color: #eee;
-}
-.uploader .progress[value]::-webkit-progress-value {
-    background: linear-gradient(to right, #393f90 0%, #454cad 50%);
-    border-radius: 4px;
-}
-.uploader .progress[value]::-moz-progress-bar {
-    background: linear-gradient(to right, #393f90 0%, #454cad 50%);
-    border-radius: 4px;
-}
+
 .uploader input[type=file] {
     display: none;
 }
@@ -128,7 +117,6 @@ p {
     font-size: 14px;
     text-decoration: none;
     text-transform: initial;
-    border: none;
     border-radius: 0.2rem;
     outline: none;
     padding: 0 1rem;
@@ -137,8 +125,7 @@ p {
     color: #fff;
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
-    background: #454cad;
-    border-color: #454cad;
+    border: none #656569;
     cursor: pointer;
 }
 #file-drag{

@@ -2,8 +2,11 @@
 require('dotenv').config();
 const express = require('express');
 const multer = require('multer');
+const fs = require('fs');
 const db = require('./modules/database');
 const rs = require('./modules/resize');
+const https =require('https');
+const http = require('http');
 const authRoutes = require('./modules/auth-routes');
 const passportSetup = require('./config/passport-setup');
 const bodyParser = require('body-parser');
@@ -11,14 +14,24 @@ const passport = require('passport');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 
+const sslkey = fs.readFileSync('/etc/pki/tls/private/ca.key');
+const sslcert = fs.readFileSync('/etc/pki/tls/certs/ca.crt');
+
+const httpsOptions = {
+    key: sslkey,
+    cert: sslcert
+};
+
 const options = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
+    password: process.env.DB_PWD
 };
 const sessionStore = new MySQLStore(options);
 
 const app = express();
+app.set('trust proxy');
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(session({
@@ -26,7 +39,7 @@ app.use(session({
     resave: true,
     store: sessionStore,
     saveUninitialized: true,
-    // cookie: {secure: true},
+    cookie: {secure: true},
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -34,8 +47,6 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/auth', authRoutes);
-
-app.listen(3000);
 
 const connection = db.connect();
 const upload = multer({dest: 'public/memes/'});
@@ -146,6 +157,15 @@ function authenticationMiddleware() {
         res.redirect('/');
     };
 }
+
+http.createServer((req,res)=>{
+    const redir ='https://' + req.headers.host + '/node' + req.url;
+    console.log(redir);
+    res.writeHead(302,{'Location': redir});
+    res.end();
+}).listen(8000);
+
+https.createServer(options,app).listen(3000);
 
 
 

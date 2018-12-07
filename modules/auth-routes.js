@@ -79,8 +79,8 @@ router.post('/register', [
 
 //auth login
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/main',
-    failureRedirect: '/',
+    successRedirect: '/node/main',
+    failureRedirect: '/node/',
 }));
 
 //auth logout

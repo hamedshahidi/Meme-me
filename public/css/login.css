@@ -167,8 +167,8 @@ input[type=submit]:hover {
     min-width: 285px;
     padding: 20px 45px 25px 45px;
     transition: all 500ms ease;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
 }
 
 #btn-signIn,

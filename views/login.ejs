@@ -12,13 +12,13 @@
 </head>
 
 <body>
+
 <main>
     <header>
         <span id="title_login">Welcome to Meme-me </span>
     </header>
 
     <!-- Sign in form -->
-
     <div class="modal-container-signIn" id="signIn-container">
         <div class="modal-signIn" id="signIn-box">
             <div class="signIn-header">
@@ -64,17 +64,29 @@
             <div class="signUp-content">
                 <form action="/auth/register" method="post">
                     <input type="text" name="username" placeholder="Username" required>
-                    <span class="err-msg" id="username-err"></span>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'username'){ %>
+                        <span class="err-msg" id="err-username"><%= error.msg %></span>
+                    <% }})} %>
                     <input type="text" name="firstname" placeholder="First name" required>
-                    <span class="err-msg" id="firstname-err"></span>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'firstname'){ %>
+                        <span class="err-msg" id="err-firstname"><%= error.msg %></span>
+                    <% }})} %>
                     <input type="text" name="lastname" placeholder="Last name" required>
-                    <span class="err-msg" id="lastname-err"></span>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'lastname'){ %>
+                        <span class="err-msg" id="err-lastname"><%= error.msg %></span>
+                    <% }})} %>
                     <input type="email" name="email" placeholder="jim.carrey@liarliar.com" required>
-                    <span class="err-msg" id="email-err"></span>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'email'){ %>
+                        <span class="err-msg" id="err-email"><%= error.msg %></span>
+                    <% }})} %>
                     <input type="password" name="password" placeholder="Password" required>
-                    <span class="err-msg" id="password-err"></span>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'password'){ %>
+                        <span class="err-msg" id="err-password"><%= error.msg %></span>
+                    <% }})} %>
                     <input type="password" name="re_enter_password" placeholder="Re-enter password" required>
-                    <span class="err-msg" id="re_enter_password-err"></span>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 're_enter_password'){ %>
+                        <span class="err-msg" id="err-re_enter_password"><%= error.msg %></span>
+                    <% }})} %>
                     <input type="submit" value="Sign up" class="btn-action">
                 </form>
             </div>

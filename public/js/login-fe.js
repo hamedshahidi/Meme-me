@@ -43,7 +43,6 @@ const removeAnimationFrom = (box) => {
 signUpbtn.addEventListener('click', (e) => {
   e.preventDefault();
   removeAnimationFrom(signInbox);
-  //setTimeout(() => addAnimationTo(signUpbox));
   addAnimationTo(signUpbox);
   hide1show2(signInContainer, signInbox, signUpContainer, signUpbox);
 }, false);
@@ -51,13 +50,19 @@ signUpbtn.addEventListener('click', (e) => {
 signInbtn.addEventListener('click', (e) => {
   e.preventDefault();
   removeAnimationFrom(signUpbox);
-  //setTimeout(() => addAnimationTo(signInbox));
   addAnimationTo(signInbox);
   hide1show2(signUpContainer, signUpbox, signInContainer, signInbox);
 }, false);
 
-/*window.onload = () => {
-  addAnimationTo(signInbox);
-};*/
+window.onload = () => {
+  if (document.querySelector('span[id^="err-"]')) {
+    hide1show2(signInContainer, signInbox, signUpContainer, signUpbox);
+    removeAnimationFrom(signInbox);
+    addAnimationTo(signUpbox);
+  } else {
+    showIt(signInContainer,signInbox);
+    addAnimationTo(signInbox);
+  }
+};
 
 console.log('js loaded!');

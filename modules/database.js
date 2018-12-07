@@ -12,7 +12,7 @@ const connect = () => {
 
 const selectMeme = (res, connection) => {
     connection.query(
-        'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, SUM(IFNULL(voted_for.liked, 0)) as NumLikes, SUM(IFNULL(voted_for.disliked, 0)) as NumDislikes\n' +
+        'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, meme.caption, SUM(IFNULL(voted_for.liked, 0)) as NumLikes, SUM(IFNULL(voted_for.disliked, 0)) as NumDislikes\n' +
         'FROM meme LEFT JOIN voted_for \n' +
         'ON meme.id_meme = voted_for.id_meme\n' +
         'GROUP BY meme.id_meme\n' +
@@ -143,7 +143,7 @@ const selectGoogleUser = (profile, connection) => {
 
 const insertMeme = (data, connection, callback) => {
     connection.execute(
-        'INSERT INTO meme (meme_name, meme_medium, tag) VALUES (?, ?, ?);',
+        'INSERT INTO meme (meme_name, meme_medium, tag, caption) VALUES (?, ?, ?, ?);',
         data,
         (err, results, fields) => {
             callback();
@@ -180,6 +180,23 @@ const checkVoted = (data, connection) => {
             },
         );
     });
+};
+
+const insertHasTag = (data, connection, callback) => {
+    connection.execute(
+        `INSERT INTO has_tags
+        VALUES (
+        (SELECT meme.id_meme
+        FROM meme
+        WHERE meme.meme_medium = '${data[0]}' ),
+        (SELECT tag.id_tag
+        FROM tag
+        WHERE tag.tag_name = '${data[1]}' ));`,
+        (err, results, fields) => {
+            if (err) console.log(err);
+            callback();
+        },
+    );
 };
 
 const insertVoted = (data, connection, callback) => {
@@ -250,6 +267,7 @@ module.exports = {
     insertVoted: insertVoted,
     insertUploaded: insertUploaded,
     updateVoted: updateVoted,
+    insertHasTag: insertHasTag,
     insertGoogleUser: insertGoogleUser,
     insertUser: insertUser,
 };

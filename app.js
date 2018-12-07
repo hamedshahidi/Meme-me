@@ -56,7 +56,8 @@ app.use('/upload', (req, res, next) => {
     const data = [
         req.file.filename,
         req.file.filename + '_medium',
-        req.body.tag.toString()];
+        req.body.radioBtn.toString(),
+        req.body.caption.toString()];
     db.insertMeme(data, connection, next);
 });
 
@@ -64,6 +65,15 @@ app.use('/upload', (req, res, next) => {
 app.use('/upload', (req, res, next) => {
     const data = [req.file.filename + '_medium', req.user];
     db.insertUploaded(data, connection, next);
+});
+
+//insert to has_tags table
+app.use('/upload', (req, res, next) => {
+    const data = [
+        req.file.filename + '_medium',
+        req.body.radioBtn
+    ];
+    db.insertHasTag(data, connection, next);
     res.send('Insert meme successful, upload finished here ');
 });
 
@@ -121,7 +131,6 @@ app.get('/profile', authenticationMiddleware(), (req, res) => {
 app.get('/main', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
-    console.log('main route');
     res.render('main');
 });
 

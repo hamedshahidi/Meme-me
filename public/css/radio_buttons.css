@@ -1,13 +1,5 @@
-input[type="checkbox"] {
-    display: none;
-}
 
-input[type="checkbox"] + label {
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
-input[type="checkbox"]:checked + label {
+input[type="radio"]:checked + label {
     /*background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);*/
     background-color: #5f6982;
     color: white;
@@ -18,7 +10,7 @@ input[type="radio"] {
 }
 
 input[type="radio"] + label {
-    color: #f2f2f2;
+    color: #5f6982;
     font-family: Arial, sans-serif;
 }
 

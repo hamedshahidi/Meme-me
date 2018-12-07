@@ -71,8 +71,7 @@ const listAllMemes = () => {
             cardFooterDiv.className = 'card-footer';
             const captionDiv = document.createElement('div');
             captionDiv.className = 'caption';
-            //captionDiv.innerText = meme.caption;
-            captionDiv.innerText = 'This is a test caption';
+            captionDiv.innerText = meme.caption;
             const voteDiv = document.createElement('div');
             voteDiv.className = 'vote';
             const likeDiv = document.createElement('div');

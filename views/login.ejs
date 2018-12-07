@@ -26,7 +26,7 @@
             </div>
 
             <div class="signIn-content">
-                <form action="/action_page.php">
+                <form action="/auth/login" method="POST">
                     <input type="text" name="<usernam></usernam>e" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <input type="submit" class="btn-action" value="Login">
@@ -62,7 +62,7 @@
                 <h2 style="text-align:center">Sign up...</h2>
             </div>
             <div class="signUp-content">
-                <form action="/action_page.php">
+                <form action="/auth/register" method="post">
                     <input type="text" name="username" placeholder="Username" required>
                     <span class="err-msg" id="username-err"></span>
                     <input type="text" name="firstname" placeholder="First name" required>

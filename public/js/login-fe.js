@@ -56,8 +56,8 @@ signInbtn.addEventListener('click', (e) => {
   hide1show2(signUpContainer, signUpbox, signInContainer, signInbox);
 }, false);
 
-window.onload = () => {
+/*window.onload = () => {
   addAnimationTo(signInbox);
-};
+};*/
 
 console.log('js loaded!');

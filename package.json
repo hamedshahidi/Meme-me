@@ -19,6 +19,8 @@
     "express-session": "^1.15.6",
     "express-validator": "^5.3.0",
     "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "https": "^1.0.0",
     "multer": "^1.4.1",
     "mysql2": "^1.6.4",
     "nodejs": "0.0.0",

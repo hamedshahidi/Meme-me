@@ -52,7 +52,7 @@ router.post('/register', [
         console.log(errors.array());
         return res.render('login', {
             title: 'Register Errors',
-            errors: errors,
+            errors: errors.array(),
         });
     } else {
         const data = [

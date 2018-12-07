@@ -12,98 +12,94 @@
 </head>
 
 <body>
+
 <main>
     <header>
         <span id="title_login">Welcome to Meme-me </span>
     </header>
 
-    <section id="login_container">
-        <div class="container">
-            <form action="/auth/login" method="POST" >
-                <div class="row">
-                    <h4 style="text-align:center">Please sign in...</h4>
-                    <div class="vl">
-                        <span class="vl-innertext">or</span>
+    <!-- Sign in form -->
+    <div class="modal-container-signIn" id="signIn-container">
+        <div class="modal-signIn" id="signIn-box">
+            <div class="signIn-header">
+                <h2 style="text-align:center">Please sign in...</h2>
+            </div>
+
+            <div class="signIn-content">
+                <form action="/auth/login" method="POST">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="submit" class="btn-action" value="Login">
+
+                    <div class="md-txt">
+                        <p>Or...</p>
                     </div>
 
-                    <div class="col">
-
-                        <input type="text" name="username" placeholder="Username" required="">
-                        <input type="password" name="password" placeholder="Password" required="">
-                        <input type="submit" value="Login">
-
-                        <div class="hide-md-lg">
-                            <p>Or...</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <a href="#" class="fb btn">
-                            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-                        </a>
-                        <a href="#" class="twitter btn">
-                            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                        </a>
-                        <a href="/auth/google" class="google btn"><i class="fa fa-google fa-fw">
-                            </i> Login with Google+
-                        </a>
-                    </div>
-
-                </div>
-            </form>
-        </div>
-
-        <div class="bottom-container">
-            <div class="row">
-                <div class="col">
-                    <a href="#" style="color:white" class="btn">Sign up</a>
-                </div>
-                
+                    <a href="#" class="fb btn">
+                        <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                    </a>
+                    <a href="#" class="twitter btn">
+                        <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                    </a>
+                    <a href="#" class="google btn">
+                        <i class="fa fa-google fa-fw"></i> Login with Google+
+                    </a>
+                </form>
+            </div>
+            <div class="signIn-footer">
+                <br>
+                <span>Not a member yet?</span>
+                <a id="btn-signUp"><b>Sign up</b></a>
             </div>
         </div>
-    </section>
-
-    <div id="signup-modal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <section id="signup_container">
-                <div class="container">
-                    <form action="/auth/register" method="post">
-                        <div class="row">
-                            <h4 style="text-align:center">Create your personal account...</h4>
-                            <div class="vl">
-                                <span class="vl-innertext">or</span>
-                            </div>
-
-                            <div class="col">
-                                <input type="text" name="username" placeholder="Username" required>
-                                <input type="text" name="firstname" placeholder="First name" required>
-                                <input type="text" name="lastname" placeholder="Last name" required>
-                                <input type="email" name="email" placeholder="jim.carrey@liarliar.com" required>
-                                <input type="password" name="password" placeholder="Password" required>
-                                <input type="password" name="re_enter_password" placeholder="Re-enter password" required>
-                                <input type="submit" value="Sign up">
-
-                            </div>
-
-
-                        </div>
-                    </form>
-                </div>
-
-                <div class="bottom-container">
-                    <div class="row">
-                        <div class="col">
-                            <a href="#" style="color:white" class="btn">Login</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
     </div>
 
+    <!-- Sign up form -->
+
+    <div class="modal-container-signUp" id="signUp-container">
+        <div class="modal-signUp" id="signUp-box">
+            <div class="signUp-header">
+                <h2 style="text-align:center">Sign up...</h2>
+            </div>
+            <div class="signUp-content">
+                <form action="/auth/register" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'username'){ %>
+                        <span class="err-msg" id="err-username"><%= error.msg %></span>
+                    <% }})} %>
+                    <input type="text" name="firstname" placeholder="First name" required>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'firstname'){ %>
+                        <span class="err-msg" id="err-firstname"><%= error.msg %></span>
+                    <% }})} %>
+                    <input type="text" name="lastname" placeholder="Last name" required>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'lastname'){ %>
+                        <span class="err-msg" id="err-lastname"><%= error.msg %></span>
+                    <% }})} %>
+                    <input type="email" name="email" placeholder="jim.carrey@liarliar.com" required>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'email'){ %>
+                        <span class="err-msg" id="err-email"><%= error.msg %></span>
+                    <% }})} %>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'password'){ %>
+                        <span class="err-msg" id="err-password"><%= error.msg %></span>
+                    <% }})} %>
+                    <input type="password" name="re_enter_password" placeholder="Re-enter password" required>
+                    <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 're_enter_password'){ %>
+                        <span class="err-msg" id="err-re_enter_password"><%= error.msg %></span>
+                    <% }})} %>
+                    <input type="submit" value="Sign up" class="btn-action">
+                </form>
+            </div>
+            <div class="signUp-footer">
+                <br>
+                <span>Already a member?</span>
+                <a id="btn-signIn"><b>Login</b></a>
+            </div>
+        </div>
+    </div>
 </main>
+
+<script type="text/javascript" src="js/login-fe.js"></script>
+
 </body>
 </html>

@@ -7,6 +7,7 @@ const topObj = obj.querySelector('.stackedcards-overlay.top'); //Keep the swipe 
 const rightObj = obj.querySelector('.stackedcards-overlay.right'); //Keep the swipe right properties.
 const leftObj = obj.querySelector('.stackedcards-overlay.left'); //Keep the swipe left properties.
 const frm = document.querySelector('#file-upload-form');
+const searchForm = document.querySelector('#search_form');
 
 //Function for liking
 const likeMeme = (id_meme) => {
@@ -46,84 +47,7 @@ const dislikeMeme = (id_meme) => {
     });
 };
 
-//Function for listing all memes
-const listAllMemes = () => {
-    fetch('/node/listMeme').then((response) => {
-        return response.json();
-    }).then((json) => {
-        json.reverse();
-        console.log(json);
-        stackedCardsObj.innerHTML = '';
-        json.forEach(meme => {
-            const cardDiv = document.createElement('div');
-            cardDiv.className = 'card';
-            const cardContentDiv = document.createElement('div');
-            cardContentDiv.className = 'card-content';
-            const cardImageDiv = document.createElement('div');
-            cardImageDiv.className = 'card-image';
-            const image = document.createElement('img');
-            image.src = 'medium/' + meme.meme_medium;
-            cardImageDiv.className = 'card-image';
-            image.setAttribute('width', '100%');
-            image.setAttribute('height', '100%');
-            //Still have card-titles here
-            const cardFooterDiv = document.createElement('div');
-            cardFooterDiv.className = 'card-footer';
-            const captionDiv = document.createElement('div');
-            captionDiv.className = 'caption';
-            captionDiv.innerText = meme.caption;
-            const voteDiv = document.createElement('div');
-            voteDiv.className = 'vote';
-            const likeDiv = document.createElement('div');
-            likeDiv.className = 'circle';
-            const likeImage = document.createElement('img');
-            likeImage.src = 'res/heart.png';
-            likeImage.setAttribute('height', '66.67%');
-            likeImage.setAttribute('width', '100%');
-            const likeNum = document.createElement('p');
-            likeNum.innerText = meme.NumLikes;
-            likeNum.setAttribute('height', '33.33%');
-            likeNum.setAttribute('width', '100%');
-            const dislikeDiv = document.createElement('div');
-            dislikeDiv.className = 'circle';
-            const dislikeImage = document.createElement('img');
-            dislikeImage.src = 'res/x.png';
-            dislikeImage.setAttribute('height', '66.67%');
-            dislikeImage.setAttribute('width', '100%');
-            const dislikeNum = document.createElement('p');
-            dislikeNum.innerText = meme.NumDislikes;
-            dislikeNum.setAttribute('height', '33.33%');
-            dislikeNum.setAttribute('width', '100%');
-            likeDiv.innerHTML = likeImage.outerHTML + likeNum.outerHTML;
-            dislikeDiv.innerHTML = dislikeImage.outerHTML + dislikeNum.outerHTML;
-            voteDiv.innerHTML = dislikeDiv.outerHTML + likeDiv.outerHTML;
-            cardFooterDiv.innerHTML = captionDiv.outerHTML + voteDiv.outerHTML;
-            cardImageDiv.appendChild(image);
-            cardContentDiv.appendChild(cardImageDiv);
-            cardDiv.innerHTML = cardContentDiv.outerHTML + cardFooterDiv.outerHTML;
-            stackedCardsObj.innerHTML += cardDiv.outerHTML;
-        });
-        stackedCards();
-    });
-};
-
-//Function for sending data form to server and fetching data back
-const sendForm = (evt) => {
-    evt.preventDefault();
-    const fd = new FormData(frm);
-    const settings = {
-        method: 'post',
-        body: fd,
-    };
-
-    fetch('/node/upload', settings).then((response) => {
-        return response.text();
-    }).then((text) => {
-        console.log(text);
-        listAllMemes();
-    });
-};
-
+//Function for stacking cards
 const stackedCards = () => {
     const stackedOptions = 'Top'; //Change stacked cards view from 'Bottom', 'Top' or 'None'.
     const rotate = true; //Activate the elements' rotation for each move on stacked cards.
@@ -909,10 +833,164 @@ const stackedCards = () => {
 
 };
 
+//Function for listing all memes
+const listAllMemes = () => {
+    fetch('/node/listMeme').then((response) => {
+        return response.json();
+    }).then((json) => {
+        json.reverse();
+        console.log(json);
+        stackedCardsObj.innerHTML = '';
+        json.forEach(meme => {
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'card';
+            const cardContentDiv = document.createElement('div');
+            cardContentDiv.className = 'card-content';
+            const cardImageDiv = document.createElement('div');
+            cardImageDiv.className = 'card-image';
+            const image = document.createElement('img');
+            image.src = 'medium/' + meme.meme_medium;
+            image.setAttribute('width', '100%');
+            image.setAttribute('height', '100%');
+            //Still have card-titles here
+            const cardFooterDiv = document.createElement('div');
+            cardFooterDiv.className = 'card-footer';
+            const captionDiv = document.createElement('div');
+            captionDiv.className = 'caption';
+            captionDiv.innerText = meme.caption;
+            const voteDiv = document.createElement('div');
+            voteDiv.className = 'vote';
+            const likeDiv = document.createElement('div');
+            likeDiv.className = 'circle';
+            const likeImage = document.createElement('img');
+            likeImage.src = 'res/heart.png';
+            likeImage.setAttribute('height', '66.67%');
+            likeImage.setAttribute('width', '100%');
+            const likeNum = document.createElement('p');
+            likeNum.innerText = meme.NumLikes;
+            likeNum.setAttribute('height', '33.33%');
+            likeNum.setAttribute('width', '100%');
+            const dislikeDiv = document.createElement('div');
+            dislikeDiv.className = 'circle';
+            const dislikeImage = document.createElement('img');
+            dislikeImage.src = 'res/x.png';
+            dislikeImage.setAttribute('height', '66.67%');
+            dislikeImage.setAttribute('width', '100%');
+            const dislikeNum = document.createElement('p');
+            dislikeNum.innerText = meme.NumDislikes;
+            dislikeNum.setAttribute('height', '33.33%');
+            dislikeNum.setAttribute('width', '100%');
+            likeDiv.innerHTML = likeImage.outerHTML + likeNum.outerHTML;
+            dislikeDiv.innerHTML = dislikeImage.outerHTML + dislikeNum.outerHTML;
+            voteDiv.innerHTML = dislikeDiv.outerHTML + likeDiv.outerHTML;
+            cardFooterDiv.innerHTML = captionDiv.outerHTML + voteDiv.outerHTML;
+            cardImageDiv.appendChild(image);
+            cardContentDiv.appendChild(cardImageDiv);
+            cardDiv.innerHTML = cardContentDiv.outerHTML + cardFooterDiv.outerHTML;
+            stackedCardsObj.innerHTML += cardDiv.outerHTML;
+        });
+        stackedCards();
+    });
+};
+
+//Function for sending data form to server and fetching data back
+const sendForm = (evt) => {
+    evt.preventDefault();
+    const fd = new FormData(frm);
+    const settings = {
+        method: 'post',
+        body: fd,
+    };
+
+    fetch('/node/upload', settings).then((response) => {
+        return response.text();
+    }).then((text) => {
+        console.log(text);
+        listAllMemes();
+    });
+};
+
+const sendSearchForm = (evt) => {
+    evt.preventDefault();
+    const data = {
+        search: searchForm.search.value
+    };
+    fetch('/node/search', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'},
+    }).then((response) => {
+        return response.json();
+    }).then((json) => {
+        if(json.length !== 0){
+            console.log('Search fetched');
+            json.reverse();
+            console.log(json);
+            stackedCardsObj.innerHTML = '';
+            json.forEach(meme => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                const cardContentDiv = document.createElement('div');
+                cardContentDiv.className = 'card-content';
+                const cardImageDiv = document.createElement('div');
+                cardImageDiv.className = 'card-image';
+                const image = document.createElement('img');
+                image.src = 'medium/' + meme.meme_medium;
+                image.setAttribute('width', '100%');
+                image.setAttribute('height', '100%');
+                //Still have card-titles here
+                const cardFooterDiv = document.createElement('div');
+                cardFooterDiv.className = 'card-footer';
+                const captionDiv = document.createElement('div');
+                captionDiv.className = 'caption';
+                captionDiv.innerText = meme.caption;
+                const voteDiv = document.createElement('div');
+                voteDiv.className = 'vote';
+                const likeDiv = document.createElement('div');
+                likeDiv.className = 'circle';
+                const likeImage = document.createElement('img');
+                likeImage.src = 'res/heart.png';
+                likeImage.setAttribute('height', '66.67%');
+                likeImage.setAttribute('width', '100%');
+                const likeNum = document.createElement('p');
+                likeNum.innerText = meme.NumLikes;
+                likeNum.setAttribute('height', '33.33%');
+                likeNum.setAttribute('width', '100%');
+                const dislikeDiv = document.createElement('div');
+                dislikeDiv.className = 'circle';
+                const dislikeImage = document.createElement('img');
+                dislikeImage.src = 'res/x.png';
+                dislikeImage.setAttribute('height', '66.67%');
+                dislikeImage.setAttribute('width', '100%');
+                const dislikeNum = document.createElement('p');
+                dislikeNum.innerText = meme.NumDislikes;
+                dislikeNum.setAttribute('height', '33.33%');
+                dislikeNum.setAttribute('width', '100%');
+                likeDiv.innerHTML = likeImage.outerHTML + likeNum.outerHTML;
+                dislikeDiv.innerHTML = dislikeImage.outerHTML + dislikeNum.outerHTML;
+                voteDiv.innerHTML = dislikeDiv.outerHTML + likeDiv.outerHTML;
+                cardFooterDiv.innerHTML = captionDiv.outerHTML + voteDiv.outerHTML;
+                cardImageDiv.appendChild(image);
+                cardContentDiv.appendChild(cardImageDiv);
+                cardDiv.innerHTML = cardContentDiv.outerHTML + cardFooterDiv.outerHTML;
+                stackedCardsObj.innerHTML += cardDiv.outerHTML;
+            });
+            stackedCards();
+        }else{
+            console.log('Search failed');
+            document.querySelector('.stage').classList.add('hidden');
+            document.querySelector('.final-state').classList.remove('hidden');
+            document.querySelector('.final-state').classList.add('active');
+            document.querySelector('.final-state').innerHTML = '<h2>No meme found !<br/> To submit again, press F5.</h2>';
+        }
+    });
+};
+
+
 listAllMemes();
 //inputFile.addEventListener('change', previewFile);
 frm.addEventListener('submit', sendForm);
-
+searchForm.addEventListener('submit', sendSearchForm);
 
 
 

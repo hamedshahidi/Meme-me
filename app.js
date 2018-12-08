@@ -45,7 +45,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/auth', authRoutes);
 
 const connection = db.connect();
@@ -53,6 +53,7 @@ const upload = multer({dest: 'public/memes/'});
 
 //upload the meme
 app.post('/upload', upload.single('mediafile'), (req, res, next) => {
+    console.log(req.body);
     next();
 });
 
@@ -106,6 +107,12 @@ app.post('/voted', (req, res, next) => {
             res.send('Vote is updated');
         }
     });
+});
+
+//search
+app.post('/search', (req, res, next) => {
+    console.log(req.body.search);
+    db.searchMeme(req.body.search, res, connection);
 });
 
 //query all memes from database

@@ -8,6 +8,10 @@
 </head>
 <body>
 <% include partials/nav.ejs %>
+<form id="search_form" enctype="multipart/form-data">
+    <input type="text" name="search" placeholder="Search by tag">
+    <input type="submit" value="Search">
+</form>
 <div class="stage">
     <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
         <div class="stackedcards-container">

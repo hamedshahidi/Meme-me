@@ -27,6 +27,22 @@ const selectMeme = (res, connection) => {
     );
 };
 
+const searchMeme = (tag, res, connection) => {
+    connection.query(
+        'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, meme.caption, SUM(IFNULL(voted_for.liked, 0)) as NumLikes, SUM(IFNULL(voted_for.disliked, 0)) as NumDislikes\n' +
+        'FROM meme LEFT JOIN voted_for\n' +
+        'ON meme.id_meme = voted_for.id_meme\n' +
+        `WHERE meme.tag = '${tag}'\n` +
+        'GROUP BY meme.id_meme\n' +
+        'ORDER BY meme.id_meme;',
+        (err, results, fields) => {
+            if (err) console.log(err);
+            console.log('All memes selected');
+            res.json(results);
+        },
+    );
+};
+
 const countUploads = (user_id, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -257,6 +273,7 @@ module.exports = {
     connect: connect,
     countUploads: countUploads,
     selectMeme: selectMeme,
+    searchMeme: searchMeme,
     selectMemeProfile: selectMemeProfile,
     selectProfile: selectProfile,
     selectUser: selectUser,

@@ -70,7 +70,7 @@ router.post('/register', [
                     if (err) {
                         console.log(err);
                     }
-                    res.redirect(`/main`);
+                    res.redirect(`/node/main`);
                 });
             },
         );
@@ -79,8 +79,8 @@ router.post('/register', [
 
 //auth login
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/main',
-    failureRedirect: '/',
+    successRedirect: '/node/main',
+    failureRedirect: '/node/',
 }));
 
 //auth logout
@@ -88,7 +88,7 @@ router.get('/logout', (req, res) => {
     console.log('User id: '+req.user +' logout');
     req.logout();
     req.session.destroy();
-    res.redirect('/');
+    res.redirect('/node/');
 });
 
 //auth with google
@@ -104,7 +104,7 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
         if (err) {
             console.log(err);
         }
-        res.redirect(`/main`);
+        res.redirect(`/node/`);
     });
 });
 

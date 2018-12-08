@@ -16,7 +16,7 @@ const likeMeme = (id_meme) => {
         like: 1,
         dislike: 0,
     };
-    fetch('/voted', {
+    fetch('/node/voted', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {'Content-Type': 'application/json'},
@@ -35,7 +35,7 @@ const dislikeMeme = (id_meme) => {
         like: 0,
         dislike: 1,
     };
-    fetch('/voted', {
+    fetch('/node/voted', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {'Content-Type': 'application/json'},
@@ -48,7 +48,7 @@ const dislikeMeme = (id_meme) => {
 
 //Function for listing all memes
 const listAllMemes = () => {
-    fetch('/listMeme').then((response) => {
+    fetch('/node/listMeme').then((response) => {
         return response.json();
     }).then((json) => {
         json.reverse();
@@ -116,7 +116,7 @@ const sendForm = (evt) => {
         body: fd,
     };
 
-    fetch('/upload', settings).then((response) => {
+    fetch('/node/upload', settings).then((response) => {
         return response.text();
     }).then((text) => {
         console.log(text);
@@ -212,8 +212,7 @@ const stackedCards = () => {
 
     //Functions to swipe left elements on logic external action.
     const onActionLeft = () => {
-        console.log(currentElementObj.querySelector('img').src);
-        dislikeMeme(currentElementObj.querySelector('img').src.substring(29));
+        dislikeMeme(currentElementObj.querySelector('img').src.substring(34));
         if (!(currentPosition >= maxElements)) {
             if (useOverlays) {
                 leftObj.classList.remove('no-transition');
@@ -232,7 +231,7 @@ const stackedCards = () => {
 
     //Functions to swipe right elements on logic external action.
     const onActionRight = () => {
-        likeMeme(currentElementObj.querySelector('img').src.substring(29));
+        likeMeme(currentElementObj.querySelector('img').src.substring(34));
         if (!(currentPosition >= maxElements)) {
             if (useOverlays) {
                 rightObj.classList.remove('no-transition');

@@ -27,7 +27,7 @@
             </div>
 
             <div class="signIn-content">
-                <form action="/auth/login" method="POST">
+                <form action="/node/auth/login" method="POST">
                     <input type="text" name="username" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <input type="submit" class="btn-action" value="Login">
@@ -42,7 +42,7 @@
                     <a href="#" class="twitter btn">
                         <i class="fa fa-twitter fa-fw"></i> Login with Twitter
                     </a>
-                    <a href="#" class="google btn">
+                    <a href="/node/auth/google" class="google btn">
                         <i class="fa fa-google fa-fw"></i> Login with Google+
                     </a>
                 </form>
@@ -63,7 +63,7 @@
                 <h2 style="text-align:center">Sign up...</h2>
             </div>
             <div class="signUp-content">
-                <form action="/auth/register" method="post">
+                <form action="/node/auth/register" method="post">
                     <input type="text" name="username" placeholder="Username" required>
                     <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'username'){ %>
                         <span class="err-msg" id="err-username"><%= error.msg %></span>

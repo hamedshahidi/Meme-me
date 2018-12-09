@@ -136,6 +136,8 @@ const stackedCards = () => {
 
     //Functions to swipe left elements on logic external action.
     const onActionLeft = () => {
+        console.log(currentPosition);
+        console.log(listElNodesObj);
         dislikeMeme(currentElementObj.querySelector('img').src.substring(34));
         if (!(currentPosition >= maxElements)) {
             if (useOverlays) {
@@ -173,6 +175,21 @@ const stackedCards = () => {
 
     //Functions to swipe top elements on logic external action.
     const onActionTop = () => {
+        if(document.querySelector('title').innerHTML === 'Admin'){
+            console.log('Removing');
+            const data = {
+                meme_medium: currentElementObj.querySelector('img').src.substring(34)
+            };
+            fetch('/node/delete', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {'Content-Type': 'application/json'},
+            }).then((response) => {
+                return response.text();
+            }).then((text) => {
+                console.log(text);
+            });
+        }
         if (!(currentPosition >= maxElements)) {
             if (useOverlays) {
                 leftObj.classList.remove('no-transition');
@@ -234,13 +251,12 @@ const stackedCards = () => {
             transformUi(0, -1000, 0, topObj); //Move topOverlay
             resetOverlays();
         }
-
-        currentPosition = currentPosition + 1;
-        updateUi();
-        currentElement();
-        changeBackground();
-        changeStages();
-        setActiveHidden();
+            currentPosition = currentPosition + 1;
+            updateUi();
+            currentElement();
+            changeBackground();
+            changeStages();
+            setActiveHidden();
     };
 
     //Remove transitions from all elements to be moved in each swipe movement to improve perfomance of stacked cards.
@@ -429,7 +445,7 @@ const stackedCards = () => {
     };
 
     // Remove element from the DOM after swipe. To use this method you need to call this function in onSwipeLeft, onSwipeRight and onSwipeTop and put the method just above the variable 'currentPosition = currentPosition + 1'.
-    //On the actions onSwipeLeft, onSwipeRight and onSwipeTop you need to remove the currentPosition variable (currentPosition = currentPosition + 1) and the function setActiveHidden
+    // On the actions onSwipeLeft, onSwipeRight and onSwipeTop you need to remove the currentPosition variable (currentPosition = currentPosition + 1) and the function setActiveHidden
 
     const removeElement = () => {
         currentElementObj.remove();
@@ -911,6 +927,7 @@ const sendForm = (evt) => {
 };
 
 const sendSearchForm = (evt) => {
+    stackedCardsObj.innerHTML = '';
     evt.preventDefault();
     const data = {
         search: searchForm.search.value
@@ -926,7 +943,6 @@ const sendSearchForm = (evt) => {
             console.log('Search fetched');
             json.reverse();
             console.log(json);
-            stackedCardsObj.innerHTML = '';
             json.forEach(meme => {
                 const cardDiv = document.createElement('div');
                 cardDiv.className = 'card';

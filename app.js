@@ -120,6 +120,20 @@ app.use('/listMeme', (req, res, next) => {
     db.selectMeme(res, connection, next);
 });
 
+//delete meme from database
+app.post('/delete', (req, res, next) => {
+    console.log(req.body.meme_medium);
+    db.deleteHas_tags(req.body.meme_medium, connection, next).then((result) => {
+        db.deleteUploaded(req.body.meme_medium, connection, next).then((result) => {
+            db.deleteVoted_for(req.body.meme_medium, connection, next).then((result) => {
+                db.deleteMeme(req.body.meme_medium, connection, next).then((result) => {
+                    res.send('Removing done');
+                })
+            })
+        })
+    });
+});
+
 //query profile user
 app.get('/profile', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
@@ -131,8 +145,6 @@ app.get('/profile', authenticationMiddleware(), (req, res) => {
             if (count.length === 0) userProfile.num = 0;
             else userProfile.num = count[0].NumOfMemes;
             db.selectMemeProfile(req.user, connection).then((memes) => {
-                    console.log('The result is');
-                    console.log(memes);
                     if (memes.length === 0) {
                         userProfile.memes = 0;
                     } else {
@@ -149,7 +161,11 @@ app.get('/profile', authenticationMiddleware(), (req, res) => {
 app.get('/main', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
-    res.render('main');
+    if(req.user === 1){
+        res.render('main', {title: 'Admin'});
+    }else{
+        res.render('main', {title: 'Main page'});
+    }
 });
 
 app.get('/', (req, res) => {

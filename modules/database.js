@@ -7,7 +7,7 @@ const connect = () => {
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
         database: process.env.DB_DATABASE,
-        password: process.env.DB_PWD
+        password: process.env.DB_PWD,
     });
 };
 
@@ -168,6 +168,72 @@ const insertMeme = (data, connection, callback) => {
     );
 };
 
+const deleteHas_tags = (data, connection, callback) => {
+    return new Promise((resolve, reject) => {
+        connection.execute(
+            `DELETE FROM has_tags
+            WHERE has_tags.id_meme = (SELECT meme.id_meme FROM meme
+            WHERE meme.meme_medium = '${data}');`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
+const deleteUploaded = (data, connection, callback) => {
+    return new Promise((resolve, reject) => {
+        connection.execute(
+            `DELETE FROM uploaded
+                WHERE uploaded.id_meme = (SELECT meme.id_meme FROM meme
+                WHERE meme.meme_medium = '${data}');`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
+const deleteVoted_for = (data, connection, callback) => {
+    return new Promise((resolve, reject) => {
+        connection.execute(
+            `DELETE FROM voted_for
+                    WHERE voted_for.id_meme = (SELECT meme.id_meme FROM meme
+                    WHERE meme.meme_medium = '${data}');`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+const deleteMeme = (data, connection, callback) => {
+    return new Promise((resolve, reject) => {
+        connection.execute(
+            `DELETE FROM meme
+             WHERE meme.meme_medium = '${data}';`,
+            (err, results, fields) => {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                resolve(results);
+            },
+        );
+    });
+};
+
 const insertUploaded = (data, connection, callback) => {
     connection.execute(
         `INSERT INTO uploaded
@@ -281,6 +347,10 @@ module.exports = {
     selectEmail: selectEmail,
     selectGoogleUser: selectGoogleUser,
     insertMeme: insertMeme,
+    deleteMeme: deleteMeme,
+    deleteVoted_for: deleteVoted_for,
+    deleteUploaded: deleteUploaded,
+    deleteHas_tags: deleteHas_tags,
     checkVoted: checkVoted,
     insertVoted: insertVoted,
     insertUploaded: insertUploaded,

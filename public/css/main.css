@@ -76,6 +76,10 @@ p {
     display: none;
 }
 
+#menuToggle{
+    display: block;
+}
+
 .stage {
     position: absolute;
     opacity: 1;
@@ -99,10 +103,12 @@ p {
 @media screen and (min-width: 600px) {
     .stage {
         width: 70%;
-        max-width: 600px;
     }
     #home_list, #profile_list, #upload_list, #logout_list{
         display: flex;
+    }
+    #menuToggle{
+        display: none;
     }
 }
 
@@ -452,6 +458,9 @@ h3 {
     #home_list, #profile_list, #upload_list, #logout_list{
         display: flex;
     }
+    #menuToggle{
+        display: none;
+    }
 }
 
 
@@ -496,16 +505,25 @@ h3 {
     #home_list, #profile_list, #upload_list, #logout_list{
         display: inline;
     }
+    #menuToggle{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 991px) {
     #home_list, #profile_list, #upload_list, #logout_list{
         display: flex;
     }
+    #menuToggle{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 990px) {
     #home_list, #profile_list, #upload_list, #logout_list{
         display: flex;
+    }
+    #menuToggle{
+        display: none;
     }
 }

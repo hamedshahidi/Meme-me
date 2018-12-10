@@ -42,7 +42,7 @@
                     <a href="#" class="twitter btn">
                         <i class="fa fa-twitter fa-fw"></i> Login with Twitter
                     </a>
-                    <a href="/node/auth/google" class="google btn">
+                    <a href="#" class="google btn">
                         <i class="fa fa-google fa-fw"></i> Login with Google+
                     </a>
                 </form>
@@ -66,27 +66,27 @@
                 <form action="/node/auth/register" method="post">
                     <input type="text" name="username" placeholder="Username" required>
                     <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'username'){ %>
-                        <span class="err-msg" id="err-username"><%= error.msg %></span>
+                        <p class="err-msg" id="err-username"><%= error.msg %></p>
                     <% }})} %>
                     <input type="text" name="firstname" placeholder="First name" required>
                     <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'firstname'){ %>
-                        <span class="err-msg" id="err-firstname"><%= error.msg %></span>
+                        <p class="err-msg" id="err-firstname"><%= error.msg %></p>
                     <% }})} %>
                     <input type="text" name="lastname" placeholder="Last name" required>
                     <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'lastname'){ %>
-                        <span class="err-msg" id="err-lastname"><%= error.msg %></span>
+                        <p class="err-msg" id="err-lastname"><%= error.msg %></p>
                     <% }})} %>
                     <input type="email" name="email" placeholder="jim.carrey@liarliar.com" required>
                     <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'email'){ %>
-                        <span class="err-msg" id="err-email"><%= error.msg %></span>
+                        <p class="err-msg" id="err-email"><%= error.msg %></p>
                     <% }})} %>
                     <input type="password" name="password" placeholder="Password" required>
                     <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 'password'){ %>
-                        <span class="err-msg" id="err-password"><%= error.msg %></span>
+                        <p class="err-msg" id="err-password"><%= error.msg %></p>
                     <% }})} %>
                     <input type="password" name="re_enter_password" placeholder="Re-enter password" required>
                     <% if (typeof errors !== 'undefined'){errors.forEach(error => { if(error.param == 're_enter_password'){ %>
-                        <span class="err-msg" id="err-re_enter_password"><%= error.msg %></span>
+                        <p class="err-msg" id="err-re_enter_password"><%= error.msg %></p>
                     <% }})} %>
                     <input type="submit" value="Sign up" class="btn-action">
                 </form>
@@ -99,6 +99,7 @@
         </div>
     </div>
 </main>
+
 
 <script type="text/javascript" src="js/login-fe.js"></script>
 

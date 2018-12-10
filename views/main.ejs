@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/main.css">
     <title><%= title%></title>
 </head>
 <body>
-<% include partials/nav.ejs %>
-<form id="search_form" enctype="multipart/form-data">
-    <input type="text" name="search" placeholder="Search by tag">
-    <input type="submit" value="Search">
-</form>
+<% include partials/main_nav.ejs %>
+
 <div class="stage">
     <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
         <div class="stackedcards-container">
@@ -32,7 +29,7 @@
     </div>
 </div>
 
-<div class="final-state hidden"><h2>Got it! There is no more meme to show! <br/> To view again, press F5.</h2></div>
+<div class="final-state hidden"><h2 id="final-state">Got it! There is no more meme to show! <br/> To view again, press F5.</h2></div>
 
 <script src="js/main.js"></script>
 </body>

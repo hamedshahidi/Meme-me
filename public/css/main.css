@@ -1,510 +1,511 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-blockquote, q {
-    quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
+/*------ CSS Use Case Example START ------*/
+/* import font ROBOTO */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 /*
-==================
- End of reset CSS
-==================
+==========================================
+        for cellphones
+==========================================
 */
-body {
-    background-color: #f4f7f6;
+
+
+html, body {
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+    font-size: 12px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
-.wrapper {
+body {
     position: relative;
-    display: block;
-    background-color: #f4f7f6;
+    overflow-x: hidden;
+}
+
+p {
+    margin: 0;
+    text-align: center;
+}
+
+.background-0 {
+    background: #C87D26;
+}
+
+.background-1 {
+    background: #569D99;
+}
+
+.background-2 {
+    background: #740039;
+}
+
+.background-3 {
+    background: #839FC5;
+}
+
+.background-4 {
+    background: #6A4F76;
+}
+
+.background-5 {
+    background: #57636D;
+}
+
+.background-6 {
+    background: #6D5242;
+}
+
+.background-7 {
+    background: #4F5051;
+}
+
+.background-0,
+.background-1,
+.background-2,
+.background-3,
+.background-4,
+.background-5,
+.background-6,
+.background-7 {
+    transition: all 400ms ease;
+}
+
+/* class created only for a better preview*/
+
+#home_list, #profile_list, #upload_list, #logout_list{
+    display: none;
+}
+
+.stage {
+    position: absolute;
+    opacity: 1;
+    max-height: 500px;
+    max-width: 400px;
+    width: 98%;
+    height: 72%;
+    top: 48%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.stage.hidden {
+    opacity: 0;
+    transition: all 400ms ease;
+}
+
+
+@media screen and (min-width: 600px) {
+    .stage {
+        width: 70%;
+        max-width: 600px;
+    }
+    #home_list, #profile_list, #upload_list, #logout_list{
+        display: flex;
+    }
+}
+
+h1, h2, h3 {
+    margin: 0;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 100;
+    color: #FFF;
+    text-align: center;
 }
 
 h3 {
-    font-size: 2.5em;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 300;
+    color: #BFBFBE;
+    margin-top: 10px;
 }
 
-h4 {
-    font-size: 1.5em;
+.title {
+    width: 100%;
+    padding-bottom: 30px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 22px;
+    color: #fff;
 }
 
-#header {
+.card-content {
     position: relative;
+    color: #fff;
+    padding: 5px;
+    height: 82%;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-image img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -o-object-fit: cover;
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+    padding-top: 6px
+    /*min-height: 330px;*/
+}
+
+.card-titles {
+    position: absolute;
+    bottom: 0;
+    padding: 40px 30px;
+}
+
+.card-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 12%;
+}
+
+.card-footer * {
+    font-size: 16px;
+}
+
+.caption {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8E9AA4;
+    width: 100%;
+    height: 100%;
+    min-width: 110px;
+    padding-left: 15px;
+    padding-top: 15px;
+    overflow-wrap: break-word;
+}
+
+.vote {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 30%;
+    /*padding: 0 15px 15px 15px;*/
+    padding: 15px;
+}
+
+.circle {
+    width: 40px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    margin-left: 8px;
+}
+
+.circle img {
+    border-radius: 50%
+}
+
+/* global actions buttons*/
+.global-actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 60px;
+    min-width: 200px;
+    height: 10%;
+    width: 100%;
+}
+
+.top-action,
+.right-action,
+.left-action {
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #fff;
+    -webkit-box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 4px 0px rgba(0, 0, 0, 0.5);
+    transition: .15s;
+}
+
+.right-action,
+.left-action {
+    width: 60px;
+    height: 60px;
+}
+
+.top-action {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+}
+
+.top-action:hover,
+.right-action:hover,
+.left-action:hover {
+    transform: scale(1.2);
+}
+
+.top-action:active,
+.right-action:active,
+.left-action:active {
+    transform: scale(1.2);
+}
+
+.final-state.active {
+    position: absolute;
+    opacity: 1;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100px;
-    line-height: 73px;
-    font-size: 13px;
-    font-weight: 400;
-    z-index: 302;
-    display: block;
-    clear: both;
+    height: 100%;
+    transition: all 400ms ease;
 }
 
-.header_main {
-    position: relative;
-    display: flex;
-    height: 100px;
-    border-bottom: 2px solid #E6EAEA;
-    margin: 0;
-    padding: 0;
-}
-
-.left {
-    display: block;
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    width: 100px;
-    background-color: #4d4d4d;
-
-}
-
-.navigation {
-    padding: 0 23px;
-    width: 100px;
-    min-width: inherit;
-    height: 100px;
-    border-right: 2px solid #E6EAEA;
-    color: #202121;
-    cursor: pointer;
-    float: left;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1;
-}
-
-.logo {
-    display: block;
-    position: absolute;
-    top: 30px;
-    left: 40%;
-    width: auto;
-    height: 23px;
-    line-height: normal;
-    box-sizing: inherit;
-    z-index: -1;
-
-}
-
-#login_button, #upload_button {
-    display: inline-block;
-    background-color: #6ed3cf; /* Green */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 20px;
-
-}
-
-.search_div {
-    display: flex;
-    height: 100px;
-    padding: 0 23px;
-}
-
-#search_button {
-    background-color: transparent;
-    padding: 0;
-    border: 0;
-}
-
-#search_button > img {
-    width: 50px;
-    height: 50px;
-}
-
-.button_bar {
-    height: 70px;
-    display: block;
-}
-.tab_bar{
-    height: inherit;
-    display: flex;
-
-}
-.btn {
-    display: flex;
-    height: inherit;
-    justify-content: center;
-    align-items: center;
-    width: 33.333%;
-    background-color: #f4f7f6;
-    border-bottom: 2px solid #E6EAEA;
-    box-sizing: border-box;
-
-}
-
-.button3 {
-    color: #000000;
-    text-decoration: none;
-    line-height: 24px;
-    font-size: 2em;
-    text-align: center;
-
+.final-state.hidden {
+    opacity: 0;
 }
 
 
-.btn:nth-child(1), .btn:nth-child(2) {
-    border-right: 2px solid #E6EAEA;
+/*------ CSS Use Case Example END ------*/
+/*----- Stacked Cards component css START -----*/
+
+.no-transition {
+    -webkit-transition: none ! important;
+    transition: none ! important;
 }
 
-.meme_container {
+#stacked-cards-block {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #E6EAEA;
-    border-top: 0;
-    padding-top: 50px;
-
-}
-
-.meme_title {
-    align-self: flex-start;
-}
-
-.meme {
+    height: 90%;
     width: 100%;
-
 }
 
-.meme > img {
-    border-radius: 18px;
-    max-width: 100%;
-
+.stackedcards-container {
+    width: 100%;
+    height: 100%;
 }
 
-.like_dislike_buttons {
-    display: flex;
-    flex-direction: row;
+.stackedcards-overflow {
+    overflow-y: hidden !important;
 }
 
-#like, #dislike {
-    font-size: 2em;
-    margin: 30px;
+.stackedcards.init {
+    opacity: 0; /* set the opacity to 0 if you want a fade-in effect to stacked cards on page load */
 }
 
-.button3 {
-    text-decoration: none;
-    color: #232323;
-    transition: color 0.3s ease;
-}
-
-.button3:hover {
-    color: tomato;
-}
-
-#menuToggle {
+.stackedcards {
     position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 13px;
-    justify-content: center;
-    z-index: 1;
-    padding-bottom: 10px;
+}
+
+.stackedcards * {
     -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
-#menuToggle input {
-    display: block;
-    width: 40px;
-    height: 32px;
+.stackedcards--animatable {
+    -webkit-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.stackedcards .stackedcards-container > *,
+.stackedcards-overlay {
     position: absolute;
-    top: -7px;
-    left: -5px;
-
-    cursor: pointer;
-
-    opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
-
-    -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-#menuToggle span {
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-
-    background: #cdcdcd;
-    border-radius: 3px;
-
-    z-index: 1;
-
-    transform-origin: 4px 0px;
-
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-    opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-    transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
-}
-
-/*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu {
-    position: absolute;
-    width: 300px;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
-
-    background: #ededed;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
-
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-}
-
-#menu li {
-    padding: 10px 0;
-    font-size: 22px;
-}
-
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul {
-    transform: none;
-}
-
-/*
-Like button
-*/
-
-
-#like, .dislike {
-    position: relative;
+    width: 100%; /* set 100% */
+    height: 100%; /* set 100% */
+    will-change: transform, opacity;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 250px;
-    height: 100px;
-    background: #FFFFFF;
-    border: 0;
-    font-size: 0.9rem;
-    font-family: Futura, sans-serif;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    border-radius: 6px;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
-    outline: none;
-    margin-top: 100px;
-}
-.dislike{
-    background-color: rgba(255, 0, 19, 0.19);
-    margin-right: 30px;
-}
-#like{
-    margin-left: 30px;
-    background-color: rgba(116, 143, 255, 0.19);
-}
-#like:hover, .dislike:hover {
-    color: #748fff;
-    transform: scale(1.2);
-}
-.dislike:hover {
-    color: #ff3f3c;
-    transform: scale(1.2);
-}
-#like:hover span, .dislike:hover span {
-    opacity: 1;
-    transition: all 0.2s ease-in-out;
-}
-#like:active, .dislike:active {
-    transform: scale(1.4);
-}
-#like span, .dislike span {
-    position: absolute;
-    top: -55px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background: #84d9ff;
-    color: rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
-    border-radius: 100px;
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-}
-.dislike span {
-    position: absolute;
-    top: -55px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background: #ff0013;
-    color: rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
-    border-radius: 100px;
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-}
-#like span:hover, .dislike span:hover {
-    opacity: 1;
-}
-#like span:after, .dislike span:after {
-    position: absolute;
-    bottom: -7px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #84d9ff;
-}
-.dislike span:after {
-    position: absolute;
-    bottom: -7px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #ff0013;
+    border-radius: 10px;
+    min-width: 265px;
 }
 
-.form-popup {
+.stackedcards-overlay.left > div,
+.stackedcards-overlay.right > div,
+.stackedcards-overlay.top > div {
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.stackedcards-overlay.left,
+.stackedcards-overlay.right,
+.stackedcards-overlay.top {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    height: 100%;
+}
+
+.stackedcards-overlay.top,
+.stackedcards-overlay.right,
+.stackedcards-overlay.left {
+    background: #fff;
+}
+
+.stackedcards-overlay.left:empty,
+.stackedcards-overlay.right:empty,
+.stackedcards-overlay.top:empty {
+    display: none !important;
+}
+
+.stackedcards-overlay-hidden {
     display: none;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
+}
+
+.stackedcards-origin-bottom {
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+}
+
+.stackedcards-origin-top {
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+}
+
+.stackedcards-bottom,
+.stackedcards-top,
+.stackedcards-none {
+    background: #fff; /* set card background background */
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.30);
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.stackedcards .stackedcards-container > :nth-child(1) {
+    position: relative;
+    display: block;
+}
+
+#final-state{
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    line-height: 1;
+    color: #f6eef7;
+    margin-bottom: 0;
 }
 
 
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
+/*----- Stacked Cards component css END -----*/
+
+
+
 /*
-@media only screen and (min-width: 35em) {
-
-}
-
-@media print,
-(-o-min-device-pixel-ratio: 5/4),
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi) {
-
-}
+==========================================
+        for smaller tablets
+==========================================
 */
+@media screen and (min-width: 501px) {
+    #home_list, #profile_list, #upload_list, #logout_list{
+        display: flex;
+    }
+}
 
 
+/* ==========================================*/
+/* ==========================================*/
+/* ==========================================*/
+/* media queries to implement */
+
+@media screen and (min-width: 1200px) {
+    /* for desktops */
+    .stage {
+        height: 90%;
+        top: 50%;
+    }
+
+    .card-content {
+
+        height: 85%;
+    }
+
+    .card-footer * {
+        font-size: 18px;
+    }
 
 
+    .caption {
+        font-size: 16px;
+    }
 
+    .stackedcards-bottom,
+    .stackedcards-top,
+    .stackedcards-none {
 
+        padding-bottom: 20px;
+    }
 
+    .global-actions {
+
+        padding-top: 100px;
+
+    }
+    #home_list, #profile_list, #upload_list, #logout_list{
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    #home_list, #profile_list, #upload_list, #logout_list{
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+    #home_list, #profile_list, #upload_list, #logout_list{
+        display: flex;
+    }
+}

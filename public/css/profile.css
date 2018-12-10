@@ -1,11 +1,7 @@
 /*
-
 All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 310).
-
 The 'supports' rule will only run if your browser supports CSS grid.
-
 Flexbox and floats are used as a fallback so that browsers which don't support grid will still recieve a similar layout.
-
 */
 
 /* Base Styles */
@@ -26,7 +22,7 @@ html, body {
     background-color: #232323;
     color: #e1e1e1;
     /*padding-bottom: 3rem;*/
-    margin: 0;
+    margin: 5% 0 0 0;
     width: 100%;
     height: 100%;
 }
@@ -41,7 +37,7 @@ img {
     padding: 0 2rem;
 }
 
-.btn {
+.profile-btn {
     display: inline-block;
     font: inherit;
     background: none;
@@ -51,7 +47,7 @@ img {
     cursor: pointer;
 }
 
-.btn:focus {
+.profile-btn:focus {
     outline: 0.5rem auto #4d90fe;
 }
 
@@ -135,11 +131,14 @@ img {
     margin-right: 0;
 }
 
+#profile-status,
 .profile-bio {
     font-size: 1.6rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 0.5;
     margin-top: 2.3rem;
+    color: #e1e1e1 !important;
+
 }
 
 .profile-real-name,
@@ -253,7 +252,8 @@ img {
     }
 
     .profile-image img {
-        width: 7.7rem;
+        width: 11rem;
+        height: 11rem;
     }
 
     .profile-user-settings {
@@ -322,11 +322,8 @@ img {
 }
 
 /*
-
 The following code will only run if your browser supports CSS grid.
-
 Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling.
-
 */
 
 @supports (display: grid) {

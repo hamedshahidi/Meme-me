@@ -3,7 +3,7 @@
     font-family: "Rajdhani", sans-serif;
     font-size: 1.8rem;
     color: #fff;
-    background-color: #5f6982;
+    background-color: #39abab;
     border: 0;
     border-radius: 5px;
     cursor: pointer;
@@ -19,13 +19,12 @@
     top: 50%;
     left: 0;
     right: 0;
-    width: 90%;
+    width: 80%;
     max-width: 50rem;
     padding: 2.5rem;
     margin: auto;
 
-    background-color: rgb(175, 177, 181);
-
+    background-color: rgb(255, 181, 126);
     border-radius: 10px;
     z-index: 1000;
     opacity: 0;
@@ -123,13 +122,13 @@ html body p {
 }
 
 *, *::before, *::after {
-    box-sizing: inherit;
+    /*box-sizing: border-box;*/
 }
 
 .submit_button {
     width: 100%;
-    height: 19px;
-    margin: 3px 50px;
+    height: 19%;
+    margin: 20px 8% 0 8%;
     padding: 10px;
     text-align: center;
     text-transform: uppercase;
@@ -140,19 +139,180 @@ html body p {
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     /*background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);*/
-    background-color: #5f6982;
+    background-color: #39abab;
     border: 3px solid #eee;
+    font-weight: bold;
 }
 
 .submit_button:hover {
     cursor: pointer;
-    border-color: #656569;
-    background-color: white;
-    color: #656569;
-
-
+    background-color: #1e9689;
 }
 
 .btn-1 {
 
+}
+
+/*
+======================================
+    Mobile min-width: 400px
+======================================
+*/
+
+@media only screen and (min-width: 400px) {
+
+    .btn--launch-modal, .btn {
+        padding: 1.5rem 2.5rem;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 1.8rem;
+        color: #fff;
+        background-color: #39abab;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn--launch-modal {
+
+    }
+
+    .modal {
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        /*right: 0;*/
+        width: 80%;
+        max-width: 50rem;
+        padding: 2.5rem;
+        margin: auto;
+
+        background-color: rgb(255, 181, 126);
+
+        border-radius: 10px;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(-200%);
+        transition: all 1s cubic-bezier(0.15, 0.59, 0.46, 1.07);
+    }
+
+    .modal.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+
+    .modal__header {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        font-size: 2.4rem;
+    }
+
+    .modal__header .modal__dismiss .modal__submit {
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.3);
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .modal__header > p {
+        margin: auto;
+    }
+
+    #x_button {
+        font-size: 2rem;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.3);
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .modal__footer {
+
+        display: flex;
+    }
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+    }
+
+    .popup_header_text {
+        font-size: 2rem;
+    }
+
+    .meme_caption {
+        font-size: 1.5rem;
+        /* float: left; */
+        /* clear: both; */
+        /* padding: 2rem 1.5rem; */
+        text-align: center;
+        background: #fff;
+        border-radius: 7px;
+        border: 3px solid #eee;
+        transition: all 0.2s ease;
+        user-select: none;
+        width: 84%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .caption_div {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .caption_div > div {
+        font-size: 1.5rem;
+    }
+
+    html body p {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        line-height: 1.3;
+    }
+
+
+    .submit_button {
+        width: 100%;
+        height: 19%;
+        margin: 20px 8% 0 8%;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        /*background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);*/
+        background-color: #39abab;
+        border: 3px solid #eee;
+    }
+
+    .submit_button:hover {
+        cursor: pointer;
+        border-color: #bebec2;
+        background-color: #1e9689;
+        color: #fff;
+    }
+
+    .btn-1 {
+
+    }
 }

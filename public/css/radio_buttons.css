@@ -1,8 +1,10 @@
 
 input[type="radio"]:checked + label {
     /*background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);*/
-    background-color: #5f6982;
-    color: white;
+    /*! background-color: #d9f6f6; */
+    color: #000C;
+    border: 2px solid #e38484;
+    font-weight: bold;
 }
 
 input[type="radio"] {
@@ -10,7 +12,7 @@ input[type="radio"] {
 }
 
 input[type="radio"] + label {
-    color: #5f6982;
+    color: #020202cc;
     font-family: Arial, sans-serif;
 }
 

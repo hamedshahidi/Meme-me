@@ -4,14 +4,14 @@ h2 {
     font-family: "Roboto", sans-serif;
     font-size: 26px;
     line-height: 1;
-    color: #454cad;
+    color: #f8edf4;
     margin-bottom: 0;
 }
 
 p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    color: #5f6982;
+    color: #000C;
 }
 
 .uploader {
@@ -34,7 +34,7 @@ p {
     user-select: none;
 }
 .uploader label:hover {
-    border-color: #656569;
+    border-color: #1e968999;
 }
 .uploader label.hover {
     border: 3px solid #656569;
@@ -106,7 +106,7 @@ p {
 }
 .uploader div {
     margin: 0 0 0.5rem 0;
-    color: #5f6982;
+    color: #000c;
 }
 .uploader .btn {
     display: inline-block;
@@ -125,7 +125,7 @@ p {
     color: #fff;
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
-    border: none #656569;
+    border: none #1e9689;
     cursor: pointer;
 }
 #file-drag{

@@ -10,6 +10,23 @@ body {
     padding: 0;
 }
 
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    flex: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .signUp-header,
 .signIn-header {
     font-size: 0.8rem;
@@ -20,7 +37,6 @@ body {
     margin-top: 20px;
 }
 
-/* style inputs and link buttons */
 input,
 .btn {
     width: 100%;
@@ -32,7 +48,7 @@ input,
     display: inline-block;
     font-size: 17px;
     line-height: 20px;
-    text-decoration: none; /* remove underline from anchors */
+    text-decoration: none;
 }
 
 input {
@@ -49,7 +65,6 @@ input:hover,
     text-align: center;
 }
 
-/* add appropriate colors to fb, twitter and google buttons */
 .fb {
     background-color: #3B5998;
     color: white;
@@ -71,7 +86,6 @@ input:hover,
     border-radius: 25px;
 }
 
-/* style the submit button */
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -87,21 +101,15 @@ input[type=submit]:hover {
     margin: 22px;
 }
 
-
 #title_login {
-    margin: 50px;
+    margin-top: 5%;
     text-align: center;
     font-family: 'Courgette', Helvetica, sans-serif;
-    font-size: 3vw;
+    font-size: 28px;
     color: whitesmoke;
     max-width: 600px;
     width: 90%;
     display: block;
-}
-
-
-.header {
-    flex: 100%;
 }
 
 .main {
@@ -110,26 +118,50 @@ input[type=submit]:hover {
     flex-flow: wrap;
     background-color: black;
     position: absolute;
-    min-width: 285px;
-    margin-left: 10px;
+    /*    min-width: 285px;
+        margin-left: 10px;*/
+}
+
+.err-msg {
+    font-size: 14px;
+    color: #ff3f3c;
+    padding: 0 10px;
+    overflow-wrap: normal;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 65px;
+    height: 50px;
+}
+
+#logo-img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
 }
 
 
 /*============================================
-    test MODAL start
+    MODAL
 ==============================================
 */
 /* style the container */
 .modal-container-signIn,
 .modal-container-signUp {
     position: absolute;
-    top: 0;
+    top: 5%;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10;
     background: rgba(0, 0, 0, .0);
     /*opacity: 0;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-container-signIn {
@@ -145,24 +177,23 @@ input[type=submit]:hover {
 .modal-signUp {
     background-color: #f2f2f2;
     border-radius: 60px 5px;
-    position: absolute;
-    right: 70px;
-    top: 136px;
+    /*    position: absolute;
+        right: 70px;
+        top: 136px;*/
     width: 400px;
     min-width: 285px;
     padding: 20px 45px 25px 45px;
     transition: all 500ms ease;
     opacity: 0;
     visibility: hidden;
-
 }
 
 .modal-signIn {
     background-color: #f2f2f2;
     border-radius: 60px 5px;
-    position: absolute;
-    right: 70px;
-    top: 136px;
+    /*    position: absolute;
+        right: 70px;
+        top: 136px;*/
     width: 400px;
     min-width: 285px;
     padding: 20px 45px 25px 45px;
@@ -175,6 +206,7 @@ input[type=submit]:hover {
 #btn-signUp {
     color: black;
     margin-top: 10px;
+    font-weight: bold !important;
 }
 
 #btn-signIn,
@@ -195,7 +227,123 @@ input[type=submit]:hover {
 
 
 /*============================================
-    test MODAL end
+    Media query
+  ============================================*/
+
+@media screen and (min-height: 670px) {
+    #logo {
+        width: 30%;
+        height: 20%;
+    }
+}
+
+@media screen and (min-width: 769px) and (min-height: 680px) {
+    #logo {
+        top: 10%;
+        left: 15%;
+        width: 30%;
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 540px){
+
+    header {
+        padding-top:5%;
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 768px){
+
+    header {
+        margin-top: 10px;
+    }
+    #title_login{
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    header {
+        flex-direction: row;
+        align-items: normal;
+        justify-content: left;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    #title_login {
+
+        font-size: 3vw;
+    }
+
+    .modal-container-signIn,
+    .modal-container-signUp {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, .0);
+        /*opacity: 0;*/
+    }
+
+
+    .header {
+        width: 100%;
+        flex: 100%;
+        display: block;
+    }
+
+    #title_login {
+        margin: 50px;
+        text-align: center;
+        font-family: 'Courgette', Helvetica, sans-serif;
+        font-size: 2.8em;
+        color: whitesmoke;
+        max-width: 600px;
+        width: 90%;
+        display: block;
+    }
+
+    .modal-signUp {
+        position: absolute;
+        right: 70px;
+        top: 136px;
+        width: 400px;
+        min-width: 285px;
+    }
+
+    .modal-signIn {
+        position: absolute;
+        right: 70px;
+        top: 136px;
+        width: 400px;
+        min-width: 285px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*============================================
+    Animation
 ==============================================
 */
 @-webkit-keyframes jellyMotion {
@@ -299,6 +447,3 @@ input[type=submit]:hover {
 }
 
 
-/*============================================
-    Modal animation
-  ============================================*/

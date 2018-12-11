@@ -3,13 +3,14 @@
 <head>
     <base href="https://10.114.32.124/node/"/>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
-<% include partials/nav.ejs %>
+<% include partials/profile_nav.ejs %>
 <header>
 
     <div class="container">
@@ -18,7 +19,7 @@
 
             <div class="profile-image">
 
-                <img src="https://d3iw72m71ie81c.cloudfront.net/female-17.jpg" width="152" height="152"
+                <img src="res/avatar.png" width="152" height="152"
                      alt="profile-image">
 
             </div>
@@ -27,18 +28,12 @@
 
                 <h1 class="profile-user-name"><%= profile.username %></h1>
 
-                <button class="btn profile-edit-btn">Edit Profile</button>
-
-                <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog"
-                                                                                          aria-hidden="true"></i>
-                </button>
-
             </div>
 
             <div class="profile-stats">
 
                 <ul id="posts-bar">
-                    <li><span class="profile-real-name"><%= profile.first_name + ' ' + profile.last_name %></span></li>
+                    <li id="real-name"><span class="profile-real-name"><%= profile.first_name + ' ' + profile.last_name %></span></li>
                     <li><span class="profile-stat-count"><%= profile.num %></span> memes</li>
                 </ul>
 
@@ -46,7 +41,7 @@
 
             <div class="profile-bio">
 
-                <p>Meme-me makes my day!! 😅👍😻️</p>
+                <p id="profile-status">Meme-me makes my day!! 😅👍😻️</p>
 
             </div>
 
@@ -140,7 +135,6 @@
 
                     <div class="gallery-item-type">
 
-                        <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
 
                     </div>
 
@@ -324,7 +318,6 @@
 
                     <div class="gallery-item-type">
 
-                        <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
 
                     </div>
 
@@ -350,7 +343,6 @@
 
                 <div class="gallery-item-type">
 
-                    <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
 
                 </div>
 

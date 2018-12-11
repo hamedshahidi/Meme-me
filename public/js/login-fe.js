@@ -55,7 +55,7 @@ signInbtn.addEventListener('click', (e) => {
 }, false);
 
 window.onload = () => {
-  if (document.querySelector('span[id^="err-"]')) {
+  if (document.querySelector('p[id^="err-"]')) {
     hide1show2(signInContainer, signInbox, signUpContainer, signUpbox);
     removeAnimationFrom(signInbox);
     addAnimationTo(signUpbox);

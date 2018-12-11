@@ -2,6 +2,7 @@
 
 const backdrop = document.createElement("div");
 const upload = document.querySelector('#upload');
+const uploadHam = document.querySelector('#uploadHam');
 const modal = document.getElementById("modal");
 const fileSelect    = document.getElementById('file-upload');
 const fileDrag      = document.getElementById('file-drag');
@@ -93,14 +94,17 @@ const ekUpload = () =>{
 upload.addEventListener('click', (event) => {
     event.preventDefault();
 });
-
+uploadHam.addEventListener('click', (event) => {
+    event.preventDefault();
+});
 document.addEventListener('click', (event) => {
     // element.matches() polyfill for IE10+ support
     if (!Element.prototype.matches) {
         Element.prototype.matches = Element.prototype.msMatchesSelector;
     }
 
-    if (event.target.matches("#upload")) {
+    if (event.target.matches("#upload") || event.target.matches("#uploadHam")) {
+        console.log('Upload is called');
         modal.classList.add("open");
         backdrop.setAttribute("class", "backdrop");
         document.body.appendChild(backdrop);

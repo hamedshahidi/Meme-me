@@ -8,6 +8,7 @@ const rightObj = obj.querySelector('.stackedcards-overlay.right'); //Keep the sw
 const leftObj = obj.querySelector('.stackedcards-overlay.left'); //Keep the swipe left properties.
 const frm = document.querySelector('#file-upload-form');
 const searchForm = document.querySelector('#search_form');
+const stageCard = document.getElementsByClassName('stage')[0];
 
 //Function for liking
 const likeMeme = (id_meme) => {
@@ -95,19 +96,20 @@ const stackedCards = () => {
     };
 
     //Keep the active card.
-    const currentElement = () =>{
+    const currentElement = () => {
         currentElementObj = listElNodesObj[currentPosition];
     };
 
     //Change background for each swipe.
     const changeBackground = () => {
-        if(currentPosition <= 7 ){
+        if (currentPosition <= 7) {
             document.body.removeAttribute('class');
             document.body.classList.add('background-' + currentPosition + '');
         }
         else {
             document.body.removeAttribute('class');
-            document.body.classList.add('background-' + currentPosition % 8 + '');
+            document.body.classList.add(
+                'background-' + currentPosition % 8 + '');
         }
     };
 
@@ -175,10 +177,12 @@ const stackedCards = () => {
 
     //Functions to swipe top elements on logic external action.
     const onActionTop = () => {
-        if(document.querySelector('title').innerHTML === 'Admin'){
+        if (document.querySelector('title').innerHTML === 'Admin') {
             console.log('Removing');
             const data = {
-                meme_medium: currentElementObj.querySelector('img').src.substring(34)
+                meme_medium: currentElementObj.querySelector('img').
+                    src.
+                    substring(34),
             };
             fetch('/node/delete', {
                 method: 'POST',
@@ -251,12 +255,12 @@ const stackedCards = () => {
             transformUi(0, -1000, 0, topObj); //Move topOverlay
             resetOverlays();
         }
-            currentPosition = currentPosition + 1;
-            updateUi();
-            currentElement();
-            changeBackground();
-            changeStages();
-            setActiveHidden();
+        currentPosition = currentPosition + 1;
+        updateUi();
+        currentElement();
+        changeBackground();
+        changeStages();
+        setActiveHidden();
     };
 
     //Remove transitions from all elements to be moved in each swipe movement to improve perfomance of stacked cards.
@@ -897,12 +901,14 @@ const listAllMemes = () => {
             dislikeNum.setAttribute('height', '33.33%');
             dislikeNum.setAttribute('width', '100%');
             likeDiv.innerHTML = likeImage.outerHTML + likeNum.outerHTML;
-            dislikeDiv.innerHTML = dislikeImage.outerHTML + dislikeNum.outerHTML;
+            dislikeDiv.innerHTML = dislikeImage.outerHTML +
+                dislikeNum.outerHTML;
             voteDiv.innerHTML = dislikeDiv.outerHTML + likeDiv.outerHTML;
             cardFooterDiv.innerHTML = captionDiv.outerHTML + voteDiv.outerHTML;
             cardImageDiv.appendChild(image);
             cardContentDiv.appendChild(cardImageDiv);
-            cardDiv.innerHTML = cardContentDiv.outerHTML + cardFooterDiv.outerHTML;
+            cardDiv.innerHTML = cardContentDiv.outerHTML +
+                cardFooterDiv.outerHTML;
             stackedCardsObj.innerHTML += cardDiv.outerHTML;
         });
         stackedCards();
@@ -930,7 +936,7 @@ const sendSearchForm = (evt) => {
     stackedCardsObj.innerHTML = '';
     evt.preventDefault();
     const data = {
-        search: searchForm.search.value
+        search: searchForm.search.value,
     };
     fetch('/node/search', {
         method: 'POST',
@@ -939,7 +945,7 @@ const sendSearchForm = (evt) => {
     }).then((response) => {
         return response.json();
     }).then((json) => {
-        if(json.length !== 0){
+        if (json.length !== 0) {
             console.log('Search fetched');
             json.reverse();
             console.log(json);
@@ -983,30 +989,55 @@ const sendSearchForm = (evt) => {
                 dislikeNum.setAttribute('height', '33.33%');
                 dislikeNum.setAttribute('width', '100%');
                 likeDiv.innerHTML = likeImage.outerHTML + likeNum.outerHTML;
-                dislikeDiv.innerHTML = dislikeImage.outerHTML + dislikeNum.outerHTML;
+                dislikeDiv.innerHTML = dislikeImage.outerHTML +
+                    dislikeNum.outerHTML;
                 voteDiv.innerHTML = dislikeDiv.outerHTML + likeDiv.outerHTML;
-                cardFooterDiv.innerHTML = captionDiv.outerHTML + voteDiv.outerHTML;
+                cardFooterDiv.innerHTML = captionDiv.outerHTML +
+                    voteDiv.outerHTML;
                 cardImageDiv.appendChild(image);
                 cardContentDiv.appendChild(cardImageDiv);
-                cardDiv.innerHTML = cardContentDiv.outerHTML + cardFooterDiv.outerHTML;
+                cardDiv.innerHTML = cardContentDiv.outerHTML +
+                    cardFooterDiv.outerHTML;
                 stackedCardsObj.innerHTML += cardDiv.outerHTML;
             });
             stackedCards();
-        }else{
+        } else {
             console.log('Search failed');
             document.querySelector('.stage').classList.add('hidden');
             document.querySelector('.final-state').classList.remove('hidden');
             document.querySelector('.final-state').classList.add('active');
-            document.querySelector('.final-state').innerHTML = '<h2>No meme found !<br/> To submit again, press F5.</h2>';
+            document.querySelector(
+                '.final-state').innerHTML = '<h2>No meme found !<br/> To submit again, press F5.</h2>';
         }
     });
 };
-
 
 listAllMemes();
 //inputFile.addEventListener('change', previewFile);
 frm.addEventListener('submit', sendForm);
 searchForm.addEventListener('submit', sendSearchForm);
+
+window.onload = () => {
+    if (document.URL === 'https://10.114.32.124/node/main') {
+        console.log('Main page is active.');
+        document.getElementById('home').style.color = '#d94f5c';
+    }
+};
+
+const focusSearch = () => {
+    stageCard.style.display = 'none';
+};
+
+const blurSearch = () => {
+    stageCard.style.display = 'inline';
+};
+
+const mq = window.matchMedia('(max-width: 450px)');
+if (mq.matches) {
+    const search = document.getElementById('search');
+    search.addEventListener('focus', focusSearch);
+    search.addEventListener('blur', blurSearch);
+}
 
 
 

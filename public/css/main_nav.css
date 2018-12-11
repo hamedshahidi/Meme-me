@@ -1,0 +1,72 @@
+/*
+======================================
+    Mobile w320
+======================================
+*/
+
+nav {
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    min-height: 50px;
+    background-color: #ffffff;
+    top:0;
+    transition: top 1s;
+    z-index: 7;
+}
+
+.menu {
+    padding: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 720px;
+    width: 70%;
+    margin: 0 auto;
+    height: 100%;
+    list-style: none;
+}
+
+.menu li {
+    width: 125px;
+    height: 85%;
+    transition: background-position-x 0.9s linear;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu li a {
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.45s;
+}
+
+.menu li:hover a {
+    color: #d94f5c;
+}
+
+.menu li:not(:last-child) {
+    margin-right: 30px;
+}
+
+@keyframes line {
+    0% {
+        background-position-x: 390px;
+    }
+}
+
+/*
+======================================
+    Mobile min-width: 400px
+======================================
+*/
+@media only screen and (min-width: 400px) {
+    .menu li a {
+        font-size: 22px;
+    }
+}

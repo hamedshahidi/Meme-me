@@ -227,7 +227,7 @@ h3 {
     height: 60px;*/
     border-radius: 50%;
     /*background: #fff;
-    margin-left: 8px;/*
+    margin-left: 8px;*/
 }
 
 /* global actions buttons*/
@@ -303,8 +303,7 @@ h3 {
     transition: all 400ms ease;
 }
 
-.final-state.hidden {
-
+.final-state.hidden,
 .final-state.active {
     position: absolute;
     opacity: 1;

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="107c2712-f303-416b-8a0f-05b434294852" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/passport-setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport-setup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/css_reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/css_reset.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,12 +14,24 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-256963901">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/keys.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="168">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
@@ -29,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="831">
+            <state relative-caret-position="1365">
               <caret line="65" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
@@ -38,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/css_reset.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="831">
+            <state relative-caret-position="1134">
               <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
@@ -47,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/hamburger.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="109" column="23" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+            <state relative-caret-position="59">
+              <caret line="114" column="22" lean-forward="true" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -166,11 +177,24 @@
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="177" />
@@ -196,23 +220,19 @@
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
               <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
               <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="medium" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Meme-me" type="b2602c69:ProjectViewProjectNode" />
               <item name="Meme-me" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="memes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,6 +333,8 @@
       <workItem from="1544344930209" duration="14238000" />
       <workItem from="1544432662248" duration="22781000" />
       <workItem from="1544470413923" duration="10170000" />
+      <workItem from="1544622040067" duration="1002000" />
+      <workItem from="1544701043423" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="commit -m&quot;Adding like, dislike function, login page&quot;">
       <created>1543323916517</created>
@@ -458,15 +480,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425524000" />
+    <option name="totallyTimeSpent" value="426549000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16791044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09455371" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.42295083" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3147541" />
@@ -479,7 +501,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.20491803" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.08852459" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.66721314" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.62786883" />
+      <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.16393442" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -510,6 +532,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit -m&quot;Adding like, dislike function, login page&quot;" />
@@ -549,13 +574,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mysql2/lib/packets/packet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="57" column="2" selection-start-line="57" selection-start-column="2" selection-end-line="57" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql2/lib/packets/packet.js" />
     <entry file="file://$PROJECT_DIR$/public/js/upload_function.js" />
     <entry file="file://$PROJECT_DIR$/public/js/upload_popup.js" />
     <entry file="file://$PROJECT_DIR$/public/js/test.js" />
@@ -606,13 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.env" />
     <entry file="file://$PROJECT_DIR$/html/main_swipe_html.html" />
     <entry file="file://$PROJECT_DIR$/html/upload_button.html" />
     <entry file="file://$PROJECT_DIR$/public/css/search.css">
@@ -647,18 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="926" column="23" selection-start-line="926" selection-start-column="17" selection-end-line="926" selection-end-column="23" />
-          <folding>
-            <element signature="e#697#1086#0" />
-            <element signature="e#1147#1539#0" />
-            <element signature="e#1599#29153#0" />
-            <element signature="e#29216#32114#0" />
-            <element signature="e#32552#36403#0" />
-            <element signature="e#36595#36776#0" />
-            <element signature="e#36657#36774#0" />
-            <element signature="e#36805#36846#0" />
-            <element signature="e#36874#36917#0" />
-            <element signature="e#36988#37145#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,12 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="107" column="7" lean-forward="true" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
-          <folding>
-            <element signature="e#1939#2106#0" />
-            <element signature="e#2135#2289#0" />
-            <element signature="e#2346#2447#0" />
-            <element signature="e#2555#2620#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,22 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-950">
           <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding>
-            <element signature="e#727#765#0" />
-            <element signature="e#784#921#0" />
-            <element signature="e#1093#1228#0" />
-            <element signature="e#1605#1647#0" />
-            <element signature="e#1880#2087#0" />
-            <element signature="e#2157#2267#0" />
-            <element signature="e#2337#2539#0" />
-            <element signature="e#2643#3140#0" />
-            <element signature="e#2880#3136#0" />
-            <element signature="e#3193#3283#0" />
-            <element signature="e#3360#3405#0" />
-            <element signature="e#5188#5216#0" />
-            <element signature="e#5256#5480#0" />
-            <element signature="e#5511#5665#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,10 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1821">
           <caret line="355" selection-start-line="355" selection-end-line="355" />
-          <folding>
-            <element signature="e#5#108#0" />
-            <element signature="e#112#174#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,37 +782,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/keys.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="168">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/passport-setup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
+        <state relative-caret-position="1365">
           <caret line="65" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/css_reset.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
+        <state relative-caret-position="1134">
           <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/hamburger.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="109" column="23" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+        <state relative-caret-position="59">
+          <caret line="114" column="22" lean-forward="true" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="hamedConnection">
+      <paths name="virtual server">
         <serverdata>
           <mappings>
             <mapping deploy="/test" local="$PROJECT_DIR$" web="/test" />

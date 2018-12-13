@@ -1007,7 +1007,8 @@ const sendSearchForm = (evt) => {
             document.querySelector('.final-state').classList.remove('hidden');
             document.querySelector('.final-state').classList.add('active');
             document.querySelector(
-                '.final-state').innerHTML = '<h2>No meme found !<br/> To submit again, press F5.</h2>';
+                '.final-state').innerHTML = '<h2>No meme found !<br/> To submit again, press F5 <br/> Hint tags: Funny, Nerdy, Animals, \t\n' +
+                'Sports, Dark_Humor... </h2>';
         }
     });
 };

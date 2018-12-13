@@ -5,7 +5,7 @@
       <paths name="virtual server">
         <serverdata>
           <mappings>
-            <mapping deploy="/test" local="$PROJECT_DIR$" web="/test" />
+            <mapping deploy="/Web_Project" local="$PROJECT_DIR$" web="/Web_Project" />
           </mappings>
         </serverdata>
       </paths>

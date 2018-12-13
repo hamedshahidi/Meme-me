@@ -5,7 +5,8 @@ Meme-me is a fun media sharing web application where you can view and rate memes
 
 This project is done using HTML/CSS, JavaScript, MySQL, Express and NodeJS.
 
-
+![Poster of Meme-me](https://github.com/hamedshahidi/Meme-me/raw/master/poster_meme_me.png
+)
 # How to setup a working version of Meme-me for yourself
 ## Getting started
 

@@ -35,8 +35,8 @@ Meme-me is a fun media sharing web application where you can view and rate memes
 ### Installation:
 - Clone or download the git repository
 If cloning in terminal do as follows:
-go to the folder you wish to clone the repo into which will be project’s root
-folder and execute commands bellow:
+go to the folder you wish to clone the repo into, which will be root folder of the project.
+Then execute commands bellow:
 
  ```
  git init
@@ -45,13 +45,20 @@ folder and execute commands bellow:
  ```
  git clone https://github.com/hamedshahidi/Meme-me.git
  ```
- - then use this command to install project dependencies.
+ - Now use this command to install project dependencies:
  ```
  npm install
  ```
 - In root folder find  **_.env-template_** file and rename it to  **_.env_** .
 - Open  **_.env_**  in a text editor and update it with your database information.
 - Use **_database_meme_me.txt_** to create required database and settings.
+
+
+## Running
+Execute the following command in project root folder to run the application:
+```
+node app.js
+```
 
 
 ## You are ready!

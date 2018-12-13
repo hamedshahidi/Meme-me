@@ -1,3 +1,7 @@
+/**
+ * Create by 'The missing semicolon' team @author
+ * Database queries are exported from this file
+ */
 'use strict';
 const mysql = require('mysql2');
 
@@ -11,6 +15,7 @@ const connect = () => {
     });
 };
 
+// select meme from database for main page
 const selectMeme = (res, connection) => {
     connection.query(
         'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, meme.caption, SUM(IFNULL(voted_for.liked, 0)) as NumLikes, SUM(IFNULL(voted_for.disliked, 0)) as NumDislikes\n' +
@@ -18,7 +23,6 @@ const selectMeme = (res, connection) => {
         'ON meme.id_meme = voted_for.id_meme\n' +
         'GROUP BY meme.id_meme\n' +
         'ORDER BY meme.id_meme;',
-        // 'SELECT * FROM meme',
         (err, results, fields) => {
             if (err) console.log(err);
             console.log('All memes selected');
@@ -27,6 +31,7 @@ const selectMeme = (res, connection) => {
     );
 };
 
+// search meme based on tag
 const searchMeme = (tag, res, connection) => {
     connection.query(
         'SELECT meme.id_meme, meme.meme_name, meme.meme_medium, meme.tag, meme.caption, SUM(IFNULL(voted_for.liked, 0)) as NumLikes, SUM(IFNULL(voted_for.disliked, 0)) as NumDislikes\n' +
@@ -43,6 +48,7 @@ const searchMeme = (tag, res, connection) => {
     );
 };
 
+// count number of uploads for each user
 const countUploads = (user_id, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -58,6 +64,7 @@ const countUploads = (user_id, connection) => {
     });
 };
 
+// select meme in database to show in profile page
 const selectMemeProfile = (user_id, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -78,6 +85,7 @@ const selectMemeProfile = (user_id, connection) => {
     });
 };
 
+// select user profile in database for profile page
 const selectProfile = (user_id, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -95,6 +103,7 @@ const selectProfile = (user_id, connection) => {
     });
 };
 
+// select usr from database
 const selectUser = (data, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -111,6 +120,7 @@ const selectUser = (data, connection) => {
     });
 };
 
+// select username, check if already exist
 const selectUsername = (data, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -127,6 +137,8 @@ const selectUsername = (data, connection) => {
     });
 };
 
+
+// select email, check if already exist
 const selectEmail = (data, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -143,6 +155,8 @@ const selectEmail = (data, connection) => {
     });
 };
 
+
+// select google user, check if already exist
 const selectGoogleUser = (profile, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -158,6 +172,8 @@ const selectGoogleUser = (profile, connection) => {
     });
 };
 
+
+// insert meme to database
 const insertMeme = (data, connection, callback) => {
     connection.execute(
         'INSERT INTO meme (meme_name, meme_medium, tag, caption) VALUES (?, ?, ?, ?);',
@@ -168,6 +184,7 @@ const insertMeme = (data, connection, callback) => {
     );
 };
 
+// delete data in has_tags table
 const deleteHas_tags = (data, connection, callback) => {
     return new Promise((resolve, reject) => {
         connection.execute(
@@ -185,6 +202,7 @@ const deleteHas_tags = (data, connection, callback) => {
     });
 };
 
+// delete data in uploaded table
 const deleteUploaded = (data, connection, callback) => {
     return new Promise((resolve, reject) => {
         connection.execute(
@@ -202,6 +220,7 @@ const deleteUploaded = (data, connection, callback) => {
     });
 };
 
+// delete data in voted_for table
 const deleteVoted_for = (data, connection, callback) => {
     return new Promise((resolve, reject) => {
         connection.execute(
@@ -218,6 +237,8 @@ const deleteVoted_for = (data, connection, callback) => {
         );
     });
 };
+
+// delete data in meme table
 const deleteMeme = (data, connection, callback) => {
     return new Promise((resolve, reject) => {
         connection.execute(
@@ -234,6 +255,7 @@ const deleteMeme = (data, connection, callback) => {
     });
 };
 
+// insert data into uploaded table
 const insertUploaded = (data, connection, callback) => {
     connection.execute(
         `INSERT INTO uploaded
@@ -250,6 +272,7 @@ const insertUploaded = (data, connection, callback) => {
     );
 };
 
+// check if meme is already voted by user
 const checkVoted = (data, connection) => {
     return new Promise((resolve, reject) => {
         connection.query(
@@ -265,6 +288,7 @@ const checkVoted = (data, connection) => {
     });
 };
 
+// insert tag into has_tag table
 const insertHasTag = (data, connection, callback) => {
     connection.execute(
         `INSERT INTO has_tags
@@ -282,6 +306,7 @@ const insertHasTag = (data, connection, callback) => {
     );
 };
 
+// insert vote into voted table
 const insertVoted = (data, connection, callback) => {
     connection.execute(
         `INSERT INTO voted_for (id_user, id_meme, liked, disliked) 
@@ -296,6 +321,8 @@ const insertVoted = (data, connection, callback) => {
     );
 };
 
+
+// update vote to voted table
 const updateVoted = (data, connection, callback) => {
     connection.execute(
         `UPDATE voted_for 
@@ -312,6 +339,8 @@ const updateVoted = (data, connection, callback) => {
     );
 };
 
+
+// insert google user
 const insertGoogleUser = (data, connection) => {
     connection.execute(
         'INSERT INTO user (id_google, last_name, first_name, email, username) VALUE (?, ?, ?, ?, ?);',
@@ -322,6 +351,7 @@ const insertGoogleUser = (data, connection) => {
     );
 };
 
+// insert normal user
 const insertUser = (data, connection) => {
     return new Promise((resolve, reject) => {
         connection.execute(

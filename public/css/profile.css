@@ -1,3 +1,8 @@
+/**
+ * Create by 'The missing semicolon' team @author
+ * Profile page styling
+ */
+
 /*
 All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 310).
 The 'supports' rule will only run if your browser supports CSS grid.

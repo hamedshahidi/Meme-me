@@ -1,3 +1,8 @@
+/**
+ * Create by 'The missing semicolon' team @author
+ * Upload js file is for processing file data when upload button is clicked
+ */
+
 'use strict';
 
 const backdrop = document.createElement("div");
@@ -10,6 +15,8 @@ const submitButton  = document.getElementById('submit-button');
 //
 // File Upload
 //
+
+// Function for file uploading
 const ekUpload = () =>{
     const Init = () => {
         fileSelect.addEventListener('change', fileSelectHandler, false);
@@ -91,12 +98,18 @@ const ekUpload = () =>{
         document.getElementById('file-drag').style.display = 'none';
     }
 };
+
+//Prevent upload button from sending
 upload.addEventListener('click', (event) => {
     event.preventDefault();
 });
+
+//Prevent upload hamburger button from sending
 uploadHam.addEventListener('click', (event) => {
     event.preventDefault();
 });
+
+//Addeventlistener to document for it to listen to a click event for upload button
 document.addEventListener('click', (event) => {
     // element.matches() polyfill for IE10+ support
     if (!Element.prototype.matches) {
@@ -116,6 +129,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
+//Addeventlistener for submit button
 submitButton.addEventListener('click', () => {
     modal.classList.remove("open");
     document.body.removeChild(backdrop);

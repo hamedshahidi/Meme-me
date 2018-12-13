@@ -1,4 +1,8 @@
-// JavaScript Document
+/**
+ * Create by 'The missing semicolon' team @author
+ * Main js file for displaying memes in main page, including swiping and searching mechanism
+ */
+
 'use strict';
 
 const obj = document.getElementById('stacked-cards-block');
@@ -932,6 +936,7 @@ const sendForm = (evt) => {
     });
 };
 
+//Function for sending data form to server and fetching data back (according to search request)
 const sendSearchForm = (evt) => {
     stackedCardsObj.innerHTML = '';
     evt.preventDefault();
@@ -1014,10 +1019,10 @@ const sendSearchForm = (evt) => {
 };
 
 listAllMemes();
-//inputFile.addEventListener('change', previewFile);
 frm.addEventListener('submit', sendForm);
 searchForm.addEventListener('submit', sendSearchForm);
 
+//Setting the home button active when user on main page
 window.onload = () => {
     if (document.URL === 'https://10.114.32.124/node/main') {
         console.log('Main page is active.');
@@ -1025,14 +1030,17 @@ window.onload = () => {
     }
 };
 
+//Hide stacked-card when search input is focused
 const focusSearch = () => {
     stageCard.style.display = 'none';
 };
 
+//Show stacked-card when search input is unfocused
 const blurSearch = () => {
     stageCard.style.display = 'inline';
 };
 
+//Media query for phone device to addeventlistener to search icon
 const mq = window.matchMedia('(max-width: 450px)');
 if (mq.matches) {
     const search = document.getElementById('search');

@@ -1,3 +1,8 @@
+/**
+ * Create by 'The missing semicolon' team @author
+ * Upload js file is for processing file data when upload button is clicked
+ */
+
 'use strict';
 require('dotenv').config();
 const express = require('express');
@@ -17,11 +22,13 @@ const MySQLStore = require('express-mysql-session')(session);
 const sslkey = fs.readFileSync('/etc/pki/tls/private/ca.key');
 const sslcert = fs.readFileSync('/etc/pki/tls/certs/ca.crt');
 
+//Option for https
 const httpsOptions = {
     key: sslkey,
     cert: sslcert
 };
 
+//Option for sessionStore
 const options = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -50,6 +57,16 @@ app.use('/auth', authRoutes);
 
 const connection = db.connect();
 const upload = multer({dest: 'public/memes/'});
+
+//check user is authenticated or not
+const authenticationMiddleware = () => {
+    return (req, res, next) => {
+        console.log(`req.session.passport.user: ${JSON.stringify(
+            req.session.passport)}`);
+        if (req.isAuthenticated()) return next();
+        res.redirect('/');
+    };
+};
 
 //upload the meme
 app.post('/upload', upload.single('mediafile'), (req, res, next) => {
@@ -150,7 +167,6 @@ app.get('/profile', authenticationMiddleware(), (req, res) => {
                     } else {
                         userProfile.memes = memes.reverse();
                     }
-                    //console.log(userProfile.memes[0].meme_medium);
                     res.render('profile', {profile: userProfile});
                 },
             );
@@ -158,6 +174,7 @@ app.get('/profile', authenticationMiddleware(), (req, res) => {
     });
 });
 
+//main page
 app.get('/main', authenticationMiddleware(), (req, res) => {
     console.log(req.user);
     console.log(req.isAuthenticated());
@@ -168,19 +185,12 @@ app.get('/main', authenticationMiddleware(), (req, res) => {
     }
 });
 
+//login page
 app.get('/', (req, res) => {
     res.render('login');
 });
 
-function authenticationMiddleware() {
-    return (req, res, next) => {
-        console.log(`req.session.passport.user: ${JSON.stringify(
-            req.session.passport)}`);
-        if (req.isAuthenticated()) return next();
-        res.redirect('/');
-    };
-}
-
+//create http server, listen to port
 http.createServer((req,res)=>{
     const redir ='https://' + req.headers.host + '/node' + req.url;
     console.log(redir);
@@ -188,6 +198,7 @@ http.createServer((req,res)=>{
     res.end();
 }).listen(8000);
 
+//create https server, listen to port
 https.createServer(httpsOptions,app).listen(3000);
 
 

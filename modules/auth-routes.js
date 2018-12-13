@@ -1,3 +1,7 @@
+/**
+ * Create by 'The missing semicolon' team @author
+ * Authentication route will go here
+ */
 'use strict';
 
 const passport = require('passport');
@@ -48,6 +52,7 @@ router.post('/register', [
     }),
 ], (req, res) => {
     const errors = validationResult(req);
+    //if there is error render the login page with errors
     if (!errors.isEmpty()) {
         console.log(errors.array());
         return res.render('login', {
@@ -55,6 +60,7 @@ router.post('/register', [
             errors: errors.array(),
         });
     } else {
+        //else insert user to database and log the user in
         const data = [
             req.body.lastname,
             req.body.firstname,

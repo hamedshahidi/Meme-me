@@ -1,3 +1,7 @@
+/**
+ * Create by 'The missing semicolon' team @author
+ * Passport.js set up
+ */
 'use strict';
 const passport = require('passport');
 const keys = require('./keys');
@@ -7,14 +11,17 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const connection = db.connect();
 
+//Serialize user with user id
 passport.serializeUser((user, done) => {
     done(null, user.id_user);
 });
 
+//Deserialize user with user id
 passport.deserializeUser((id_user, done) => {
     done(null, id_user);
 });
 
+//Local Strategy for user log in (check username and password in database)
 passport.use(new LocalStrategy(
     (username, password, done) => {
         const data = [username, password];
@@ -29,6 +36,7 @@ passport.use(new LocalStrategy(
     },
 ));
 
+//Google Strategy for user log in (not working with private IP)
 passport.use(new GoogleStrategy({
         //options for the google strategy
         clientID: keys.google.GOOGLE_CLIENT_ID,

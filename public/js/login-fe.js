@@ -1,3 +1,8 @@
+/**
+ * Create by 'The missing semicolon' team @author
+ * Login js for sign in and sign up animation
+ */
+
 'use stricts';
 
 const signInContainer = document.getElementById('signIn-container');

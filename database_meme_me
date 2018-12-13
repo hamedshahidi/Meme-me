@@ -1,0 +1,203 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.15.10
+-- https://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 13, 2018 at 01:45 PM
+-- Server version: 5.5.60-MariaDB
+-- PHP Version: 5.4.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `meme_me`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `has_tags`
+--
+
+CREATE TABLE IF NOT EXISTS `has_tags` (
+  `id_meme` int(10) NOT NULL,
+  `id_tag` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `meme`
+--
+
+CREATE TABLE IF NOT EXISTS `meme` (
+  `id_meme` int(10) NOT NULL,
+  `meme_name` varchar(50) NOT NULL,
+  `meme_medium` varchar(50) NOT NULL,
+  `tag` varchar(25) NOT NULL,
+  `caption` text NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `tag`
+--
+
+CREATE TABLE IF NOT EXISTS `tag` (
+  `id_tag` int(10) NOT NULL,
+  `tag_name` varchar(25) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uploaded`
+--
+
+CREATE TABLE IF NOT EXISTS `uploaded` (
+  `id_meme` int(10) NOT NULL,
+  `id_user` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id_user` int(10) NOT NULL,
+  `id_google` varchar(50) DEFAULT NULL,
+  `last_name` varchar(25) NOT NULL,
+  `first_name` varchar(25) NOT NULL,
+  `email` varchar(25) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` varchar(25) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `voted_for`
+--
+
+CREATE TABLE IF NOT EXISTS `voted_for` (
+  `id_user` int(10) NOT NULL,
+  `id_meme` int(10) NOT NULL,
+  `liked` int(1) NOT NULL,
+  `disliked` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `has_tags`
+--
+ALTER TABLE `has_tags`
+  ADD KEY `id_meme` (`id_meme`),
+  ADD KEY `id_tag` (`id_tag`);
+
+--
+-- Indexes for table `meme`
+--
+ALTER TABLE `meme`
+  ADD PRIMARY KEY (`id_meme`);
+
+--
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`session_id`);
+
+--
+-- Indexes for table `tag`
+--
+ALTER TABLE `tag`
+  ADD PRIMARY KEY (`id_tag`);
+
+--
+-- Indexes for table `uploaded`
+--
+ALTER TABLE `uploaded`
+  ADD KEY `id_meme` (`id_meme`),
+  ADD KEY `id_user` (`id_user`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `voted_for`
+--
+ALTER TABLE `voted_for`
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_meme` (`id_meme`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `meme`
+--
+ALTER TABLE `meme`
+  MODIFY `id_meme` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=105;
+--
+-- AUTO_INCREMENT for table `tag`
+--
+ALTER TABLE `tag`
+  MODIFY `id_tag` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `has_tags`
+--
+ALTER TABLE `has_tags`
+  ADD CONSTRAINT `has_tags_ibfk_1` FOREIGN KEY (`id_meme`) REFERENCES `meme` (`id_meme`),
+  ADD CONSTRAINT `has_tags_ibfk_2` FOREIGN KEY (`id_tag`) REFERENCES `tag` (`id_tag`);
+
+--
+-- Constraints for table `uploaded`
+--
+ALTER TABLE `uploaded`
+  ADD CONSTRAINT `uploaded_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `uploaded_ibfk_2` FOREIGN KEY (`id_meme`) REFERENCES `meme` (`id_meme`);
+
+--
+-- Constraints for table `voted_for`
+--
+ALTER TABLE `voted_for`
+  ADD CONSTRAINT `voted_for_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `voted_for_ibfk_2` FOREIGN KEY (`id_meme`) REFERENCES `meme` (`id_meme`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -2,11 +2,25 @@
 ## A place for sharing / rating memes
 
 Meme-me is a fun media sharing web application where you can view and rate memes and even upload and share your own ones. It is a window for a quick escape from the rush of the day which leaves a smile on your lips 🙂
+ 
+**Technologies:**<br>
+ | JavaScript | HTML/CSS | Express | NodeJS | MySQL |
+ 
+  **License:**<br>
+ GNU General Public License version 3.0
+ 
+ **Developer team:**<br>
+ [Hamed Shahidi](https://www.linkedin.com/in/hamed-shahidi/)<br>
+ [Hung Nguyen](https://www.linkedin.com/in/hung-nguyen-tran-gia-860321139/)<br>
+ [Kristófer Knutsen](https://www.linkedin.com/in/k-knutsen/)<br>
+ 
 
-This project is done using HTML/CSS, JavaScript, MySQL, Express and NodeJS.
-
+ 
+ 
+ 
 ![Poster of Meme-me](https://github.com/hamedshahidi/Meme-me/raw/master/poster_meme_me.png
 )
+
 # How to setup a working version of Meme-me for yourself
 ## Getting started
 

@@ -1,7 +1,7 @@
 # Meme-me 
 ## A place for sharing / rating memes
 
-Meme-me is a fun media sharing web application where you can view and rate memes and even upload and share your own ones. It is window for a quick escape from the rush of the day which leaves a smile on your lips :simple_smile:
+Meme-me is a fun media sharing web application where you can view and rate memes and even upload and share your own ones. It is a window for a quick escape from the rush of the day which leaves a smile on your lips :simple_smile:
 
 This project is done using HTML/CSS, JavaScript, MySQL, Express and NodeJS.
 

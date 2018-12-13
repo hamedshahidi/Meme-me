@@ -1,4 +1,4 @@
-/**
+/*
  * Create by 'The missing semicolon' team @author
  * Upload js file is for processing file data when upload button is clicked
  */

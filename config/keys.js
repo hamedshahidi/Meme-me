@@ -1,4 +1,4 @@
-/**
+/*
  * Create by 'The missing semicolon' team @author
  * Google API setup
  */

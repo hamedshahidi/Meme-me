@@ -1,3 +1,6 @@
+/*
+ * Create by 'The missing semicolon' team @author
+/* Profile js file for creating animated navigation bar on profile page */
 let prevScrollpos = window.pageYOffset;
 window.onscroll = () => {
     const currentScrollPos = window.pageYOffset;

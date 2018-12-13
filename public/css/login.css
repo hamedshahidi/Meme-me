@@ -52,7 +52,7 @@ input,
     display: inline-block;
     font-size: 17px;
     line-height: 20px;
-    text-decoration: none; /* remove underline from anchors */
+    text-decoration: none;
 }
 
 input {
@@ -69,7 +69,7 @@ input:hover,
     text-align: center;
 }
 
-/* add appropriate colors to fb, twitter and google buttons */
+/* social media buttons */
 .fb {
     background-color: #3B5998;
     color: white;
@@ -124,8 +124,6 @@ input[type=submit]:hover {
     flex-flow: wrap;
     background-color: black;
     position: absolute;
-    /*    min-width: 285px;
-        margin-left: 10px;*/
 }
 
 .err-msg {
@@ -158,10 +156,9 @@ input[type=submit]:hover {
 
 
 /*============================================
-    MODAL
+    Sign in and Sign up modals
 ==============================================
 */
-/* style the container */
 .modal-container-signIn,
 .modal-container-signUp {
     position: absolute;
@@ -190,9 +187,6 @@ input[type=submit]:hover {
 .modal-signUp {
     background-color: #f2f2f2;
     border-radius: 60px 5px;
-    /*    position: absolute;
-        right: 70px;
-        top: 136px;*/
     width: 400px;
     min-width: 285px;
     padding: 20px 45px 25px 45px;
@@ -204,9 +198,6 @@ input[type=submit]:hover {
 .modal-signIn {
     background-color: #f2f2f2;
     border-radius: 60px 5px;
-    /*    position: absolute;
-        right: 70px;
-        top: 136px;*/
     width: 400px;
     min-width: 285px;
     padding: 20px 45px 25px 45px;
@@ -240,7 +231,7 @@ input[type=submit]:hover {
 
 
 /*============================================
-    Media query
+    Media queries
   ============================================*/
 
 @media screen and (min-height: 670px) {
@@ -300,7 +291,6 @@ input[type=submit]:hover {
         height: 100%;
         z-index: 10;
         background: rgba(0, 0, 0, .0);
-        /*opacity: 0;*/
     }
 
 
@@ -339,24 +329,8 @@ input[type=submit]:hover {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*============================================
-    Animation
+    Modal animation
 ==============================================
 */
 @-webkit-keyframes jellyMotion {
@@ -458,8 +432,3 @@ input[type=submit]:hover {
     animation-fill-mode: both; /* forward or both */
 
 }
-
-
-/*============================================
-    Modal animation
-  ============================================*/

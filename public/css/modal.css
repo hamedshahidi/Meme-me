@@ -78,7 +78,6 @@
 }
 
 .modal__footer {
-
     display: flex;
 }
 
@@ -98,9 +97,6 @@
 
 .meme_caption {
     font-size: 1.5rem;
-    /* float: left; */
-    /* clear: both; */
-    /* padding: 2rem 1.5rem; */
     text-align: center;
     background: #fff;
     border-radius: 7px;
@@ -127,7 +123,6 @@ html body p {
 }
 
 *, *::before, *::after {
-    /*box-sizing: border-box;*/
 }
 
 .submit_button {
@@ -140,10 +135,8 @@ html body p {
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
-    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    /*background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);*/
     background-color: #39abab;
     border: 3px solid #eee;
     font-weight: bold;
@@ -160,7 +153,7 @@ html body p {
 
 /*
 ======================================
-    Mobile min-width: 400px
+    screen wider than 400px
 ======================================
 */
 
@@ -177,23 +170,16 @@ html body p {
         cursor: pointer;
     }
 
-    .btn--launch-modal {
-
-    }
-
     .modal {
         visibility: hidden;
         position: absolute;
         top: 50%;
         left: 0;
-        /*right: 0;*/
         width: 80%;
         max-width: 50rem;
         padding: 2.5rem;
         margin: auto;
-
         background-color: rgb(255, 181, 126);
-
         border-radius: 10px;
         z-index: 1000;
         opacity: 0;
@@ -242,7 +228,6 @@ html body p {
     }
 
     .modal__footer {
-
         display: flex;
     }
 
@@ -262,9 +247,6 @@ html body p {
 
     .meme_caption {
         font-size: 1.5rem;
-        /* float: left; */
-        /* clear: both; */
-        /* padding: 2rem 1.5rem; */
         text-align: center;
         background: #fff;
         border-radius: 7px;
@@ -302,10 +284,8 @@ html body p {
         transition: 0.5s;
         background-size: 200% auto;
         color: white;
-        /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
         box-shadow: 0 0 20px #eee;
         border-radius: 10px;
-        /*background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);*/
         background-color: #39abab;
         border: 3px solid #eee;
     }
@@ -315,9 +295,5 @@ html body p {
         border-color: #bebec2;
         background-color: #1e9689;
         color: #fff;
-    }
-
-    .btn-1 {
-
     }
 }

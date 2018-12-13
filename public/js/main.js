@@ -1,4 +1,4 @@
-/**
+/*
  * Create by 'The missing semicolon' team @author
  * Main js file for displaying memes in main page, including swiping and searching mechanism
  */

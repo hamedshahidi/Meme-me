@@ -4,7 +4,7 @@
 Meme-me is a fun media sharing web application where you can view and rate memes and even upload and share your own ones. It is a window for a quick escape from the rush of the day which leaves a smile on your lips 🙂
  
 **Technologies:**<br>
- | JavaScript | HTML/CSS | Express | NodeJS | MySQL |
+ | Express | JavaScript | HTML/CSS | MySQL | Node JS |
  
   **License:**<br>
  GNU General Public License version 3.0

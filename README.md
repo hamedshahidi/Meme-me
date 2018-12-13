@@ -1,13 +1,19 @@
 # Meme-me 
 ## A place for sharing / rating memes
-Meme-me is a fun media sharing web application where you can view and rate memes and even upload and share your own ones. It is window for a quick escape from the rush of the day which leaves a smile on your lips :)  This project is done using html/css, Javascript, MySQL, Express, NodeJS and MariaDB.
+
+Meme-me is a fun media sharing web application where you can view and rate memes and even upload and share your own ones. It is window for a quick escape from the rush of the day which leaves a smile on your lips :simple_smile:
+This project is done using HTML/CSS, JavaScript, MySQL, Express and NodeJS.
+
 
 ## Getting started
 
+
 ### Foundation:
+
 - Install Node JS.
 - Set up Apache web server.
-- Setup Database (MySql or MariaDB).
+- Setup Database (MySQL or MariaDB).
+
 
 ### Installation:
 - Clone or download the git repository
@@ -30,7 +36,8 @@ folder and execute commands bellow:
 - Open  **_.env_**  in a text editor and update it with your database information.
 - Use **_database_meme_me.txt_** to create required database and settings.
 
-### You are ready!
+
+## You are ready!
 
 In your browser go to
 **https://_[your ip address]_/node/** or simply **_[your ip address]_/node/**
